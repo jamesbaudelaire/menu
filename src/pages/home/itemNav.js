@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router";
+import { useParams, useHistory } from "react-router";
 import { saveItem } from "redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+
+import { Load } from "functions/load";
 
 const S = styled.div`
   background: grey;
@@ -22,10 +23,20 @@ const S = styled.div`
       font-size: 25px;
     }
   }
+
+  opacity: 0;
+  transition: 0.5s;
+  transform: translatey(20px);
+  &.loading {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `;
 
 export const ItemNav = ({ name, item }) => {
   let { restaurant } = useParams();
+
+  const { loading } = Load();
 
   const dispatch = useDispatch();
 
@@ -44,14 +55,22 @@ export const ItemNav = ({ name, item }) => {
     }
   };
 
+  let history = useHistory();
+
+  let back = () => {
+    if (history.length < 2) {
+      history.push(`/${restaurant}`);
+    } else {
+      history.goBack();
+    }
+  };
+
   return (
-    <S>
-      <Link to={location => ({ ...location, pathname: `/${restaurant}` })}>
-        <div className="action">
-          <i className="material-icons-round">arrow_back_ios</i>
-          back
-        </div>
-      </Link>
+    <S className={loading ? "loading" : ""}>
+      <div className="action" onClick={() => back()}>
+        <i className="material-icons-round">arrow_back_ios</i>
+        back
+      </div>
 
       <div
         className="action"

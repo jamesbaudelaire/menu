@@ -19,11 +19,6 @@ const S = styled.div`
     width: 300px;
     background: red;
   }
-  ::after {
-    content: "";
-    display: block;
-    height: 200px;
-  }
 `;
 
 export const Items = ({ restaurant, items }) => {

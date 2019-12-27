@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { ItemNav } from "./itemNav";
 import { useParams } from "react-router-dom";
@@ -36,10 +36,6 @@ const S = styled.div`
 export const Item = ({ items, restaurant }) => {
   let { item } = useParams();
   let search = items.filter(i => i.url == item)[0];
-
-  useEffect(() => {
-    window.scroll(0, 0);
-  });
 
   return (
     <S>

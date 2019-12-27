@@ -11,3 +11,10 @@ export const saveItem = x => {
     data: x
   };
 };
+
+export const deleteSaved = x => {
+  return {
+    type: "delete",
+    data: x
+  };
+};

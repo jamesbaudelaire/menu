@@ -9,9 +9,14 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { Reducers } from "./redux/reducers";
 import { useSelector } from "react-redux";
+
+import { LS } from "functions/LS";
+
 const store = createStore(Reducers);
 
-store.subscribe(() => console.log(store.getState()));
+store.subscribe(() => {
+  LS.save(store.getState());
+});
 
 const GS = createGlobalStyle`
 
@@ -23,8 +28,8 @@ const GS = createGlobalStyle`
 --font1:'';
 --font2:'';
 --dark:rgb(30,30,30);
---light:rgb(240,240,240)
---theme:red
+--light:rgb(240,240,240);
+--theme:red;
 }
 
 
@@ -33,12 +38,22 @@ body{
   padding:0;
   background:${props => (props.dark ? "var(--dark)" : "var(--light)")};
   color:${props => (props.dark ? "var(--light)" : "var(--dark)")};
+
+  ::after {
+    content: "";
+    display: block;
+    height: 200px;
+  }
+  user-select:none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 a{
   text-decoration:none;
   color:unset;
 }
+
+
 
 `;
 
