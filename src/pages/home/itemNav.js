@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { useParams, useHistory } from "react-router";
+import { saveItem } from "redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+
+import { Load } from "functions/load";
 
 const S = styled.div`
-  background: red;
+  background: grey;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -18,35 +23,80 @@ const S = styled.div`
       font-size: 25px;
     }
   }
+
+  opacity: 0;
+  transition: 0.5s;
+  transform: translatey(20px);
+  &.loading {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `;
 
-const Buttons = [
-  {
-    name: "back",
-    location: "/",
-    icon: "arrow_back_ios"
-  },
-  {
-    name: "share",
-    location: "/saved",
-    icon: "send"
-  },
-  {
-    name: "save",
-    location: "/settings",
-    icon: "favorite"
-  }
-];
+export const ItemNav = ({ name, item }) => {
+  let { restaurant } = useParams();
 
-export const ItemNav = () => {
+  const { loading } = Load();
+
+  const dispatch = useDispatch();
+
+  let saved = useSelector(s => s.saved).map(x => x.url);
+
+  let share = () => {
+    let location = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: "Menu App",
+        text: `${name} ${item.name}`,
+        url: `${location}`
+      });
+    } else {
+      console.log(location);
+    }
+  };
+
+  let history = useHistory();
+
+  let back = () => {
+    if (history.length < 2) {
+      history.push(`/${restaurant}`);
+    } else {
+      history.goBack();
+    }
+  };
+
   return (
-    <S>
-      {Buttons.map(x => (
-        <div className="action" key={x.name}>
-          <i className="material-icons-round">{x.icon}</i>
-          {x.name}
-        </div>
-      ))}
+    <S className={loading ? "loading" : ""}>
+      <div className="action" onClick={() => back()}>
+        <i className="material-icons-round">arrow_back_ios</i>
+        back
+      </div>
+
+      <div
+        className="action"
+        onClick={() => {
+          share();
+        }}
+      >
+        <i className="material-icons-round">send</i>
+        share
+      </div>
+
+      <div
+        className="action"
+        onClick={() => {
+          item.restaurant = restaurant;
+          dispatch(saveItem(item));
+        }}
+      >
+        <i
+          className="material-icons-round"
+          style={{ color: saved.includes(item.url) ? "red" : "" }}
+        >
+          favorite
+        </i>
+        save
+      </div>
     </S>
   );
 };

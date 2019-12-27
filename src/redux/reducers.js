@@ -1,6 +1,9 @@
 import { combineReducers } from "redux";
 
-const darkReducer = (state = false, action) => {
+import { LS } from "functions/LS";
+LS.init();
+
+const darkReducer = (state = LS.data.dark, action) => {
   switch (action.type) {
     case "dark":
       return !state;
@@ -18,7 +21,23 @@ const restaurantReducer = (state = null, action) => {
   }
 };
 
+const savedReducer = (state = LS.data.saved, action) => {
+  switch (action.type) {
+    case "save":
+      if (state.includes(action.data)) {
+        return state.filter(x => x !== action.data);
+      } else {
+        return [...state, action.data];
+      }
+    case "delete":
+      return state.filter(x => x !== action.data);
+    default:
+      return state;
+  }
+};
+
 export const Reducers = combineReducers({
   dark: darkReducer,
-  restaurant: restaurantReducer
+  restaurant: restaurantReducer,
+  saved: savedReducer
 });

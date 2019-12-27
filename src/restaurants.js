@@ -19,6 +19,15 @@ export const Restaurants = {
         types: ["seafood"],
         info: "info",
         sides: ["side1", ""]
+      },
+      {
+        name: "Caesar",
+        category: "salad",
+        url: "caesar",
+        price: "12",
+        types: ["vegetarian", "vegan"],
+        info: "info",
+        sides: ["side1", ""]
       }
     ]
   }
