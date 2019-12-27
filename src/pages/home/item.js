@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { ItemNav } from "./itemNav";
 import { useParams } from "react-router-dom";
 
 const S = styled.div`
   position: absolute;
-  background: grey;
   top: 0;
   left: 0;
   height: 100%;
@@ -32,16 +31,15 @@ const S = styled.div`
   .side {
     margin: 20px;
   }
-  ::after {
-    content: "";
-    display: block;
-    height: 70px;
-  }
 `;
 
-export const Item = ({ items }) => {
+export const Item = ({ items, restaurant }) => {
   let { item } = useParams();
   let search = items.filter(i => i.url == item)[0];
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  });
 
   return (
     <S>
@@ -73,7 +71,7 @@ export const Item = ({ items }) => {
         </>
       )}
 
-      <ItemNav />
+      <ItemNav item={search} name={restaurant} />
     </S>
   );
 };

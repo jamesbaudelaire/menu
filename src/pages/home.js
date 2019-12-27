@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Items } from "./home/items";
 import { Item } from "./home/item";
 
-import { Route, useParams } from "react-router-dom";
+import { Route, useParams, Switch } from "react-router-dom";
 import { Restaurants } from "restaurants";
 import { useDispatch } from "react-redux";
 import { getRestaurant } from "redux/actions";
@@ -23,15 +23,20 @@ export const Home = () => {
   return (
     <S>
       {Restaurants[restaurant] && (
-        <>
+        <Switch>
           <Route path="/:restaurant/:item">
-            <Item items={Restaurants[restaurant].items} />
+            <Item
+              restaurant={Restaurants[restaurant].name}
+              items={Restaurants[restaurant].items}
+            />
           </Route>
-          <Items
-            restaurant={restaurant}
-            items={Restaurants[restaurant].items}
-          />
-        </>
+          <Route path="/:restaurant">
+            <Items
+              restaurant={restaurant}
+              items={Restaurants[restaurant].items}
+            />
+          </Route>
+        </Switch>
       )}
     </S>
   );

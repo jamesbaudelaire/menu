@@ -4,3 +4,10 @@ export const getRestaurant = x => {
     data: x
   };
 };
+
+export const saveItem = x => {
+  return {
+    type: "save",
+    data: x
+  };
+};
