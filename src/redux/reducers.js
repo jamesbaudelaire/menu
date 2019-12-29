@@ -36,8 +36,23 @@ const savedReducer = (state = LS.data.saved, action) => {
   }
 };
 
+const filterReducer = (state = "", action) => {
+  switch (action.type) {
+    case "filter":
+      if (action.data == state) {
+        return "";
+      } else {
+        return action.data;
+      }
+
+    default:
+      return state;
+  }
+};
+
 export const Reducers = combineReducers({
   dark: darkReducer,
   restaurant: restaurantReducer,
-  saved: savedReducer
+  saved: savedReducer,
+  filter: filterReducer
 });

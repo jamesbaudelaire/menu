@@ -18,3 +18,10 @@ export const deleteSaved = x => {
     data: x
   };
 };
+
+export const filterItems = x => {
+  return {
+    type: "filter",
+    data: x
+  };
+};

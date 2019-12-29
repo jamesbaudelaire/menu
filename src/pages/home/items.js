@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+
+import { FilterNav } from "./filterNav";
+import { useSelector } from "react-redux";
 
 const S = styled.div`
   .category-name {
@@ -22,11 +25,21 @@ const S = styled.div`
 `;
 
 export const Items = ({ restaurant, items }) => {
-  // const [filter, setFilter] = useState(null);
+  const filter = useSelector(s => s.filter);
 
-  // if (filter) {
-  //   items = items.filter(item => item.types.includes(filter));
-  // }
+  let itemsCopy = items;
+
+  if (filter) {
+    items = items.filter(item => item.types.includes(filter));
+  }
+
+  // let filterItems = x => {
+  //   if (filter == x) {
+  //     setFilter(null);
+  //   } else {
+  //     setFilter(x);
+  //   }
+  // };
 
   let categories = () => [...new Set(items.map(item => item.category))];
   let categoryItems = category =>
@@ -55,6 +68,8 @@ export const Items = ({ restaurant, items }) => {
           </div>
         </div>
       ))}
+
+      <FilterNav items={itemsCopy} filter={filter} />
     </S>
   );
 };
