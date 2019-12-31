@@ -7,8 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Load } from "functions/load";
 
 const S = styled.div`
-  background: grey;
+  background: var(--theme3);
   position: fixed;
+  border-radius: 30px 30px 0 0;
   bottom: 0;
   left: 0;
   z-index: 100;
@@ -19,6 +20,7 @@ const S = styled.div`
   .action {
     padding: 10px;
     i {
+      transition: 0.5s;
       display: block;
       font-size: 25px;
     }
@@ -33,7 +35,7 @@ const S = styled.div`
   }
 `;
 
-export const ItemNav = ({ name, item }) => {
+export const ItemNav = ({ item }) => {
   let { restaurant } = useParams();
 
   const { loading } = Load();
@@ -46,8 +48,6 @@ export const ItemNav = ({ name, item }) => {
     let location = window.location.href;
     if (navigator.share) {
       navigator.share({
-        title: "Menu App",
-        text: `${name} ${item.name}`,
         url: `${location}`
       });
     } else {
@@ -91,7 +91,7 @@ export const ItemNav = ({ name, item }) => {
       >
         <i
           className="material-icons-round"
-          style={{ color: saved.includes(item.url) ? "red" : "" }}
+          style={{ color: saved.includes(item.url) ? "#d50000" : "" }}
         >
           favorite
         </i>

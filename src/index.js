@@ -20,20 +20,29 @@ store.subscribe(() => {
 
 const GS = createGlobalStyle`
 
-/* @import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto"); */
+@import url("https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Open+Sans&display=swap");
+
 
 @import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp");
 
+
 :root{
---font1:'';
---font2:'';
+--font2:'Open Sans', sans-serif;
+--font1:'Averia Serif Libre', cursive;
 --dark:rgb(30,30,30);
 --light:rgb(240,240,240);
---theme:red;
+--grey:rgb(50,50,50);
+--theme1:#304ffe;
+--theme2:#ffd600;
+--theme3:#1a237e;
+--shadow:0 10px 6px -6px rgba(0,0,0,.5);
+
 }
 
 
 body{
+  font-family:var(--font1);
+  transition:.5s;
   margin:0;
   padding:0;
   background:${props => (props.dark ? "var(--dark)" : "var(--light)")};

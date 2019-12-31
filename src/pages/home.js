@@ -26,7 +26,7 @@ export const Home = () => {
         <Switch>
           <Route path="/:restaurant/:item">
             <Item
-              restaurant={Restaurants[restaurant].name}
+              restaurant={Restaurants[restaurant]}
               items={Restaurants[restaurant].items}
             />
           </Route>
