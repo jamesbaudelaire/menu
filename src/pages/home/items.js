@@ -24,7 +24,7 @@ const S = styled.div`
     margin-right: 0;
 
     display: inline-block;
-    border-radius: 30px;
+    border-radius: 5px;
     height: 200px;
     width: calc(100% - 80px);
 
@@ -46,7 +46,7 @@ const S = styled.div`
   }
 
   .notice {
-    margin: 10px;
+    margin: 30px;
     text-align: center;
     font-family: var(--font2);
     color: #d50000;
@@ -54,7 +54,7 @@ const S = styled.div`
   }
 
   .logo {
-    width: calc(100% - 60px);
+    width: calc(100% - 100px);
     margin: 20px auto;
     display: block;
   }

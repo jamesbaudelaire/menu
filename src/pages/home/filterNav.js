@@ -6,7 +6,7 @@ import { Load } from "functions/load";
 
 const S = styled.div`
   background: var(--theme3);
-  border-radius: 30px;
+  border-radius: 5px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -28,19 +28,12 @@ const S = styled.div`
     display: inline-block;
     margin: 10px;
     padding: 5px 10px;
-    border-radius: 30px;
+    border-radius: 5px;
     transition: 0.5s;
     &.selected {
       background: var(--theme2);
       color: black;
       box-shadow: var(--shadow);
-    }
-
-    :first-child {
-      margin-left: 20px;
-    }
-    :last-child {
-      margin-right: 20px;
     }
   }
 `;

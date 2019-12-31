@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const S = styled.div`
   position: fixed;
-  border-radius: 30px 30px 0 0;
+  border-radius: 5px 5px 0 0;
   bottom: 0;
   left: 0;
   width: 100%;

@@ -13,7 +13,6 @@ const S = styled.div`
   }
 
   .info {
-    max-width: calc(100% - 100px);
     margin: 20px;
     .title {
       font-size: 25px;
@@ -26,16 +25,16 @@ const S = styled.div`
       list-style: none;
       padding: 0 10px;
       li {
+        margin: 10px;
         i {
           margin: 10px;
-          font-size: 30px;
+          font-size: 40px;
         }
       }
     }
   }
 
   .contact {
-    max-width: calc(100% - 100px);
     margin: 20px;
     .title {
       font-size: 20px;
@@ -43,7 +42,7 @@ const S = styled.div`
     font-size: 15px;
     i {
       display: block;
-      font-size: 30px;
+      font-size: 40px;
       margin: 10px;
     }
   }

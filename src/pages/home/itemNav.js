@@ -9,7 +9,7 @@ import { Load } from "functions/load";
 const S = styled.div`
   background: var(--theme3);
   position: fixed;
-  border-radius: 30px 30px 0 0;
+  border-radius: 5px 5px 0 0;
   bottom: 0;
   left: 0;
   z-index: 100;
