@@ -18,6 +18,7 @@ export const Home = () => {
 
   useEffect(() => {
     dispatch(getRestaurant(restaurant));
+    window.scroll(0, 0);
   });
 
   return (
@@ -26,7 +27,7 @@ export const Home = () => {
         <Switch>
           <Route path="/:restaurant/:item">
             <Item
-              restaurant={Restaurants[restaurant].name}
+              restaurant={Restaurants[restaurant]}
               items={Restaurants[restaurant].items}
             />
           </Route>

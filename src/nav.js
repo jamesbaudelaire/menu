@@ -6,12 +6,13 @@ import { useSelector } from "react-redux";
 
 const S = styled.div`
   position: fixed;
+  border-radius: 5px 5px 0 0;
   bottom: 0;
   left: 0;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: grey;
+  background: var(--theme1);
   text-align: center;
   transition: 0.5s;
 
@@ -24,6 +25,8 @@ const S = styled.div`
 
   .page-link {
     padding: 10px;
+    transition: 0.5s;
+    color: var(--light);
     i {
       display: block;
       font-size: 25px;
@@ -31,7 +34,12 @@ const S = styled.div`
   }
 
   .active {
-    color: red;
+    .page-link {
+      color: var(--dark);
+      i {
+        color: var(--dark);
+      }
+    }
   }
 `;
 
