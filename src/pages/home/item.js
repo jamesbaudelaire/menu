@@ -49,6 +49,11 @@ const S = styled.div`
     margin: 20px;
     font-family: var(--font2);
   }
+
+  .not-found {
+    margin: 20px;
+    font-family: var(--font2);
+  }
 `;
 
 export const Item = ({ items }) => {
@@ -63,58 +68,64 @@ export const Item = ({ items }) => {
 
   return (
     <S>
-      <div className={loading ? "item loading" : "item"}>
-        <div
-          className="img"
-          style={{
-            backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/v1577777469/menu/rialto/${
-              search.url
-            }.jpg')`
-          }}
-        />
-        <div className="details">
-          <div className="name">{search.name}</div>
+      {search ? (
+        <div className={loading ? "item loading" : "item"}>
+          <div
+            className="img"
+            style={{
+              backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/v1577777469/menu/rialto/${
+                search.url
+              }.jpg')`
+            }}
+          />
+          <div className="details">
+            <div className="name">{search.name}</div>
 
-          <div className="price">{search.price}</div>
-          <div className="info">{search.info}</div>
+            <div className="price">{search.price}</div>
+            <div className="info">{search.info}</div>
 
-          {search.toppings && (
-            <div className="toppings">
-              TOPPINGS
-              <br />
-              {search.toppings.map(topping => (
-                <div key={topping} className="topping">
-                  {topping}
-                </div>
-              ))}
-            </div>
-          )}
+            {search.toppings && (
+              <div className="toppings">
+                TOPPINGS
+                <br />
+                {search.toppings.map(topping => (
+                  <div key={topping} className="topping">
+                    {topping}
+                  </div>
+                ))}
+              </div>
+            )}
 
-          {search.category == "entree" && (
-            <div className="sides">
-              SIDES
-              <br />
-              {Restaurants[restaurant].sides.map(side => (
-                <div key={side} className="side">
-                  {side}
-                </div>
-              ))}
-            </div>
-          )}
+            {search.category == "entree" && (
+              <div className="sides">
+                SIDES
+                <br />
+                {Restaurants[restaurant].sides.map(side => (
+                  <div key={side} className="side">
+                    {side}
+                  </div>
+                ))}
+              </div>
+            )}
 
-          {search.category == "salad" && (
-            <div className="dressings">
-              DRESSINGS
-              <br />
-              {Restaurants[restaurant].dressings.map(dressing => (
-                <div key={dressing} className="dressing">
-                  {dressing}
-                </div>
-              ))}
-            </div>
-          )}
+            {search.category == "salad" && (
+              <div className="dressings">
+                DRESSINGS
+                <br />
+                {Restaurants[restaurant].dressings.map(dressing => (
+                  <div key={dressing} className="dressing">
+                    {dressing}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="not-found">
+          Item doesn't exist or no longer available
+        </div>
+      )}
 
       <ItemNav item={search} />
     </S>

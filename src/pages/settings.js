@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -13,11 +13,10 @@ const S = styled.div`
   }
 
   .info {
-    margin: 20px;
     max-width: calc(100% - 100px);
-
+    margin: 20px;
     .title {
-      font-size: 20px;
+      font-size: 25px;
       font-family: var(--font1);
     }
 
@@ -25,8 +24,12 @@ const S = styled.div`
 
     ul {
       list-style: none;
+      padding: 0 10px;
       li {
-        margin: 10px 0;
+        i {
+          margin: 10px;
+          font-size: 30px;
+        }
       }
     }
   }
@@ -49,6 +52,11 @@ const S = styled.div`
 export const Settings = () => {
   const dark = useSelector(state => state.dark);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  });
+
   return (
     <S>
       <i
@@ -62,16 +70,26 @@ export const Settings = () => {
       </i>
 
       <div className="info">
-        <div className="title">The future of menus</div>
+        <div className="title">M3NU</div>
         <ul>
-          <li>Share your favorite items with family and friends</li>
-          <li>Save items you loved or want to try next</li>
+          <li>
+            <i className="material-icons-round">restaurant_menu</i>A modern menu
+            for the web.
+          </li>
+          <li>
+            <i className="material-icons-round">send</i>
+            Share your favorite items with family and friends.
+          </li>
+          <li>
+            <i className="material-icons-round">favorite</i>
+            Save items you loved or want to try next!
+          </li>
         </ul>
       </div>
 
       <div className="contact">
         <div className="title">Interested in listing your menu?</div>
-        <a href="mailto:ronakmystery@gmail.com?subject=I want to list my Restaurant's menu!">
+        <a href="mailto:ronakmystery@gmail.com?subject=I want to list my menu!">
           <i className="material-icons-round">email</i>
         </a>
       </div>

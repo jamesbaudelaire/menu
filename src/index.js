@@ -41,6 +41,8 @@ const GS = createGlobalStyle`
 
 
 body{
+  overscroll-behavior: contain;
+
   font-family:var(--font1);
   transition:.5s;
   margin:0;

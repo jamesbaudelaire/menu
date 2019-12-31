@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { filterItems } from "redux/actions";
@@ -24,7 +24,6 @@ const S = styled.div`
   }
 
   div {
-    background: var(--theme1);
     color: white;
     display: inline-block;
     margin: 10px;
@@ -51,7 +50,16 @@ export const FilterNav = ({ items }) => {
   const dispatch = useDispatch();
   const { loading } = Load();
 
-  let filters = [...new Set(items.map(x => x.types).flat())];
+  useEffect(() => {
+    if (filter) {
+      document.querySelector(".selected").scrollIntoView({
+        behavior: "smooth",
+        inline: "center"
+      });
+    }
+  });
+
+  let filters = [...new Set(items.map(x => x.types).flat())].filter(x => x);
 
   return (
     <S className={loading ? "loading" : ""}>
@@ -60,6 +68,7 @@ export const FilterNav = ({ items }) => {
           className={filter == x ? "selected" : ""}
           key={x}
           onClick={() => {
+            window.scroll(0, 0);
             dispatch(filterItems(x));
           }}
         >

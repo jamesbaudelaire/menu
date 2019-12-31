@@ -49,7 +49,38 @@ export const Restaurants = {
         url: "osso-bucco",
         price: "24.50",
         types: ["pork"],
-        info: `pork shank simmered in red wine and demi glaze, carrots, celery, onions`
+        info: `pork shank simmered in red wine and demi glaz with carrots, celery, onions`
+      },
+      {
+        name: "Burger",
+        category: "entree",
+        url: "burger",
+        price: "10",
+        types: ["beef"],
+        info: `choice ground beef with tomato, lettuce, pickle, onion`,
+        toppings: ["fried onions", "bacon", "avocado", "mushrooms", "fried egg"]
+      },
+      {
+        name: "Pesto Linguine",
+        category: "entree",
+        url: "linguine",
+        price: "12",
+        types: ["vegan", "vegetarian"],
+        info: `squash, red onions, tomatoes, artichokes, mushrooms, eggplant, asparagus, spinach, vegan mozzarella`
+      },
+      {
+        name: "Creme Brulee",
+        category: "dessert",
+        types: [],
+        url: "creme-brulee",
+        price: "5"
+      },
+      {
+        name: "Tiramisu",
+        types: [],
+        category: "dessert",
+        url: "tiramisu",
+        price: "5"
       }
     ]
   }

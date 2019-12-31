@@ -21,10 +21,13 @@ const S = styled.div`
 
   .item {
     margin: 20px;
+    margin-right: 0;
+
     display: inline-block;
     border-radius: 30px;
     height: 200px;
-    width: 300px;
+    width: calc(100% - 80px);
+
     background: var(--grey);
     background-size: cover;
 
@@ -38,10 +41,16 @@ const S = styled.div`
     }
   }
 
+  a:last-child {
+    margin-right: 20px;
+  }
+
   .notice {
-    margin: 20px;
+    margin: 10px;
+    text-align: center;
     font-family: var(--font2);
     color: #d50000;
+    font-size: 15px;
   }
 
   .logo {
@@ -74,7 +83,7 @@ export const Items = ({ restaurant, items }) => {
   return (
     <S>
       <img
-        src={`https://res.cloudinary.com/baudelaire/image/upload/v1577778466/menu/${restaurant}/logo.png`}
+        src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/v1577778466/menu/${restaurant}/logo.png`}
         alt="logo"
         className="logo"
         style={{ filter: dark ? "invert(1)" : "invert(0)" }}
@@ -87,12 +96,10 @@ export const Items = ({ restaurant, items }) => {
             {categoryItems(category).map(item => (
               <Link to={`${restaurant}/${item.url}`} key={item.url}>
                 <div
+                  data-url={`https://res.cloudinary.com/baudelaire/image/upload/w_700/v1577777469/menu/${restaurant}/${
+                    item.url
+                  }.jpg`}
                   className="item"
-                  style={{
-                    backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/v1577777469/menu/${restaurant}/${
-                      item.url
-                    }.jpg')`
-                  }}
                 />
               </Link>
             ))}
@@ -101,7 +108,7 @@ export const Items = ({ restaurant, items }) => {
       ))}
 
       <div className="notice">
-        consuming raw or undercooked meats, poultry, seafood shellfish, or eggs
+        Consuming raw or undercooked meats, poultry, seafood shellfish, or eggs
         may increase your risk of foodborne illness!
       </div>
 

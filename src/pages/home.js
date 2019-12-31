@@ -18,6 +18,7 @@ export const Home = () => {
 
   useEffect(() => {
     dispatch(getRestaurant(restaurant));
+    window.scroll(0, 0);
   });
 
   return (

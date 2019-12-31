@@ -26,7 +26,7 @@ const S = styled.div`
   .page-link {
     padding: 10px;
     transition: 0.5s;
-
+    color: var(--light);
     i {
       display: block;
       font-size: 25px;
@@ -34,7 +34,12 @@ const S = styled.div`
   }
 
   .active {
-    color: var(--dark);
+    .page-link {
+      color: var(--dark);
+      i {
+        color: var(--dark);
+      }
+    }
   }
 `;
 
