@@ -37,20 +37,24 @@ const S = styled.div`
   .toppings,
   .dressings {
     margin: 20px;
+    font-size: 20px;
     .side,
     .dressing,
     .topping {
       font-family: var(--font2);
       display: inline-block;
       margin: 5px 10px;
+      font-size: 15px;
     }
   }
   .info {
     margin: 20px;
+    font-size: 15px;
     font-family: var(--font2);
   }
 
   .not-found {
+    text-align: center;
     margin: 20px;
     font-family: var(--font2);
   }

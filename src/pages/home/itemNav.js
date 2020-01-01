@@ -9,7 +9,7 @@ import { Load } from "functions/load";
 const S = styled.div`
   background: var(--theme3);
   position: fixed;
-  border-radius: 5px 5px 0 0;
+  border-radius: 10px 10px 0 0;
   bottom: 0;
   left: 0;
   z-index: 100;
@@ -43,7 +43,7 @@ export const ItemNav = ({ item }) => {
 
   const dispatch = useDispatch();
 
-  let saved = useSelector(s => s.saved).map(x => x.url);
+  let saved = useSelector(s => s.saved).filter(x => x.restaurant == restaurant);
 
   let share = () => {
     let location = window.location.href;
@@ -95,7 +95,9 @@ export const ItemNav = ({ item }) => {
         >
           <i
             className="material-icons-round"
-            style={{ color: saved.includes(item.url) ? "#d50000" : "" }}
+            style={{
+              color: saved.map(x => x.url).includes(item.url) ? "#d50000" : ""
+            }}
           >
             favorite
           </i>

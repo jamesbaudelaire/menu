@@ -10,7 +10,7 @@ const S = styled.div`
   .item {
     position: relative;
     color: var(--light);
-    border-radius: 5px;
+    border-radius: 10px;
     background: var(--grey);
     height: 100px;
     width: calc(100% - 40px);
@@ -29,6 +29,15 @@ const S = styled.div`
       height: 100px;
       border-radius: 5px;
     }
+
+    .logo {
+      position: absolute;
+      height: 30px;
+      filter: invert();
+      right: 60px;
+      top: 20px;
+    }
+
     .name {
       text-align: right;
       width: 150px;
@@ -46,7 +55,7 @@ const S = styled.div`
       top: 0;
       right: 0;
       background: #d50000;
-      border-radius: 0 5px;
+      border-radius: 0 10px;
       padding: 10px;
     }
     .link {
@@ -69,7 +78,7 @@ export const Saved = () => {
     targets.forEach((x, i) => {
       setTimeout(() => {
         IO(x);
-      }, i * 100);
+      }, i * 50);
     });
   });
 
@@ -80,11 +89,19 @@ export const Saved = () => {
           <Link to={`${item.restaurant}/${item.url}`} key={item.url}>
             <img
               alt="item"
-              src={`https://res.cloudinary.com/baudelaire/image/upload/w_350/v1577777469/menu/${
+              src={`https://res.cloudinary.com/baudelaire/image/upload/w_300/v1577777469/menu/${
                 item.restaurant
               }/${item.url}.jpg`}
             />
           </Link>
+
+          <img
+            src={`https://res.cloudinary.com/baudelaire/image/upload/w_300/v1577778466/menu/${
+              item.restaurant
+            }/logo.png`}
+            alt="logo"
+            className="logo"
+          />
 
           <div className="name">{item.name}</div>
           <i

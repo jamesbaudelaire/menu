@@ -3,7 +3,15 @@ import styled from "styled-components";
 
 import { useSelector, useDispatch } from "react-redux";
 
+import { Load } from "functions/load";
+
 const S = styled.div`
+  opacity: 0;
+  transition: 0.5s;
+  &.loading {
+    opacity: 1;
+  }
+
   .darkmode {
     position: absolute;
     top: 0;
@@ -25,7 +33,7 @@ const S = styled.div`
       list-style: none;
       padding: 0 10px;
       li {
-        margin: 10px;
+        margin: 20px 0;
         i {
           margin: 10px;
           font-size: 40px;
@@ -36,6 +44,7 @@ const S = styled.div`
 
   .contact {
     margin: 20px;
+    margin-top: 50px;
     .title {
       font-size: 20px;
     }
@@ -52,18 +61,20 @@ export const Settings = () => {
   const dark = useSelector(state => state.dark);
   const dispatch = useDispatch();
 
+  const { loading } = Load();
+
   useEffect(() => {
     window.scroll(0, 0);
   });
 
   return (
-    <S>
+    <S className={loading ? "loading" : ""}>
       <i
         style={{ color: dark ? "var(--light)" : "var(--dark)" }}
         onClick={() => {
           dispatch({ type: "dark" });
         }}
-        className="material-icons-round darkmode transition"
+        className="material-icons-round darkmode"
       >
         brightness_6
       </i>
@@ -72,16 +83,20 @@ export const Settings = () => {
         <div className="title">M3NU</div>
         <ul>
           <li>
-            <i className="material-icons-round">restaurant_menu</i>A modern menu
-            for the web.
+            <i className="material-icons-round">restaurant_menu</i>A modern
+            solution for boring pdf menus
           </li>
           <li>
             <i className="material-icons-round">send</i>
-            Share your favorite items with family and friends.
+            Share your favorite items with family and friends
           </li>
           <li>
             <i className="material-icons-round">favorite</i>
-            Save items you loved or want to try next!
+            Save items you loved or want to try next
+          </li>
+          <li>
+            <i className="material-icons-round">near_me</i>
+            Browse local menus
           </li>
         </ul>
       </div>

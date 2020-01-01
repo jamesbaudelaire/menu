@@ -1,44 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-
-import { Items } from "./home/items";
-import { Item } from "./home/item";
-
-import { Route, useParams, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Restaurants } from "restaurants";
-import { useDispatch } from "react-redux";
-import { getRestaurant } from "redux/actions";
+
+import { useSelector } from "react-redux";
 
 const S = styled.div``;
 
 export const Home = () => {
-  let { restaurant } = useParams();
-
-  const dispatch = useDispatch();
+  const dark = useSelector(s => s.dark);
 
   useEffect(() => {
-    dispatch(getRestaurant(restaurant));
     window.scroll(0, 0);
   });
 
   return (
     <S>
-      {Restaurants[restaurant] && (
-        <Switch>
-          <Route path="/:restaurant/:item">
-            <Item
-              restaurant={Restaurants[restaurant]}
-              items={Restaurants[restaurant].items}
-            />
-          </Route>
-          <Route path="/:restaurant">
-            <Items
-              restaurant={restaurant}
-              items={Restaurants[restaurant].items}
-            />
-          </Route>
-        </Switch>
-      )}
+      {Object.keys(Restaurants).map(restaurant => (
+        <Link to={`${restaurant}`} key={restaurant}>
+          <img
+            src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/v1577778466/menu/${restaurant}/logo.png`}
+            alt="logo"
+            className="logo"
+            style={{ filter: dark ? "invert(1)" : "invert(0)" }}
+          />
+        </Link>
+      ))}
     </S>
   );
 };

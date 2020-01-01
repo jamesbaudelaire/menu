@@ -10,6 +10,7 @@ import { IO } from "functions/IO";
 const S = styled.div`
   .category-name {
     margin: 20px;
+    margin-bottom: 0;
     font-size: 25px;
     text-transform: uppercase;
   }
@@ -24,7 +25,7 @@ const S = styled.div`
     margin-right: 0;
 
     display: inline-block;
-    border-radius: 5px;
+    border-radius: 10px;
     height: 200px;
     width: calc(100% - 80px);
 
@@ -44,26 +45,11 @@ const S = styled.div`
   a:last-child {
     margin-right: 20px;
   }
-
-  .notice {
-    margin: 30px;
-    text-align: center;
-    font-family: var(--font2);
-    color: #d50000;
-    font-size: 15px;
-  }
-
-  .logo {
-    width: calc(100% - 100px);
-    margin: 20px auto;
-    display: block;
-  }
 `;
 
 export const Items = ({ restaurant, items }) => {
   const filter = useSelector(s => s.filter);
 
-  const dark = useSelector(s => s.dark);
   let itemsCopy = items;
 
   if (filter) {
@@ -82,13 +68,6 @@ export const Items = ({ restaurant, items }) => {
 
   return (
     <S>
-      <img
-        src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/v1577778466/menu/${restaurant}/logo.png`}
-        alt="logo"
-        className="logo"
-        style={{ filter: dark ? "invert(1)" : "invert(0)" }}
-      />
-
       {categories().map(category => (
         <div className="category" key={category}>
           <div className="category-name"> {category}</div>
@@ -106,11 +85,6 @@ export const Items = ({ restaurant, items }) => {
           </div>
         </div>
       ))}
-
-      <div className="notice">
-        Consuming raw or undercooked meats, poultry, seafood shellfish, or eggs
-        may increase your risk of foodborne illness!
-      </div>
 
       <FilterNav items={itemsCopy} filter={filter} />
     </S>
