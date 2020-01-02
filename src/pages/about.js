@@ -83,10 +83,6 @@ export const About = () => {
         <div className="title">M3NU</div>
         <ul>
           <li>
-            <i className="material-icons-round">restaurant_menu</i>A modern
-            solution for boring pdf menus
-          </li>
-          <li>
             <i className="material-icons-round">send</i>
             Share your favorite items with family and friends
           </li>

@@ -5,6 +5,10 @@ import { useParams } from "react-router-dom";
 
 import { Load } from "functions/load";
 import { Restaurants } from "../../restaurants";
+
+import { useDispatch } from "react-redux";
+import { lastItem } from "redux/actions";
+
 const S = styled.div`
   .item {
     opacity: 0;
@@ -66,8 +70,11 @@ export const Item = ({ items }) => {
 
   const { loading } = Load();
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     window.scroll(0, 0);
+    dispatch(lastItem(search.url));
   });
 
   return (

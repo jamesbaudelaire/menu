@@ -6,6 +6,11 @@ import { Restaurants } from "restaurants";
 import { IO } from "functions/IO";
 
 const S = styled.div`
+  .title {
+    font-size: 30px;
+    margin: 20px;
+  }
+
   .restaurant {
     width: calc(100% - 40px);
     border-radius: 10px;
@@ -40,8 +45,6 @@ const S = styled.div`
 
 export const Home = () => {
   useEffect(() => {
-    window.scroll(0, 0);
-
     let targets = document.querySelectorAll(".restaurant");
     targets.forEach((x, i) => {
       setTimeout(() => {
@@ -52,6 +55,8 @@ export const Home = () => {
 
   return (
     <S>
+      <div className="title">RESTAURANTS</div>
+
       <div className="restaurants">
         {Object.keys(Restaurants).map(restaurant => (
           <Link to={`${restaurant}`} key={restaurant}>
@@ -59,7 +64,7 @@ export const Home = () => {
               <img
                 className="logo"
                 alt="logo"
-                src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/v1577778466/menu/${restaurant}/logo.png`}
+                src={`https://res.cloudinary.com/baudelaire/image/upload/w_500/v1577778466/menu/${restaurant}/logo.png`}
               />
             </div>
           </Link>

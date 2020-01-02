@@ -1,5 +1,5 @@
 let terminal = {
-  dark: false,
+  dark: true,
   saved: [],
   restaurants: {}
 };

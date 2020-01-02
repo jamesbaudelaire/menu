@@ -17,26 +17,17 @@ const S = styled.div`
     display: block;
   }
 
-  .notice {
-    margin: 30px;
-    margin-top: 100px;
-    text-align: center;
-    font-family: var(--font2);
-    color: #d50000;
-    font-size: 15px;
-  }
-
   .actions {
     font-family: var(--font2);
     text-align: center;
     .action {
       display: block;
       i {
-        font-size: 30px;
+        font-size: 40px;
         margin: 10px;
       }
     }
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 `;
 
@@ -91,7 +82,6 @@ export const Restaurant = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRestaurant(restaurant));
-    window.scroll(0, 0);
   });
 
   return (
@@ -116,11 +106,6 @@ export const Restaurant = () => {
       ) : (
         <div className="not-found">???</div>
       )}
-
-      <div className="notice">
-        Consuming raw or undercooked meats, poultry, seafood shellfish, or eggs
-        may increase your risk of foodborne illness!
-      </div>
     </S>
   );
 };

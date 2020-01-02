@@ -54,7 +54,7 @@ const S = styled.div`
       position: absolute;
       top: 0;
       right: 0;
-      background: #d50000;
+      background: var(--theme3);
       border-radius: 0 10px;
       padding: 10px;
     }

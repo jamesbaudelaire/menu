@@ -42,7 +42,7 @@ const savedReducer = (state = LS.data.saved, action) => {
   }
 };
 
-const filterReducer = (state = "", action) => {
+const filterReducer = (state = null, action) => {
   switch (action.type) {
     case "filter":
       if (action.data == state) {
@@ -56,9 +56,19 @@ const filterReducer = (state = "", action) => {
   }
 };
 
+const lastItemReducer = (state = "burger", action) => {
+  switch (action.type) {
+    case "last":
+      return action.data;
+    default:
+      return state;
+  }
+};
+
 export const Reducers = combineReducers({
   dark: darkReducer,
   restaurant: restaurantReducer,
   saved: savedReducer,
-  filter: filterReducer
+  filter: filterReducer,
+  lastItem: lastItemReducer
 });
