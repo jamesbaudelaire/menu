@@ -10,7 +10,9 @@ export const IO = tar => {
       let el = entry.target;
       if (entry.intersectionRatio > 0.5) {
         el.classList.add("io");
-        el.style.backgroundImage = `url('${el.dataset.url}')`;
+        if (el.dataset.url) {
+          el.style.backgroundImage = `url('${el.dataset.url}')`;
+        }
       } else {
         el.classList.remove("io");
       }

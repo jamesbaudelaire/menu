@@ -96,7 +96,7 @@ export const Restaurant = () => {
 
   return (
     <S>
-      {Restaurants[restaurant] && (
+      {Restaurants[restaurant] ? (
         <Switch>
           <Route path="/:restaurant/:item">
             <Item
@@ -113,6 +113,8 @@ export const Restaurant = () => {
             />
           </Route>
         </Switch>
+      ) : (
+        <div className="not-found">???</div>
       )}
 
       <div className="notice">

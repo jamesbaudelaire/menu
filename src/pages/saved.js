@@ -11,7 +11,7 @@ const S = styled.div`
     position: relative;
     color: var(--light);
     border-radius: 10px;
-    background: var(--grey);
+    background: var(--theme1);
     height: 100px;
     width: calc(100% - 40px);
     margin: 20px;
@@ -27,7 +27,7 @@ const S = styled.div`
 
     img {
       height: 100px;
-      border-radius: 5px;
+      border-radius: 10px 0 0 10px;
     }
 
     .logo {

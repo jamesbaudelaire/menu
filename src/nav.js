@@ -54,9 +54,9 @@ const Pages = [
     icon: "favorite"
   },
   {
-    name: "settings",
-    location: "/settings",
-    icon: "settings"
+    name: "about",
+    location: "/about",
+    icon: "help"
   }
 ];
 

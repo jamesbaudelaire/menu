@@ -57,7 +57,7 @@ const S = styled.div`
   }
 `;
 
-export const Settings = () => {
+export const About = () => {
   const dark = useSelector(state => state.dark);
   const dispatch = useDispatch();
 
