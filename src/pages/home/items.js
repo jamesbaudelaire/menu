@@ -67,8 +67,6 @@ export const Items = ({ restaurant, items }) => {
   });
 
   useEffect(() => {
-    console.log(lastItem);
-
     if (lastItem) {
       document
         .getElementById(lastItem)

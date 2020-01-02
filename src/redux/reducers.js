@@ -56,7 +56,7 @@ const filterReducer = (state = null, action) => {
   }
 };
 
-const lastItemReducer = (state = "burger", action) => {
+const lastItemReducer = (state = null, action) => {
   switch (action.type) {
     case "last":
       return action.data;
