@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { filterItems } from "redux/actions";
 import { Load } from "functions/load";
+import { lastItem } from "../../redux/actions";
 
 const S = styled.div`
   background: var(--theme3);
@@ -69,6 +70,7 @@ export const FilterNav = ({ items }) => {
           key={x}
           onClick={() => {
             window.scroll(0, 0);
+            dispatch(lastItem(""));
             dispatch(filterItems(x));
           }}
         >

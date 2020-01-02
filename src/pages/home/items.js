@@ -68,9 +68,10 @@ export const Items = ({ restaurant, items }) => {
 
   useEffect(() => {
     if (lastItem) {
-      document
-        .getElementById(lastItem)
-        .scrollIntoView({ block: "center", inline: "center" });
+      document.getElementById(lastItem).scrollIntoView({
+        block: "center",
+        inline: "center"
+      });
     }
   }, [lastItem]);
 
