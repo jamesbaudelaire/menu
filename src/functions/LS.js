@@ -1,6 +1,7 @@
 let terminal = {
-  dark: false,
-  saved: []
+  dark: true,
+  saved: [],
+  restaurants: {}
 };
 
 let appName = "menu-app";

@@ -31,7 +31,6 @@ const GS = createGlobalStyle`
 --font1:'Averia Serif Libre', cursive;
 --dark:rgb(30,30,30);
 --light:rgb(240,240,240);
---grey:rgb(50,50,50);
 --theme1:#304ffe;
 --theme2:#ffd600;
 --theme3:#1a237e;

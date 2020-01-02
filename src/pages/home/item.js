@@ -5,6 +5,10 @@ import { useParams } from "react-router-dom";
 
 import { Load } from "functions/load";
 import { Restaurants } from "../../restaurants";
+
+import { useDispatch } from "react-redux";
+import { lastItem } from "redux/actions";
+
 const S = styled.div`
   .item {
     opacity: 0;
@@ -37,20 +41,24 @@ const S = styled.div`
   .toppings,
   .dressings {
     margin: 20px;
+    font-size: 20px;
     .side,
     .dressing,
     .topping {
       font-family: var(--font2);
       display: inline-block;
       margin: 5px 10px;
+      font-size: 15px;
     }
   }
   .info {
     margin: 20px;
+    font-size: 15px;
     font-family: var(--font2);
   }
 
   .not-found {
+    text-align: center;
     margin: 20px;
     font-family: var(--font2);
   }
@@ -62,8 +70,11 @@ export const Item = ({ items }) => {
 
   const { loading } = Load();
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     window.scroll(0, 0);
+    dispatch(lastItem(search.url));
   });
 
   return (

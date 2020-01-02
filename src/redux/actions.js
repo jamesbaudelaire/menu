@@ -25,3 +25,10 @@ export const filterItems = x => {
     data: x
   };
 };
+
+export const lastItem = x => {
+  return {
+    type: "last",
+    data: x
+  };
+};

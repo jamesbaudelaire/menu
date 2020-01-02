@@ -24,10 +24,16 @@ const restaurantReducer = (state = null, action) => {
 const savedReducer = (state = LS.data.saved, action) => {
   switch (action.type) {
     case "save":
-      if (state.includes(action.data)) {
-        return state.filter(x => x !== action.data);
-      } else {
+      if (
+        state.filter(
+          x =>
+            x.url == action.data.url && x.restaurant == action.data.restaurant
+        ).length == 0
+      ) {
         return [...state, action.data];
+      } else {
+        let items = state.filter(x => x.restaurant == action.data.restaurant);
+        return items.filter(x => x.url !== action.data.url);
       }
     case "delete":
       return state.filter(x => x !== action.data);
@@ -36,7 +42,7 @@ const savedReducer = (state = LS.data.saved, action) => {
   }
 };
 
-const filterReducer = (state = "", action) => {
+const filterReducer = (state = null, action) => {
   switch (action.type) {
     case "filter":
       if (action.data == state) {
@@ -50,9 +56,19 @@ const filterReducer = (state = "", action) => {
   }
 };
 
+const lastItemReducer = (state = null, action) => {
+  switch (action.type) {
+    case "last":
+      return action.data;
+    default:
+      return state;
+  }
+};
+
 export const Reducers = combineReducers({
   dark: darkReducer,
   restaurant: restaurantReducer,
   saved: savedReducer,
-  filter: filterReducer
+  filter: filterReducer,
+  lastItem: lastItemReducer
 });

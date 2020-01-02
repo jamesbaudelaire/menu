@@ -1,6 +1,11 @@
 export const Restaurants = {
   rialto: {
     name: "Rialto",
+    location: {
+      name: "720 Garrison Ave",
+      address: "https://goo.gl/maps/tXo5y9ccKjo9A9EF6"
+    },
+    phone: "(479) 769-2406",
     dressings: [
       "sun-dried tomato vinaigrette",
       "raspberry vinaigrette",

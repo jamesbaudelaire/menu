@@ -6,12 +6,13 @@ import { useSelector } from "react-redux";
 
 const S = styled.div`
   position: fixed;
-  border-radius: 5px 5px 0 0;
+  border-radius: 10px 10px 0 0;
   bottom: 0;
   left: 0;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: ${props =>
+    props.restaurant !== null ? "repeat(4, 1fr)" : "repeat(3, 1fr)"};
   background: var(--theme1);
   text-align: center;
   transition: 0.5s;
@@ -25,12 +26,15 @@ const S = styled.div`
 
   .page-link {
     padding: 10px;
-    transition: 0.5s;
     color: var(--light);
     i {
       display: block;
       font-size: 25px;
     }
+  }
+
+  .page-link * {
+    transition: 0.5s;
   }
 
   .active {
@@ -50,23 +54,33 @@ const Pages = [
     icon: "favorite"
   },
   {
-    name: "settings",
-    location: "/settings",
-    icon: "settings"
+    name: "about",
+    location: "/about",
+    icon: "help"
   }
 ];
 
 export const Nav = () => {
   const { loading } = Load();
   const restaurant = useSelector(state => state.restaurant);
+
   return (
-    <S className={loading ? "loading" : ""}>
-      <NavLink exact to={`/${restaurant}`}>
+    <S className={loading ? "loading" : ""} restaurant={restaurant}>
+      <NavLink exact to={`/`}>
         <div className="page-link">
-          <i className="material-icons-round">restaurant_menu</i>
-          menu
+          <i className="material-icons-round">home</i>
+          home
         </div>
       </NavLink>
+
+      {restaurant !== null && (
+        <NavLink exact to={`/${restaurant}`}>
+          <div className="page-link">
+            <i className="material-icons-round">restaurant_menu</i>
+            menu
+          </div>
+        </NavLink>
+      )}
 
       {Pages.map(x => (
         <NavLink key={x.name} exact to={x.location}>

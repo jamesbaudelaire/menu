@@ -1,44 +1,75 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-
-import { Items } from "./home/items";
-import { Item } from "./home/item";
-
-import { Route, useParams, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Restaurants } from "restaurants";
-import { useDispatch } from "react-redux";
-import { getRestaurant } from "redux/actions";
 
-const S = styled.div``;
+import { IO } from "functions/IO";
+
+const S = styled.div`
+  .title {
+    font-size: 30px;
+    margin: 20px;
+  }
+
+  .restaurant {
+    width: calc(100% - 40px);
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: var(--shadow);
+    background: var(--theme1);
+    height: 150px;
+    position: relative;
+
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateY(30px);
+    &.io {
+      box-shadow: var(--shadow);
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    .logo {
+      filter: invert();
+      width: calc(100% - 60px);
+      display: block;
+      margin: auto;
+      top: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+`;
 
 export const Home = () => {
-  let { restaurant } = useParams();
-
-  const dispatch = useDispatch();
-
   useEffect(() => {
-    dispatch(getRestaurant(restaurant));
-    window.scroll(0, 0);
+    let targets = document.querySelectorAll(".restaurant");
+    targets.forEach((x, i) => {
+      setTimeout(() => {
+        IO(x);
+      }, i * 50);
+    });
   });
 
   return (
     <S>
-      {Restaurants[restaurant] && (
-        <Switch>
-          <Route path="/:restaurant/:item">
-            <Item
-              restaurant={Restaurants[restaurant]}
-              items={Restaurants[restaurant].items}
-            />
-          </Route>
-          <Route path="/:restaurant">
-            <Items
-              restaurant={restaurant}
-              items={Restaurants[restaurant].items}
-            />
-          </Route>
-        </Switch>
-      )}
+      <div className="title">RESTAURANTS</div>
+
+      <div className="restaurants">
+        {Object.keys(Restaurants).map(restaurant => (
+          <Link to={`${restaurant}`} key={restaurant}>
+            <div className="restaurant">
+              <img
+                className="logo"
+                alt="logo"
+                src={`https://res.cloudinary.com/baudelaire/image/upload/w_500/v1577778466/menu/${restaurant}/logo.png`}
+              />
+            </div>
+          </Link>
+        ))}
+      </div>
     </S>
   );
 };
