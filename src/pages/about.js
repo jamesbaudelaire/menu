@@ -57,9 +57,6 @@ const S = styled.div`
   }
 
   @media screen and (min-width: 1200px) {
-    left: 140px;
-    position: absolute;
-    top: 50px;
   }
 `;
 
@@ -74,7 +71,7 @@ export const About = () => {
   });
 
   return (
-    <S className={loading ? "loading" : ""}>
+    <S className={loading ? "loading" : ""} id="about">
       <i
         style={{ color: dark ? "var(--light)" : "var(--dark)" }}
         onClick={() => {

@@ -35,43 +35,100 @@ export const Restaurants = {
       {
         name: "Shrimp Ceviche",
         category: "appetizer",
-        url: "shrimp-ceviche",
+        url: "ceviche",
         price: "10.50",
-        types: ["seafood", "vegan"],
+        types: ["seafood", "gluten-free"],
         info: `shrimp poached in lime juice, old bay spices and served with pico de gallo, tortilla chips, and avocado cocktail sauce`
-      },
-      {
-        name: "JT's Chicken",
-        category: "entree",
-        url: "jt-chicken",
-        price: "20",
-        types: ["chicken"],
-        info: `pan-seared chicken, jack daniels, mushroom and cream sauce`
       },
       {
         name: "Osso Bucco",
         category: "entree",
-        url: "osso-bucco",
+        url: "osso",
         price: "24.50",
         types: ["pork"],
         info: `pork shank simmered in red wine and demi glaz with carrots, celery, onions`
       },
       {
-        name: "Burger",
+        name: "Boston Casserole",
+        url: "boston",
+        price: "25",
+        types: ["seafood"],
         category: "entree",
-        url: "burger",
-        price: "10",
-        types: ["beef"],
-        info: `choice ground beef with tomato, lettuce, pickle, onion`,
-        toppings: ["fried onions", "bacon", "avocado", "mushrooms", "fried egg"]
+        info: `shrimp, scallops, lobster, crabmeat, water chestnuts broccoli, mozzarella, newburg sauce, linguine`
       },
       {
-        name: "Pesto Linguine",
+        url: "cf-steak",
+        name: "Chicken Fried Steak",
+        price: "15.50",
+        types: ["beef"],
         category: "entree",
-        url: "linguine",
-        price: "12",
-        types: ["vegan", "vegetarian"],
-        info: `squash, red onions, tomatoes, artichokes, mushrooms, eggplant, asparagus, spinach, vegan mozzarella`
+        info: `breaded chopped steak with peppered gravy`
+      },
+      {
+        url: "cheesecake",
+        name: "Cheesecake",
+        price: "5",
+        types: [],
+        category: "dessert",
+        info: `Banana Pudding Cheesecake`
+      },
+      {
+        url: "ice-cream",
+        name: "Ice Cream",
+        price: "5",
+        types: [],
+        category: "dessert",
+        info: `Smoked Maple & Bourbon Praline`
+      },
+      {
+        url: "scallops",
+        name: "Scallops Florentine",
+        price: "20.95",
+        types: ["gluten-free", "seafood"],
+        category: "entree",
+        info: `pan-seared scallops, risotto, spinach with pomodoro sauce`
+      },
+      {
+        url: "seabass",
+        name: "Blackened Seabass",
+        price: "22.50",
+        types: ["gluten-free", "seafood"],
+        category: "entree",
+        info: `topped with crabmeat and tarragon cream sauce`
+      },
+      {
+        url: "spring-rolls",
+        name: `Shina's Spring Rolls (4)`,
+        price: "9.50",
+        types: [],
+        category: "appetizer",
+        info: `ground beef, chicken, pork, noodles, vegetables, wrapped and deep-fried with oriental sauce`
+      },
+      {
+        url: "wings",
+        name: "Wings (8)",
+        price: "10",
+        types: ["chicken"],
+        category: "appetizer",
+        info: `deep-fried and tossed in a light cajun sauce
+        topped with cilantro and gorgonzola
+        chipotle ranch`
+      },
+      {
+        url: "cheese",
+        name: "Breaded Mozzarella",
+        price: "9.50",
+        types: [],
+        category: "appetizer",
+        info: `logs of fresh mozzarella, italian breading, deep-fried, with spicy caper marinara`
+      },
+      {
+        name: "Chicken Alfredo",
+        category: "entree",
+        url: "alfredo",
+        price: "14.50",
+        types: [],
+        info: `linguine and parmesan with toast points`
       },
       {
         name: "Creme Brulee",
@@ -88,5 +145,5 @@ export const Restaurants = {
         price: "5"
       }
     ]
-  },
+  }
 };

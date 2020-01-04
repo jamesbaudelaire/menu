@@ -50,6 +50,8 @@ const S = styled.div`
     display: grid;
     position: absolute;
     margin-top: 100px;
+    height: calc(100% - 100px);
+    overflow: scroll;
 
     left: 400px;
     text-align: left;
@@ -58,8 +60,7 @@ const S = styled.div`
       width: calc(100vw - 400px);
     }
     .item {
-      height: 250px;
-      width: 400px;
+      width: 300px;
     }
   }
 `;
@@ -102,7 +103,7 @@ export const Items = ({ restaurant, items }) => {
               <Link to={`${restaurant}/${item.url}`} key={item.url}>
                 <div
                   style={{
-                    backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_500/v1577777469/menu/${restaurant}/${
+                    backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/v1578175862/menu/${restaurant}/${
                       item.url
                     }.jpg')`
                   }}

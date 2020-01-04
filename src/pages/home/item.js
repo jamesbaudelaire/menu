@@ -93,7 +93,7 @@ export const Item = ({ items }) => {
           <div
             className="img"
             style={{
-              backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/v1577777469/menu/rialto/${
+              backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/v1578175862/menu/${restaurant}/${
                 search.url
               }.jpg')`
             }}

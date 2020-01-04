@@ -38,6 +38,9 @@ const GS = createGlobalStyle`
 
 }
 
+::-webkit-scrollbar {
+display: none;
+}
 
 body{
   user-select:none;
@@ -78,6 +81,11 @@ body{
     margin: auto;
 }
 
+#saved,#home,#about{
+  position: absolute;
+    left: 140px;
+    top: 40px;
+}
 
 }
 

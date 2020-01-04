@@ -8,6 +8,7 @@ const S = styled.div`
   position: fixed;
   border-radius: 10px 10px 0 0;
   bottom: 0;
+  z-index: 100;
   left: 0;
   width: 100%;
   display: grid;

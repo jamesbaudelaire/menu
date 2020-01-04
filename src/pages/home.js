@@ -43,9 +43,6 @@ const S = styled.div`
   }
 
   @media screen and (min-width: 1200px) {
-    position: absolute;
-    left: 140px;
-    top: 50px;
     .restaurants {
       display: grid;
       grid-template-columns: repeat(3, 300px);
@@ -65,7 +62,7 @@ export const Home = () => {
   });
 
   return (
-    <S>
+    <S id="home">
       <div className="title">RESTAURANTS</div>
 
       <div className="restaurants">
@@ -75,7 +72,9 @@ export const Home = () => {
               <img
                 className="logo"
                 alt="logo"
-                src={`https://res.cloudinary.com/baudelaire/image/upload/w_500/v1577778466/menu/${restaurant}/logo.png`}
+                src={`
+                https://res.cloudinary.com/baudelaire/image/upload/v1578175862/menu/${restaurant}/logo.png
+                `}
               />
             </div>
           </Link>

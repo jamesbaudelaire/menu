@@ -69,9 +69,6 @@ const S = styled.div`
   @media screen and (min-width: 1200px) {
     display: grid;
     grid-template-columns: repeat(2, 400px);
-    position: absolute;
-    left: 140px;
-    top: 50px;
   }
 `;
 
@@ -91,20 +88,20 @@ export const Saved = () => {
   });
 
   return (
-    <S>
+    <S id="saved">
       {saved.map(item => (
         <div key={item.name} className="item">
           <Link to={`${item.restaurant}/${item.url}`} key={item.url}>
             <img
               alt="item"
-              src={`https://res.cloudinary.com/baudelaire/image/upload/w_300/v1577777469/menu/${
+              src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/v1577777469/menu/${
                 item.restaurant
               }/${item.url}.jpg`}
             />
           </Link>
 
           <img
-            src={`https://res.cloudinary.com/baudelaire/image/upload/w_300/v1577778466/menu/${
+            src={`https://res.cloudinary.com/baudelaire/image/upload/v1577778466/menu/${
               item.restaurant
             }/logo.png`}
             alt="logo"

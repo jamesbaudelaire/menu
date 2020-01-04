@@ -33,7 +33,7 @@ const S = styled.div`
     margin-bottom: 50px;
   }
 
-  .info {
+  .item-info {
     opacity: 0;
     transition: 0.5s;
     &.loading {
@@ -42,7 +42,7 @@ const S = styled.div`
   }
 
   @media screen and (min-width: 1200px) {
-    .info {
+    .item-info {
       position: fixed;
       left: 100px;
       top: 80px;
@@ -60,10 +60,12 @@ const Info = () => {
   const { loading } = Load();
 
   return (
-    <div className={loading ? "info loading" : "info"}>
+    <div className={loading ? "item-info loading" : "item-info"}>
       <Link to={`/${restaurant}`}>
         <img
-          src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/v1577778466/menu/${restaurant}/logo.png`}
+          src={`
+          https://res.cloudinary.com/baudelaire/image/upload/v1578175862/menu/${restaurant}/logo.png
+          `}
           alt="logo"
           className="logo"
           style={{ filter: dark ? "invert(1)" : "invert(0)" }}
