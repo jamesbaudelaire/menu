@@ -65,6 +65,14 @@ const S = styled.div`
       font-size: 30px;
     }
   }
+
+  @media screen and (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    position: absolute;
+    left: 140px;
+    top: 50px;
+  }
 `;
 
 export const Saved = () => {

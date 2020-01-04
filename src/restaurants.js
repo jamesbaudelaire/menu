@@ -88,5 +88,5 @@ export const Restaurants = {
         price: "5"
       }
     ]
-  }
+  },
 };

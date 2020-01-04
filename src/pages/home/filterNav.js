@@ -16,7 +16,8 @@ const S = styled.div`
   white-space: nowrap;
   overflow-x: scroll;
 
-  transition: 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+
   opacity: 0;
   transform: translatey(20px);
   &.loading {
@@ -25,6 +26,7 @@ const S = styled.div`
   }
 
   div {
+    cursor: pointer;
     color: white;
     display: inline-block;
     margin: 10px 5px;
@@ -43,6 +45,18 @@ const S = styled.div`
     :last-child {
       margin-right: 10px;
     }
+  }
+
+  @media screen and (min-width: 1000px) {
+    position: fixed;
+    top: 20px;
+    bottom: unset;
+    left: 140px;
+    width: auto;
+    box-shadow: var(--shadow);
+    text-align: center;
+    margin: auto;
+    height: auto;
   }
 `;
 

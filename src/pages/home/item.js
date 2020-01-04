@@ -62,6 +62,15 @@ const S = styled.div`
     margin: 20px;
     font-family: var(--font2);
   }
+
+  @media screen and (min-width: 1200px) {
+    width: 400px;
+    margin: 50px auto;
+
+    .img {
+      border-radius: 10px;
+    }
+  }
 `;
 
 export const Item = ({ items }) => {

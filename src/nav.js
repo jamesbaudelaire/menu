@@ -15,7 +15,7 @@ const S = styled.div`
     props.restaurant !== null ? "repeat(4, 1fr)" : "repeat(3, 1fr)"};
   background: var(--theme1);
   text-align: center;
-  transition: 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
 
   opacity: 0;
   transform: translatey(20px);
@@ -44,6 +44,18 @@ const S = styled.div`
         color: var(--dark);
       }
     }
+  }
+
+  @media screen and (min-width: 1200px) {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: unset;
+    width: 100px;
+    margin: 20px;
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
   }
 `;
 

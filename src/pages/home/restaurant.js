@@ -4,17 +4,20 @@ import styled from "styled-components";
 import { Items } from "./items";
 import { Item } from "./item";
 
-import { Route, useParams, Switch } from "react-router-dom";
+import { Route, Link, useParams, Switch } from "react-router-dom";
 import { Restaurants } from "restaurants";
 import { useDispatch } from "react-redux";
 import { getRestaurant } from "redux/actions";
 import { useSelector } from "react-redux";
+
+import { Load } from "functions/load";
 
 const S = styled.div`
   .logo {
     width: calc(100% - 100px);
     margin: 20px auto;
     display: block;
+    max-width: 300px;
   }
 
   .actions {
@@ -29,6 +32,22 @@ const S = styled.div`
     }
     margin-bottom: 50px;
   }
+
+  .info {
+    opacity: 0;
+    transition: 0.5s;
+    &.loading {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .info {
+      position: fixed;
+      left: 100px;
+      top: 80px;
+    }
+  }
 `;
 
 const Info = () => {
@@ -38,14 +57,18 @@ const Info = () => {
 
   let R = Restaurants[restaurant];
 
+  const { loading } = Load();
+
   return (
-    <>
-      <img
-        src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/v1577778466/menu/${restaurant}/logo.png`}
-        alt="logo"
-        className="logo"
-        style={{ filter: dark ? "invert(1)" : "invert(0)" }}
-      />
+    <div className={loading ? "info loading" : "info"}>
+      <Link to={`/${restaurant}`}>
+        <img
+          src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/v1577778466/menu/${restaurant}/logo.png`}
+          alt="logo"
+          className="logo"
+          style={{ filter: dark ? "invert(1)" : "invert(0)" }}
+        />
+      </Link>
 
       <div className="actions">
         <a className="action" href={`tel:${R.phone}`} rel="noopener noreferrer">
@@ -72,7 +95,7 @@ const Info = () => {
           {R.location.name}
         </a>
       </div>
-    </>
+    </div>
   );
 };
 

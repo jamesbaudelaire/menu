@@ -40,8 +40,8 @@ const GS = createGlobalStyle`
 
 
 body{
+  user-select:none;
   overscroll-behavior: contain;
-
   font-family:var(--font1);
   transition:.5s;
   margin:0;
@@ -63,6 +63,23 @@ a{
   color:unset;
 }
 
+i{
+  cursor: pointer;
+}
+
+@media screen and (min-width: 500px) {
+
+width: 400px;
+    margin: auto;
+}
+@media screen and (min-width: 1200px) {
+
+body{
+    margin: auto;
+}
+
+
+}
 
 
 `;

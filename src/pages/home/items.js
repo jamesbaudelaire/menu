@@ -45,6 +45,23 @@ const S = styled.div`
   a:last-child {
     margin-right: 20px;
   }
+
+  @media screen and (min-width: 1200px) {
+    display: grid;
+    position: absolute;
+    margin-top: 100px;
+
+    left: 400px;
+    text-align: left;
+
+    .category {
+      width: calc(100vw - 400px);
+    }
+    .item {
+      height: 250px;
+      width: 400px;
+    }
+  }
 `;
 
 export const Items = ({ restaurant, items }) => {

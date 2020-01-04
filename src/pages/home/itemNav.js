@@ -28,11 +28,21 @@ const S = styled.div`
   }
 
   opacity: 0;
-  transition: 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
   transform: translatey(20px);
   &.loading {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  @media screen and (min-width: 1200px) {
+    left: 20px;
+    top: 20px;
+    bottom: unset;
+    width: 100px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    grid-template-columns: 1fr;
   }
 `;
 

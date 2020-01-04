@@ -55,6 +55,12 @@ const S = styled.div`
       margin: 10px;
     }
   }
+
+  @media screen and (min-width: 1200px) {
+    left: 140px;
+    position: absolute;
+    top: 50px;
+  }
 `;
 
 export const About = () => {

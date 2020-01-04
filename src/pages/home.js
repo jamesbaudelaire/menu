@@ -41,6 +41,17 @@ const S = styled.div`
       right: 0;
     }
   }
+
+  @media screen and (min-width: 1200px) {
+    position: absolute;
+    left: 140px;
+    top: 50px;
+    .restaurants {
+      display: grid;
+      grid-template-columns: repeat(3, 300px);
+      justify-content: center;
+    }
+  }
 `;
 
 export const Home = () => {
