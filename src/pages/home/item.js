@@ -62,6 +62,15 @@ const S = styled.div`
     margin: 20px;
     font-family: var(--font2);
   }
+
+  @media screen and (min-width: 1200px) {
+    width: 400px;
+    margin: 50px auto;
+
+    .img {
+      border-radius: 10px;
+    }
+  }
 `;
 
 export const Item = ({ items }) => {
@@ -84,7 +93,7 @@ export const Item = ({ items }) => {
           <div
             className="img"
             style={{
-              backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/v1577777469/menu/rialto/${
+              backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/v1578175862/menu/${restaurant}/${
                 search.url
               }.jpg')`
             }}

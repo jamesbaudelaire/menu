@@ -45,6 +45,24 @@ const S = styled.div`
   a:last-child {
     margin-right: 20px;
   }
+
+  @media screen and (min-width: 1200px) {
+    display: grid;
+    position: absolute;
+    margin-top: 100px;
+    height: calc(100% - 100px);
+    overflow: scroll;
+
+    left: 400px;
+    text-align: left;
+
+    .category {
+      width: calc(100vw - 400px);
+    }
+    .item {
+      width: 300px;
+    }
+  }
 `;
 
 export const Items = ({ restaurant, items }) => {
@@ -68,9 +86,10 @@ export const Items = ({ restaurant, items }) => {
 
   useEffect(() => {
     if (lastItem) {
-      document
-        .getElementById(lastItem)
-        .scrollIntoView({ block: "center", inline: "center" });
+      document.getElementById(lastItem).scrollIntoView({
+        block: "center",
+        inline: "center"
+      });
     }
   }, [lastItem]);
 
@@ -84,7 +103,7 @@ export const Items = ({ restaurant, items }) => {
               <Link to={`${restaurant}/${item.url}`} key={item.url}>
                 <div
                   style={{
-                    backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_500/v1577777469/menu/${restaurant}/${
+                    backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/v1578175862/menu/${restaurant}/${
                       item.url
                     }.jpg')`
                   }}

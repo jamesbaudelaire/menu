@@ -9,10 +9,11 @@ import { Load } from "functions/load";
 const S = styled.div`
   background: var(--theme3);
   position: fixed;
+  z-index: 80;
   border-radius: 10px 10px 0 0;
-  bottom: 0;
+  bottom: 45px;
+  padding-bottom: 20px;
   left: 0;
-  z-index: 100;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -28,11 +29,25 @@ const S = styled.div`
   }
 
   opacity: 0;
-  transition: 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
   transform: translatey(20px);
   &.loading {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  @media screen and (min-width: 1200px) {
+    left: 140px;
+    top: 20px;
+    bottom: unset;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 0;
+    height: 60px;
+    .action {
+      padding: 10px 20px;
+    }
   }
 `;
 
@@ -52,7 +67,7 @@ export const ItemNav = ({ item }) => {
         url: `${location}`
       });
     } else {
-      console.log(location);
+      prompt("URL", location);
     }
   };
 
