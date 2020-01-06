@@ -82,6 +82,7 @@ export const About = () => {
       <div className="info">
         <div className="title">M3NU</div>
         <ul>
+          A modern menu
           <li>
             <i className="material-icons-round">send</i>
             Share your favorite items with family and friends
