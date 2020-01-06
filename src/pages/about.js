@@ -82,6 +82,7 @@ export const About = () => {
       <div className="info">
         <div className="title">M3NU</div>
         <ul>
+          A modern menu
           <li>
             <i className="material-icons-round">send</i>
             Share your favorite items with family and friends
@@ -99,7 +100,7 @@ export const About = () => {
 
       <div className="contact">
         <div className="title">Interested in listing your menu?</div>
-        <a href="mailto:ronakmystery@gmail.com?subject=I want to list my menu!">
+        <a href="mailto:admin@m3nu.app?subject=I want to list my menu!">
           <i className="material-icons-round">email</i>
         </a>
       </div>

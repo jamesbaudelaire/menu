@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Restaurants } from "restaurants";
 
+import { useDispatch } from "react-redux";
+import { lastItem, filterItems } from "redux/actions";
 import { IO } from "functions/IO";
 
 const S = styled.div`
@@ -15,7 +17,7 @@ const S = styled.div`
     width: calc(100% - 40px);
     max-width: 300px;
     border-radius: 10px;
-    margin: 20px;
+    margin: 20px auto;
     box-shadow: var(--shadow);
     background: var(--theme1);
     height: 150px;
@@ -46,19 +48,25 @@ const S = styled.div`
   @media screen and (min-width: 500px) {
     .restaurants {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 2fr);
     }
   }
 
   @media screen and (min-width: 1000px) {
     .restaurants {
-      grid-template-columns: repeat(3, 300px);
-      justify-content: center;
+      grid-template-columns: repeat(2, 300px);
     }
   }
 `;
 
 export const Home = () => {
+  const dispatch = useDispatch();
+
+  const reset = () => {
+    dispatch(lastItem(""));
+    dispatch(filterItems(""));
+  };
+
   useEffect(() => {
     let targets = document.querySelectorAll(".restaurant");
     targets.forEach((x, i) => {
@@ -66,6 +74,8 @@ export const Home = () => {
         IO(x);
       }, i * 50);
     });
+
+    reset();
   });
 
   return (
