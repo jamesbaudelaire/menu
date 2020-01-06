@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createGlobalStyle } from "styled-components";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Nav } from "nav";
 import { Pages } from "pages";
 
@@ -75,7 +75,7 @@ i{
 width: 400px;
     margin: auto;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1000px) {
 
 body{
     margin: auto;
@@ -89,11 +89,18 @@ body{
 
 }
 
+@media screen and (min-width: 1000px) {
+
+
+}
+
+
 
 `;
 
 const App = () => {
   const dark = useSelector(state => state.dark);
+
   return (
     <>
       <GS dark={dark} />

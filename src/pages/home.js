@@ -13,6 +13,7 @@ const S = styled.div`
 
   .restaurant {
     width: calc(100% - 40px);
+    max-width: 300px;
     border-radius: 10px;
     margin: 20px;
     box-shadow: var(--shadow);
@@ -42,9 +43,15 @@ const S = styled.div`
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 500px) {
     .restaurants {
       display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .restaurants {
       grid-template-columns: repeat(3, 300px);
       justify-content: center;
     }

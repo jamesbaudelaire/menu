@@ -47,7 +47,7 @@ const S = styled.div`
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1000px) {
     position: fixed;
     left: 0;
     top: 0;

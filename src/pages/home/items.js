@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -46,8 +46,19 @@ const S = styled.div`
     margin-right: 20px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 500px) {
     display: grid;
+
+    .item {
+      width: 300px;
+    }
+
+    .category {
+      width: 100vw;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
     position: absolute;
     margin-top: 100px;
     height: calc(100% - 100px);
@@ -58,9 +69,6 @@ const S = styled.div`
 
     .category {
       width: calc(100vw - 400px);
-    }
-    .item {
-      width: 300px;
     }
   }
 `;

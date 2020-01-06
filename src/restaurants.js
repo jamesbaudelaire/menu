@@ -89,12 +89,12 @@ export const Restaurants = {
         info: `pan-seared scallops, risotto, spinach with pomodoro sauce`
       },
       {
-        url: "seabass",
-        name: "Blackened Seabass",
-        price: "22.50",
-        types: ["gluten-free", "seafood"],
+        url: "chicken",
+        name: "JT's Chicken",
+        price: "20",
+        types: ["chicken"],
         category: "entree",
-        info: `topped with crabmeat and tarragon cream sauce`
+        info: `pan-seared chicken, jack daniels, mushroom and cream sauce`
       },
       {
         url: "spring-rolls",
