@@ -29,14 +29,13 @@ const S = styled.div`
     height: 200px;
     width: calc(100% - 80px);
 
-    background-color: var(--theme1);
+    background-color: black;
     background-size: cover;
 
     opacity: 0.5;
     transition: 0.5s;
     transform: scale(0.9);
     &.io {
-      opacity: 1;
       box-shadow: var(--shadow);
       transform: scale(1);
     }
@@ -110,11 +109,14 @@ export const Items = ({ restaurant, items }) => {
             {categoryItems(category).map(item => (
               <Link to={`${restaurant}/${item.url}`} key={item.url}>
                 <div
-                  style={{
-                    backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/v1578175862/menu/${restaurant}/${
-                      item.url
-                    }.jpg')`
-                  }}
+                  data-img={`https://res.cloudinary.com/baudelaire/image/upload/w_700/v1578175862/menu/${restaurant}/${
+                    item.url
+                  }.jpg`}
+                  // style={{
+                  //   backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/v1578175862/menu/${restaurant}/${
+                  //     item.url
+                  //   }.jpg')`
+                  // }}
                   className="item"
                   id={item.url}
                 />
