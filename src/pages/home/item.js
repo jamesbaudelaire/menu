@@ -64,19 +64,20 @@ const S = styled.div`
   }
 
   @media screen and (min-width: 500px) {
-    width: 400px;
+    width: 450px;
     margin: 20px auto;
     margin-top: 50px;
+    .img {
+      border-radius: 10px;
+      height: 300px;
+      box-shadow: var(--shadow);
+    }
   }
 
   @media screen and (min-width: 1000px) {
     position: absolute;
     left: 400px;
     top: 100px;
-
-    .img {
-      border-radius: 10px;
-    }
   }
 `;
 
@@ -100,7 +101,7 @@ export const Item = ({ items }) => {
           <div
             className="img"
             style={{
-              backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/v1578175862/menu/${restaurant}/${
+              backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/menu/${restaurant}/${
                 search.url
               }.jpg')`
             }}

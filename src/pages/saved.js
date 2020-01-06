@@ -14,7 +14,7 @@ const S = styled.div`
     background: var(--theme1);
     height: 100px;
     width: calc(100% - 40px);
-    max-width: 400px;
+    max-width: 320px;
     margin: 20px auto;
 
     opacity: 0;
@@ -35,7 +35,7 @@ const S = styled.div`
       position: absolute;
       height: 30px;
       filter: invert();
-      right: 100px;
+      right: 50px;
       top: 10px;
     }
 
@@ -95,14 +95,14 @@ export const Saved = () => {
           <Link to={`${item.restaurant}/${item.url}`} key={item.url}>
             <img
               alt="item"
-              src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/v1577777469/menu/${
+              src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/menu/${
                 item.restaurant
               }/${item.url}.jpg`}
             />
           </Link>
 
           <img
-            src={`https://res.cloudinary.com/baudelaire/image/upload/v1577778466/menu/${
+            src={`https://res.cloudinary.com/baudelaire/image/upload/menu/${
               item.restaurant
             }/logo.png`}
             alt="logo"
