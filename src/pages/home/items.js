@@ -112,11 +112,6 @@ export const Items = ({ restaurant, items }) => {
                   data-img={`https://res.cloudinary.com/baudelaire/image/upload/w_700/v1578175862/menu/${restaurant}/${
                     item.url
                   }.jpg`}
-                  // style={{
-                  //   backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/v1578175862/menu/${restaurant}/${
-                  //     item.url
-                  //   }.jpg')`
-                  // }}
                   className="item"
                   id={item.url}
                 />
