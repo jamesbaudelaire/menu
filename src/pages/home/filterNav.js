@@ -50,7 +50,7 @@ const S = styled.div`
   @media screen and (min-width: 1000px) {
     position: fixed;
     top: 20px;
-    max-width: 400px;
+    max-width: 500px;
     bottom: unset;
     left: 140px;
     width: auto;

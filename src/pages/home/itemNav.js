@@ -36,7 +36,7 @@ const S = styled.div`
     transform: translateY(0);
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1000px) {
     left: 140px;
     top: 20px;
     bottom: unset;

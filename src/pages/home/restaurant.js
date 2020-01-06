@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import { Items } from "./items";
@@ -41,7 +41,7 @@ const S = styled.div`
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1000px) {
     .item-info {
       position: fixed;
       left: 100px;

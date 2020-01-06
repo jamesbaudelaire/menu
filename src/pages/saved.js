@@ -14,7 +14,8 @@ const S = styled.div`
     background: var(--theme1);
     height: 100px;
     width: calc(100% - 40px);
-    margin: 20px;
+    max-width: 400px;
+    margin: 20px auto;
 
     opacity: 0;
     transition: 0.5s;
@@ -34,14 +35,13 @@ const S = styled.div`
       position: absolute;
       height: 30px;
       filter: invert();
-      right: 60px;
-      top: 20px;
+      right: 100px;
+      top: 10px;
     }
 
     .name {
       text-align: right;
       width: 150px;
-      height: 20px;
       overflow: hidden;
       font-size: 15px;
       position: absolute;
@@ -66,9 +66,10 @@ const S = styled.div`
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1000px) {
     display: grid;
     grid-template-columns: repeat(2, 400px);
+    justify-content: center;
   }
 `;
 

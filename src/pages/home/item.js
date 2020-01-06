@@ -12,7 +12,7 @@ import { lastItem } from "redux/actions";
 const S = styled.div`
   .item {
     opacity: 0;
-    transition: 0.5s;
+    transition: opacity 0.5s;
     &.loading {
       opacity: 1;
     }
@@ -63,9 +63,16 @@ const S = styled.div`
     font-family: var(--font2);
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 500px) {
     width: 400px;
-    margin: 50px auto;
+    margin: 20px auto;
+    margin-top: 50px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    position: absolute;
+    left: 400px;
+    top: 100px;
 
     .img {
       border-radius: 10px;
