@@ -109,7 +109,7 @@ export const Items = ({ restaurant, items }) => {
             {categoryItems(category).map(item => (
               <Link to={`${restaurant}/${item.url}`} key={item.url}>
                 <div
-                  data-img={`https://res.cloudinary.com/baudelaire/image/upload/w_700/v1578175862/menu/${restaurant}/${
+                  data-img={`https://res.cloudinary.com/baudelaire/image/upload/w_700/menu/${restaurant}/${
                     item.url
                   }.jpg`}
                   className="item"

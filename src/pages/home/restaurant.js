@@ -26,7 +26,7 @@ const S = styled.div`
     .action {
       display: block;
       i {
-        font-size: 40px;
+        font-size: 30px;
         margin: 10px;
       }
     }

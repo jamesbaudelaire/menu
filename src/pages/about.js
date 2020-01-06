@@ -11,13 +11,14 @@ const S = styled.div`
   &.loading {
     opacity: 1;
   }
-
+  i {
+    font-size: 40px;
+  }
   .darkmode {
     position: absolute;
     top: 0;
     right: 0;
     margin: 20px;
-    font-size: 40px;
   }
 
   .info {
@@ -36,7 +37,6 @@ const S = styled.div`
         margin: 20px 0;
         i {
           margin: 10px;
-          font-size: 40px;
         }
       }
     }
@@ -51,7 +51,6 @@ const S = styled.div`
     font-size: 15px;
     i {
       display: block;
-      font-size: 40px;
       margin: 10px;
     }
   }

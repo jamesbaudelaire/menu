@@ -30,7 +30,7 @@ export const Restaurants = {
         url: "crab-cake",
         price: "10.50",
         types: ["seafood"],
-        info: `jumbo lump crab cake,shrimp, with artichoke spinach cream sauce`
+        info: `jumbo lump crab cake, shrimp, with artichoke spinach cream sauce`
       },
       {
         name: "Shrimp Ceviche",
@@ -38,7 +38,7 @@ export const Restaurants = {
         url: "ceviche",
         price: "10.50",
         types: ["seafood", "gluten-free"],
-        info: `shrimp poached in lime juice, old bay spices and served with pico de gallo, tortilla chips, and avocado cocktail sauce`
+        info: `shrimp poached in lime juice, old bay spices, and served with pico de gallo, tortilla chips, avocado cocktail sauce`
       },
       {
         name: "Osso Bucco",
@@ -46,7 +46,7 @@ export const Restaurants = {
         url: "osso",
         price: "24.50",
         types: ["pork"],
-        info: `pork shank simmered in red wine and demi glaz with carrots, celery, onions`
+        info: `pork shank simmered in red wine and demi-glaze with carrots, celery, onions`
       },
       {
         name: "Boston Casserole",
@@ -54,7 +54,7 @@ export const Restaurants = {
         price: "25",
         types: ["seafood"],
         category: "entree",
-        info: `shrimp, scallops, lobster, crabmeat, water chestnuts broccoli, mozzarella, newburg sauce, linguine`
+        info: `shrimp, scallops, lobster, crabmeat, water chestnuts, broccoli, mozzarella, newburg sauce, linguine`
       },
       {
         url: "cf-steak",
@@ -70,7 +70,7 @@ export const Restaurants = {
         price: "5",
         types: [],
         category: "dessert",
-        info: `Banana Pudding Cheesecake`
+        info: `Banana Pudding`
       },
       {
         url: "ice-cream",
@@ -78,7 +78,7 @@ export const Restaurants = {
         price: "5",
         types: [],
         category: "dessert",
-        info: `Smoked Maple & Bourbon Praline`
+        info: `smoked maple & bourbon praline`
       },
       {
         url: "scallops",
@@ -86,7 +86,7 @@ export const Restaurants = {
         price: "20.95",
         types: ["gluten-free", "seafood"],
         category: "entree",
-        info: `pan-seared scallops, risotto, spinach with pomodoro sauce`
+        info: `pan-seared scallops, risotto, spinach, with pomodoro sauce`
       },
       {
         url: "chicken",
@@ -94,7 +94,7 @@ export const Restaurants = {
         price: "20",
         types: ["chicken"],
         category: "entree",
-        info: `pan-seared chicken, jack daniels, mushroom and cream sauce`
+        info: `pan-seared chicken, jack daniels with mushroom cream sauce`
       },
       {
         url: "spring-rolls",
@@ -110,9 +110,7 @@ export const Restaurants = {
         price: "10",
         types: ["chicken"],
         category: "appetizer",
-        info: `deep-fried and tossed in a light cajun sauce
-        topped with cilantro and gorgonzola
-        chipotle ranch`
+        info: `deep-fried and tossed in a light cajun sauce topped with cilantro and gorgonzola chipotle ranch`
       },
       {
         url: "cheese",
@@ -127,7 +125,7 @@ export const Restaurants = {
         category: "entree",
         url: "alfredo",
         price: "14.50",
-        types: [],
+        types: ["chicken"],
         info: `linguine and parmesan with toast points`
       },
       {

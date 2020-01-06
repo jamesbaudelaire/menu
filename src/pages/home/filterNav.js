@@ -31,12 +31,11 @@ const S = styled.div`
     display: inline-block;
     margin: 10px 5px;
     padding: 5px 10px;
-    border-radius: 10px;
+    border-radius: 30px;
     transition: 0.5s;
     &.selected {
       background: var(--theme2);
       color: black;
-      box-shadow: var(--shadow);
     }
 
     :first-child {
