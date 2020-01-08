@@ -66,6 +66,18 @@ const S = styled.div`
     }
   }
 
+  .saved-notice {
+    text-align: center;
+    font-family: var(--font2);
+    margin: 20px;
+    i {
+      font-size: 40px;
+      color: #d50000;
+      margin: 10px;
+      display: block;
+    }
+  }
+
   @media screen and (min-width: 1000px) {
     display: grid;
     grid-template-columns: repeat(2, 400px);
@@ -90,6 +102,13 @@ export const Saved = () => {
 
   return (
     <S id="saved">
+      {saved.length < 1 && (
+        <div className="saved-notice">
+          <i className="material-icons-round">favorite</i>
+          Saved items will appear here!
+        </div>
+      )}
+
       {saved.map(item => (
         <div key={item.name} className="item">
           <Link to={`${item.restaurant}/${item.url}`} key={item.url}>
