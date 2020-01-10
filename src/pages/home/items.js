@@ -26,8 +26,8 @@ const S = styled.div`
 
     display: inline-block;
     border-radius: 10px;
-    height: 200px;
-    width: calc(100% - 80px);
+    height: 175px;
+    width: calc(100% - 100px);
 
     background-color: black;
     background-size: cover;

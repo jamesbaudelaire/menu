@@ -105,7 +105,7 @@ export const Saved = () => {
       {saved.length < 1 && (
         <div className="saved-notice">
           <i className="material-icons-round">favorite</i>
-          Saved items will appear here!
+          Saved items will appear here
         </div>
       )}
 
