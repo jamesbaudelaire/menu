@@ -89,7 +89,7 @@ export const Nav = () => {
       {restaurant !== null && (
         <NavLink exact to={`/${restaurant}`}>
           <div className="page-link">
-            <i className="material-icons-round">restaurant_menu</i>
+            <i className="material-icons-round">menu_book</i>
             menu
           </div>
         </NavLink>

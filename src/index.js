@@ -12,6 +12,8 @@ import { useSelector } from "react-redux";
 
 import { LS } from "functions/LS";
 
+import { Load } from "functions/load";
+
 const store = createStore(Reducers);
 
 store.subscribe(() => {
@@ -42,6 +44,14 @@ const GS = createGlobalStyle`
 display: none;
 }
 
+#app{
+opacity:0;
+transition:.5s;
+&.loading{
+ opacity:1 
+}
+}
+
 body{
   user-select:none;
   overscroll-behavior: contain;
@@ -57,7 +67,6 @@ body{
     display: block;
     height: 200px;
   }
-  user-select:none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -101,14 +110,16 @@ body{
 const App = () => {
   const dark = useSelector(state => state.dark);
 
+  const { loading } = Load();
+
   return (
-    <>
+    <div id="app" className={loading ? "loading" : ""}>
       <GS dark={dark} />
       <BrowserRouter>
         <Pages />
         <Nav />
       </BrowserRouter>
-    </>
+    </div>
   );
 };
 
