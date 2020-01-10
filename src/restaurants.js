@@ -129,6 +129,22 @@ export const Restaurants = {
         info: `linguine and parmesan with toast points`
       },
       {
+        name: "Beef Short Rib",
+        category: "entree",
+        url: "short-rib",
+        price: "25.50",
+        types: ["beef"],
+        info: `seasoned and lightly smoked with carrots, celery, onions, and demi-glaze`
+      },
+      {
+        name: "Chicken Avocado Club",
+        category: "entree",
+        url: "cac",
+        price: "12",
+        types: ["chicken"],
+        info: `grilled chicken, bacon, avocado, swiss cheese, lettuce, tomato, chipotle aioli, on pecan and cranberry sourdough`
+      },
+      {
         name: "Creme Brulee",
         category: "dessert",
         types: [],
