@@ -104,16 +104,13 @@ export const Item = ({ items }) => {
           />
           <div className="details">
             <div className="name">{search.name}</div>
-
-            <div className="price">{search.price}</div>
+            {/* <div className="price">${search.price}</div> */}
             <div className="info">{search.info}</div>
 
-            {search.category == "entree" && (
+            {search.sides && (
               <div className="sides">
-                SIDES
-                <br />
-                {Restaurants[restaurant].sides.map(side => (
-                  <div key={side} className="side">
+                {search.sides.map(side => (
+                  <div className="side" key={side}>
                     {side}
                   </div>
                 ))}

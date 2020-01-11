@@ -6,6 +6,7 @@ export const Restaurants = {
       address: "https://goo.gl/maps/tXo5y9ccKjo9A9EF6"
     },
     phone: "(479) 769-2406",
+
     dressings: [
       "sun-dried tomato vinaigrette",
       "raspberry vinaigrette",
@@ -14,15 +15,7 @@ export const Restaurants = {
       "blue cheese",
       "ranch"
     ],
-    sides: [
-      "asparagus",
-      "wild rice",
-      "seasoned fries",
-      "roasted garlic spinach",
-      "seasonal vegetables",
-      "whipped potatoes",
-      "twice-baked potato"
-    ],
+
     items: [
       {
         name: "Crab Cake",
@@ -46,6 +39,7 @@ export const Restaurants = {
         url: "osso",
         price: "24.50",
         types: ["pork"],
+        sides: ["whipped potatoes"],
         info: `pork shank simmered in red wine and demi-glaze with carrots, celery, onions`
       },
       {
@@ -68,7 +62,6 @@ export const Restaurants = {
         url: "cheesecake",
         name: "Cheesecake",
         price: "5",
-        types: [],
         category: "dessert",
         info: `Banana Pudding`
       },
@@ -76,7 +69,6 @@ export const Restaurants = {
         url: "ice-cream",
         name: "Ice Cream",
         price: "5",
-        types: [],
         category: "dessert",
         info: `smoked maple & bourbon praline`
       },
@@ -93,6 +85,7 @@ export const Restaurants = {
         name: "JT's Chicken",
         price: "20",
         types: ["chicken"],
+        sides: ["whipped potatoes", "asparagus"],
         category: "entree",
         info: `pan-seared chicken, jack daniels with mushroom cream sauce`
       },
@@ -100,7 +93,6 @@ export const Restaurants = {
         url: "spring-rolls",
         name: `Shina's Spring Rolls (4)`,
         price: "9.50",
-        types: [],
         category: "appetizer",
         info: `ground beef, chicken, pork, noodles, vegetables, wrapped and deep-fried with oriental sauce`
       },
@@ -116,7 +108,6 @@ export const Restaurants = {
         url: "cheese",
         name: "Breaded Mozzarella",
         price: "9.50",
-        types: [],
         category: "appetizer",
         info: `logs of fresh mozzarella, italian breading, deep-fried, with spicy caper marinara`
       },
@@ -134,6 +125,7 @@ export const Restaurants = {
         url: "short-rib",
         price: "25.50",
         types: ["beef"],
+        sides: ["whipped potatoes"],
         info: `seasoned and lightly smoked with carrots, celery, onions, and demi-glaze`
       },
       {
@@ -141,19 +133,18 @@ export const Restaurants = {
         category: "entree",
         url: "cac",
         price: "12",
+        sides: ["seasoned fries"],
         types: ["chicken"],
         info: `grilled chicken, bacon, avocado, swiss cheese, lettuce, tomato, chipotle aioli, on pecan and cranberry sourdough`
       },
       {
         name: "Creme Brulee",
         category: "dessert",
-        types: [],
         url: "creme-brulee",
         price: "5"
       },
       {
         name: "Tiramisu",
-        types: [],
         category: "dessert",
         url: "tiramisu",
         price: "5"

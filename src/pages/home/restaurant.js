@@ -133,11 +133,11 @@ export const Restaurant = () => {
             <Info />
           </Route>
           <Route path="/:restaurant">
-            <Info />
             <Items
               restaurant={restaurant}
               items={Restaurants[restaurant].items}
             />
+            <Info />
           </Route>
         </Switch>
       ) : (

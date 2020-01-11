@@ -80,7 +80,9 @@ export const Items = ({ restaurant, items }) => {
   let itemsCopy = items;
 
   if (filter) {
-    items = items.filter(item => item.types.includes(filter));
+    items = items
+      .filter(item => item.types)
+      .filter(item => item.types.includes(filter));
   }
 
   let categories = () => [...new Set(items.map(item => item.category))];
