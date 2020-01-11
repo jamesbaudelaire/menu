@@ -33,8 +33,8 @@ const S = styled.div`
     background-size: cover;
 
     opacity: 0.5;
-    transition: 0.5s;
-    transform: scale(0.9);
+    transition: opacity 0.5s, transform 0.5s;
+    transform: scale(0.8);
     &.io {
       box-shadow: var(--shadow);
       opacity: 1;
