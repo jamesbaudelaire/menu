@@ -57,12 +57,6 @@ const S = styled.div`
     font-family: var(--font2);
   }
 
-  .not-found {
-    text-align: center;
-    margin: 20px;
-    font-family: var(--font2);
-  }
-
   @media screen and (min-width: 500px) {
     width: 450px;
     margin: 20px auto;
@@ -91,7 +85,9 @@ export const Item = ({ items }) => {
 
   useEffect(() => {
     window.scroll(0, 0);
-    dispatch(lastItem(search.url));
+    if (search) {
+      dispatch(lastItem(search.url));
+    }
   });
 
   return (
@@ -108,28 +104,13 @@ export const Item = ({ items }) => {
           />
           <div className="details">
             <div className="name">{search.name}</div>
-
-            <div className="price">{search.price}</div>
+            {/* <div className="price">${search.price}</div> */}
             <div className="info">{search.info}</div>
 
-            {search.toppings && (
-              <div className="toppings">
-                TOPPINGS
-                <br />
-                {search.toppings.map(topping => (
-                  <div key={topping} className="topping">
-                    {topping}
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {search.category == "entree" && (
+            {search.sides && (
               <div className="sides">
-                SIDES
-                <br />
-                {Restaurants[restaurant].sides.map(side => (
-                  <div key={side} className="side">
+                {search.sides.map(side => (
+                  <div className="side" key={side}>
                     {side}
                   </div>
                 ))}
@@ -151,7 +132,8 @@ export const Item = ({ items }) => {
         </div>
       ) : (
         <div className="not-found">
-          Item doesn't exist or no longer available
+          <i className="material-icons-round">info</i>
+          item not found or no longer available
         </div>
       )}
 

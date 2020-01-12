@@ -41,6 +41,18 @@ const S = styled.div`
     }
   }
 
+  .not-found {
+    text-align: center;
+    font-family: var(--font2);
+    margin: 20px;
+    i {
+      font-size: 40px;
+      color: #d50000;
+      margin: 10px;
+      display: block;
+    }
+  }
+
   @media screen and (min-width: 1000px) {
     .item-info {
       position: fixed;
@@ -121,15 +133,18 @@ export const Restaurant = () => {
             <Info />
           </Route>
           <Route path="/:restaurant">
-            <Info />
             <Items
               restaurant={restaurant}
               items={Restaurants[restaurant].items}
             />
+            <Info />
           </Route>
         </Switch>
       ) : (
-        <div className="not-found">???</div>
+        <div className="not-found">
+          <i className="material-icons-round">info</i>
+          restaurant not found or no longer available
+        </div>
       )}
     </S>
   );

@@ -9,6 +9,7 @@ const S = styled.div`
   background: var(--theme3);
   border-radius: 10px;
   position: fixed;
+  z-index: 90;
   bottom: 0;
   left: 0;
   height: 115px;

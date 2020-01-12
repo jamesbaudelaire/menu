@@ -81,18 +81,18 @@ export const About = () => {
       <div className="info">
         <div className="title">M3NU</div>
         <ul>
-          A modern menu
+          a modern menu
           <li>
             <i className="material-icons-round">send</i>
-            Share your favorite items with family and friends
+            share your favorite items with family and friends
           </li>
           <li>
             <i className="material-icons-round">favorite</i>
-            Save items you loved or want to try next
+            save items you loved or want to try next
           </li>
           <li>
             <i className="material-icons-round">near_me</i>
-            Browse local menus
+            browse local menus
           </li>
         </ul>
       </div>

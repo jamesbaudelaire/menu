@@ -33,7 +33,7 @@ const S = styled.div`
     background-size: cover;
 
     opacity: 0.5;
-    transition: 0.5s;
+    transition: opacity 0.5s, transform 0.5s;
     transform: scale(0.9);
     &.io {
       box-shadow: var(--shadow);
@@ -80,7 +80,9 @@ export const Items = ({ restaurant, items }) => {
   let itemsCopy = items;
 
   if (filter) {
-    items = items.filter(item => item.types.includes(filter));
+    items = items
+      .filter(item => item.types)
+      .filter(item => item.types.includes(filter));
   }
 
   let categories = () => [...new Set(items.map(item => item.category))];

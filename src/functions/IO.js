@@ -8,7 +8,7 @@ export const IO = tar => {
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       let el = entry.target;
-      if (entry.intersectionRatio > 0.5) {
+      if (entry.intersectionRatio > 0.1) {
         if (el.dataset.img) {
           el.style.backgroundImage = `url('${el.dataset.img}')`;
         }
