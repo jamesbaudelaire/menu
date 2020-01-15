@@ -76,7 +76,7 @@ const Info = () => {
       <Link to={`/${restaurant}`}>
         <img
           src={`
-          https://res.cloudinary.com/baudelaire/image/upload/v1578175862/menu/${restaurant}/logo.png
+          https://res.cloudinary.com/baudelaire/image/upload/menu/${restaurant}/logo.png
           `}
           alt="logo"
           className="logo"

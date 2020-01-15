@@ -38,7 +38,7 @@ export const Restaurants = {
         category: "entree",
         url: "osso",
         price: "24.50",
-        types: ["pork"],
+        types: ["pork", "gluten-free"],
         sides: ["whipped potatoes"],
         info: `pork shank simmered in red wine and demi-glaze with carrots, celery, onions`
       },

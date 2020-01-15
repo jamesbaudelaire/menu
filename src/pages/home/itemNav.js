@@ -61,7 +61,7 @@ export const ItemNav = ({ item }) => {
   let saved = useSelector(s => s.saved).filter(x => x.restaurant == restaurant);
 
   let share = () => {
-    let location = window.location.href;
+    let location = `m3nu.app/${restaurant}/${item.url}`;
     if (navigator.share) {
       navigator.share({
         url: `${location}`
