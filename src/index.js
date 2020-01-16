@@ -14,6 +14,8 @@ import { LS } from "functions/LS";
 
 import { Load } from "functions/load";
 
+import { Spinner } from "./components/spinner";
+
 const store = createStore(Reducers);
 
 store.subscribe(() => {
@@ -79,6 +81,7 @@ i{
   cursor: pointer;
 }
 
+
 @media screen and (min-width: 500px) {
 
 width: 400px;
@@ -92,14 +95,9 @@ body{
 
 #saved,#home,#about{
   position: absolute;
-    left: 140px;
-    top: 40px;
+    left: 160px;
+    top: 60px;
 }
-
-}
-
-@media screen and (min-width: 1000px) {
-
 
 }
 
@@ -110,16 +108,23 @@ body{
 const App = () => {
   const dark = useSelector(state => state.dark);
 
-  const { loading } = Load();
+  const { loading } = Load(300);
 
   return (
-    <div id="app" className={loading ? "loading" : ""}>
+    <>
       <GS dark={dark} />
-      <BrowserRouter>
-        <Pages />
-        <Nav />
-      </BrowserRouter>
-    </div>
+
+      {loading ? (
+        <div id="app" className={loading ? "loading" : ""}>
+          <BrowserRouter>
+            <Pages />
+            <Nav />
+          </BrowserRouter>
+        </div>
+      ) : (
+        <Spinner />
+      )}
+    </>
   );
 };
 
