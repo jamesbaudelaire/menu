@@ -6,7 +6,7 @@ import { deleteSaved } from "redux/actions";
 
 import { IO } from "functions/IO";
 
-import {Load} from "functions/load"
+import { Load } from "functions/load";
 
 const S = styled.div`
   .item {
@@ -79,12 +79,12 @@ const S = styled.div`
       display: block;
     }
 
-    transition:.5s;
-    opacity:0;
-    transform:scale(.9);
-    &.loading{
-      opacity:1;
-      transform:scale(1);
+    transition: 0.5s;
+    opacity: 0;
+    transform: scale(0.8);
+    &.loading {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 
@@ -99,7 +99,7 @@ export const Saved = () => {
   let saved = useSelector(s => s.saved);
   let dispatch = useDispatch();
 
-let {loading}=Load()
+  let { loading } = Load();
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -115,7 +115,7 @@ let {loading}=Load()
   return (
     <S id="saved">
       {saved.length < 1 && (
-        <div className={`saved-notice ${loading?'loading':''}`}>
+        <div className={`saved-notice ${loading ? "loading" : ""}`}>
           <i className="material-icons-round">favorite</i>
           saved items will appear here
         </div>

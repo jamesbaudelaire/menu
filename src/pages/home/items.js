@@ -32,7 +32,7 @@ const S = styled.div`
     background-color: black;
     background-size: cover;
 
-    opacity: 0.5;
+    opacity: 0;
     transition: opacity 0.5s, transform 0.5s;
     transform: scale(0.9);
     &.io {
