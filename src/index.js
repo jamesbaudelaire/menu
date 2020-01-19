@@ -48,7 +48,7 @@ display: none;
 
 #app{
 opacity:0;
-transition:.5s;
+transition:.3s;
 &.loading{
  opacity:1 
 }
