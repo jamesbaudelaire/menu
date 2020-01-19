@@ -18,20 +18,35 @@ export const Restaurants = {
 
     items: [
       {
-        name: "Crab Cake",
-        category: "appetizer",
-        url: "crab-cake",
-        price: "10.50",
-        types: ["seafood"],
-        info: `jumbo lump crab cake, shrimp, with artichoke spinach cream sauce`
-      },
-      {
         name: "Shrimp Ceviche",
         category: "appetizer",
         url: "ceviche",
         price: "10.50",
         types: ["seafood", "gluten-free"],
         info: `shrimp poached in lime juice, old bay spices, and served with pico de gallo, tortilla chips, avocado cocktail sauce`
+      },
+      {
+        url: "wings",
+        name: "Wings (8)",
+        price: "10",
+        types: ["chicken"],
+        category: "appetizer",
+        info: `deep-fried and tossed in a light cajun sauce topped with cilantro and gorgonzola chipotle ranch`
+      },
+      {
+        url: "cheese",
+        name: "Breaded Mozzarella",
+        price: "9.50",
+        category: "appetizer",
+        info: `logs of fresh mozzarella, italian breading, deep-fried, with spicy caper marinara`
+      },
+      {
+        name: "Crab Cake",
+        category: "appetizer",
+        url: "crab-cake",
+        price: "10.50",
+        types: ["seafood"],
+        info: `jumbo lump crab cake, shrimp, with artichoke spinach cream sauce`
       },
       {
         name: "Osso Bucco",
@@ -58,20 +73,7 @@ export const Restaurants = {
         category: "entree",
         info: `breaded chopped steak with peppered gravy`
       },
-      {
-        url: "cheesecake",
-        name: "Cheesecake",
-        price: "5",
-        category: "dessert",
-        info: `Banana Pudding`
-      },
-      {
-        url: "ice-cream",
-        name: "Ice Cream",
-        price: "5",
-        category: "dessert",
-        info: `smoked maple & bourbon praline`
-      },
+
       {
         url: "scallops",
         name: "Scallops Florentine",
@@ -97,19 +99,13 @@ export const Restaurants = {
         info: `ground beef, chicken, pork, noodles, vegetables, wrapped and deep-fried with oriental sauce`
       },
       {
-        url: "wings",
-        name: "Wings (8)",
-        price: "10",
+        name: "Chicken Avocado Club",
+        category: "entree",
+        url: "cac",
+        price: "12",
+        sides: ["seasoned fries"],
         types: ["chicken"],
-        category: "appetizer",
-        info: `deep-fried and tossed in a light cajun sauce topped with cilantro and gorgonzola chipotle ranch`
-      },
-      {
-        url: "cheese",
-        name: "Breaded Mozzarella",
-        price: "9.50",
-        category: "appetizer",
-        info: `logs of fresh mozzarella, italian breading, deep-fried, with spicy caper marinara`
+        info: `grilled chicken, bacon, avocado, swiss cheese, lettuce, tomato, chipotle aioli, on pecan and cranberry sourdough`
       },
       {
         name: "Chicken Alfredo",
@@ -129,19 +125,24 @@ export const Restaurants = {
         info: `seasoned and lightly smoked with carrots, celery, onions, and demi-glaze`
       },
       {
-        name: "Chicken Avocado Club",
-        category: "entree",
-        url: "cac",
-        price: "12",
-        sides: ["seasoned fries"],
-        types: ["chicken"],
-        info: `grilled chicken, bacon, avocado, swiss cheese, lettuce, tomato, chipotle aioli, on pecan and cranberry sourdough`
-      },
-      {
         name: "Creme Brulee",
         category: "dessert",
         url: "creme-brulee",
         price: "5"
+      },
+      {
+        url: "cheesecake",
+        name: "Cheesecake",
+        price: "5",
+        category: "dessert",
+        info: `Banana Pudding`
+      },
+      {
+        url: "ice-cream",
+        name: "Ice Cream",
+        price: "5",
+        category: "dessert",
+        info: `smoked maple & bourbon praline`
       },
       {
         name: "Tiramisu",
