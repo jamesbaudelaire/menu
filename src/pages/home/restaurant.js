@@ -35,7 +35,7 @@ const S = styled.div`
 
   .item-info {
     opacity: 0;
-    transition: 0.5s;
+    transition: 0.3s;
     &.loading {
       opacity: 1;
     }
@@ -76,7 +76,7 @@ const Info = () => {
       <Link to={`/${restaurant}`}>
         <img
           src={`
-          https://res.cloudinary.com/baudelaire/image/upload/v1578175862/menu/${restaurant}/logo.png
+          https://res.cloudinary.com/baudelaire/image/upload/menu/${restaurant}/logo.png
           `}
           alt="logo"
           className="logo"

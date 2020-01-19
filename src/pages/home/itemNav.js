@@ -22,14 +22,14 @@ const S = styled.div`
     color: white;
     padding: 10px;
     i {
-      transition: 0.5s;
+      transition: 0.3s;
       display: block;
       font-size: 25px;
     }
   }
 
   opacity: 0;
-  transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.3s, opacity 0.3s;
   transform: translatey(20px);
   &.loading {
     opacity: 1;
@@ -61,7 +61,7 @@ export const ItemNav = ({ item }) => {
   let saved = useSelector(s => s.saved).filter(x => x.restaurant == restaurant);
 
   let share = () => {
-    let location = window.location.href;
+    let location = `m3nu.app/${restaurant}/${item.url}`;
     if (navigator.share) {
       navigator.share({
         url: `${location}`

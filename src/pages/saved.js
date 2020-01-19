@@ -18,12 +18,16 @@ const S = styled.div`
     margin: 20px auto;
 
     opacity: 0;
-    transition: 0.5s;
+    transition: 0.3s;
     transform: translateY(30px);
     &.io {
       box-shadow: var(--shadow);
       opacity: 1;
       transform: translateY(0px);
+    }
+    &.delete {
+      opacity: 0;
+      transform: scale(0.9);
     }
 
     img {
@@ -110,7 +114,7 @@ export const Saved = () => {
       )}
 
       {saved.map(item => (
-        <div key={item.name} className="item">
+        <div key={item.name} className="item" id={item.name}>
           <Link to={`${item.restaurant}/${item.url}`} key={item.url}>
             <img
               alt="item"
@@ -131,7 +135,12 @@ export const Saved = () => {
           <div className="name">{item.name}</div>
           <i
             className="material-icons-round delete"
-            onClick={() => dispatch(deleteSaved(item))}
+            onClick={() => {
+              document.getElementById(`${item.name}`).classList.add("delete");
+              setTimeout(() => {
+                dispatch(deleteSaved(item));
+              }, 300);
+            }}
           >
             close
           </i>

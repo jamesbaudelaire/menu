@@ -14,7 +14,7 @@ export const IO = tar => {
         }
         el.classList.add("io");
       } else {
-        el.classList.remove("io");
+        // el.classList.remove("io");
       }
     });
   }, options);
