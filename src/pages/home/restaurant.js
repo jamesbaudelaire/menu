@@ -35,7 +35,7 @@ const S = styled.div`
 
   .item-info {
     opacity: 0;
-    transition: 0.5s;
+    transition: 0.3s;
     &.loading {
       opacity: 1;
     }

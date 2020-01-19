@@ -7,7 +7,7 @@ import { Load } from "functions/load";
 
 const S = styled.div`
   opacity: 0;
-  transition: 0.5s;
+  transition: 0.3s;
   &.loading {
     opacity: 1;
   }

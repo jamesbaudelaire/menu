@@ -16,7 +16,7 @@ const S = styled.div`
     props.restaurant !== null ? "repeat(4, 1fr)" : "repeat(3, 1fr)"};
   background: var(--theme1);
   text-align: center;
-  transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.3s, opacity 0.3s;
 
   opacity: 0;
   transform: translatey(20px);
@@ -35,7 +35,7 @@ const S = styled.div`
   }
 
   .page-link * {
-    transition: 0.5s;
+    transition: 0.3s;
   }
 
   .active {

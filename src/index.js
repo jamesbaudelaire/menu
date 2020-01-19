@@ -58,7 +58,7 @@ body{
   user-select:none;
   overscroll-behavior: contain;
   font-family:var(--font1);
-  transition:.5s;
+  transition:.3s;
   margin:0;
   padding:0;
   background:${props => (props.dark ? "var(--dark)" : "var(--light)")};

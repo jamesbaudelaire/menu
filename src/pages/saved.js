@@ -6,8 +6,6 @@ import { deleteSaved } from "redux/actions";
 
 import { IO } from "functions/IO";
 
-import { Load } from "functions/load";
-
 const S = styled.div`
   .item {
     position: relative;
@@ -20,12 +18,16 @@ const S = styled.div`
     margin: 20px auto;
 
     opacity: 0;
-    transition: 0.5s;
+    transition: 0.3s;
     transform: translateY(30px);
     &.io {
       box-shadow: var(--shadow);
       opacity: 1;
       transform: translateY(0px);
+    }
+    &.delete {
+      opacity: 0;
+      transform: scale(0.9);
     }
 
     img {
@@ -78,14 +80,6 @@ const S = styled.div`
       margin: 10px;
       display: block;
     }
-
-    transition: 0.5s;
-    opacity: 0;
-    transform: scale(0.8);
-    &.loading {
-      opacity: 1;
-      transform: scale(1);
-    }
   }
 
   @media screen and (min-width: 1000px) {
@@ -98,8 +92,6 @@ const S = styled.div`
 export const Saved = () => {
   let saved = useSelector(s => s.saved);
   let dispatch = useDispatch();
-
-  let { loading } = Load();
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -115,14 +107,14 @@ export const Saved = () => {
   return (
     <S id="saved">
       {saved.length < 1 && (
-        <div className={`saved-notice ${loading ? "loading" : ""}`}>
+        <div className="saved-notice">
           <i className="material-icons-round">favorite</i>
           saved items will appear here
         </div>
       )}
 
       {saved.map(item => (
-        <div key={item.name} className="item">
+        <div key={item.name} className="item" id={item.name}>
           <Link to={`${item.restaurant}/${item.url}`} key={item.url}>
             <img
               alt="item"
@@ -143,7 +135,12 @@ export const Saved = () => {
           <div className="name">{item.name}</div>
           <i
             className="material-icons-round delete"
-            onClick={() => dispatch(deleteSaved(item))}
+            onClick={() => {
+              document.getElementById(`${item.name}`).classList.add("delete");
+              setTimeout(() => {
+                dispatch(deleteSaved(item));
+              }, 300);
+            }}
           >
             close
           </i>

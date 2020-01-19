@@ -24,7 +24,7 @@ const S = styled.div`
     position: relative;
 
     opacity: 0;
-    transition: 0.5s;
+    transition: 0.3s;
     transform: translateY(30px);
     &.io {
       box-shadow: var(--shadow);

@@ -12,7 +12,7 @@ import { lastItem } from "redux/actions";
 const S = styled.div`
   .item {
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.3s;
     &.loading {
       opacity: 1;
     }
@@ -104,7 +104,7 @@ export const Item = ({ items }) => {
           />
           <div className="details">
             <div className="name">{search.name}</div>
-            {/* <div className="price">${search.price}</div> */}
+            <div className="price">${search.price}</div>
             <div className="info">{search.info}</div>
 
             {search.sides && (
