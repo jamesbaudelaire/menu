@@ -78,7 +78,11 @@ a{
 }
 
 i{
+  transition:.3s;
   cursor: pointer;
+  :active{
+    transform:scale(.75)
+  }
 }
 
 
