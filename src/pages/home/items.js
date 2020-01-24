@@ -66,10 +66,8 @@ const S = styled.div`
   }
 
   @media screen and (min-width: 1000px) {
-    border: 10px solid var(--theme3);
-    border-radius: 20px 0;
-    border-right: none;
-    border-bottom: none;
+    box-shadow: inset 1px 1px 5px black;
+    border-radius: 40px 0;
     position: absolute;
     margin-top: 100px;
     height: calc(100% - 100px);

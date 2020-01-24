@@ -10,6 +10,8 @@ import { useDispatch } from "react-redux";
 import { getRestaurant } from "redux/actions";
 import { useSelector } from "react-redux";
 
+import { version } from "version";
+
 const S = styled.div`
   .logo {
     width: calc(100% - 100px);
@@ -64,7 +66,7 @@ const Info = () => {
       <Link to={`/${restaurant}`}>
         <img
           src={`
-          https://res.cloudinary.com/baudelaire/image/upload/menu/${restaurant}/logo.png
+          https://res.cloudinary.com/baudelaire/image/upload/${version}/menu/${restaurant}/logo.png
           `}
           alt="logo"
           className="logo"
