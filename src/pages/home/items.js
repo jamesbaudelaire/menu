@@ -27,7 +27,7 @@ const S = styled.div`
     margin-right: 0;
 
     display: inline-block;
-    border-radius: 10px;
+    border-radius: 20px;
     height: 250px;
     width: calc(100% - 100px);
 
@@ -67,17 +67,17 @@ const S = styled.div`
 
   @media screen and (min-width: 1000px) {
     box-shadow: inset 1px 1px 5px black;
-    border-radius: 40px 0;
+    border-radius: 40px 0 0 0;
     position: absolute;
-    margin-top: 100px;
-    height: calc(100% - 100px);
+    margin-top: 120px;
+    height: calc(100% - 120px);
     overflow: scroll;
 
-    left: 420px;
+    left: 430px;
     text-align: left;
 
     .category {
-      width: calc(100vw - 420px);
+      width: calc(100vw - 430px);
     }
   }
 `;

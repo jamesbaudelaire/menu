@@ -14,7 +14,7 @@ const S = styled.div`
     overflow: hidden;
     position: relative;
     color: var(--light);
-    border-radius: 10px;
+    border-radius: 20px;
     background: var(--theme1);
     height: 100px;
     width: calc(100% - 40px);
@@ -36,7 +36,7 @@ const S = styled.div`
 
     .food-img {
       width: 150px;
-      border-radius: 10px 0 0 10px;
+      border-radius: 20px 0 0 20px;
     }
 
     .logo {
@@ -63,7 +63,7 @@ const S = styled.div`
       top: 0;
       right: 0;
       background: var(--theme3);
-      border-radius: 0 10px;
+      border-radius: 0 20px;
       padding: 10px;
       &:hover {
         background: #d50000;

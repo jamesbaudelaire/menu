@@ -38,7 +38,7 @@ export const Restaurants = {
         url: "s-s",
         price: "14",
         types: ["vegetarian"],
-        info: `blackened shrimp, panko-breaded avocado, bacon, mandarin oranges, eggs,boursin cheese, tomato, caramelized onions`
+        info: `blackened shrimp, panko-breaded avocado, bacon, mandarin oranges, eggs, boursin cheese, tomato, caramelized onions`
       },
       {
         name: "14oz Ribeye",

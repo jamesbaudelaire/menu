@@ -18,7 +18,7 @@ const S = styled.div`
   .restaurant {
     width: calc(100% - 40px);
     max-width: 300px;
-    border-radius: 10px;
+    border-radius: 20px;
     margin: 20px auto;
     box-shadow: var(--shadow);
     background: var(--theme1);

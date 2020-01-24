@@ -9,9 +9,9 @@ const S = styled.div`
   background: var(--theme3);
   position: fixed;
   z-index: 80;
-  border-radius: 10px 10px 0 0;
-  bottom: 45px;
-  padding-bottom: 20px;
+  border-radius: 50px 50px 0 0;
+  bottom: 0px;
+  padding-bottom: 65px;
   left: 0;
   width: 100%;
   display: grid;

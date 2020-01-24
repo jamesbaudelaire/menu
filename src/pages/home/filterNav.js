@@ -7,7 +7,7 @@ import { useAnimation } from "../../hooks/animation";
 
 const S = styled.div`
   background: var(--theme3);
-  border-radius: 10px;
+  border-radius: 40px 40px 0 0;
   position: fixed;
   z-index: 90;
   bottom: 0;
@@ -30,7 +30,7 @@ const S = styled.div`
     display: inline-block;
     margin: 10px 5px;
     padding: 5px 10px;
-    border-radius: 30px;
+    border-radius: 20px;
     transition: 0.5s;
     &.selected {
       background: var(--theme2);
@@ -38,10 +38,10 @@ const S = styled.div`
     }
 
     :first-child {
-      margin-left: 10px;
+      margin-left: 20px;
     }
     :last-child {
-      margin-right: 10px;
+      margin-right: 20px;
     }
   }
 
@@ -49,6 +49,7 @@ const S = styled.div`
     position: fixed;
     top: 20px;
     max-width: 350px;
+    border-radius: 40px;
     bottom: unset;
     left: 140px;
     width: auto;
