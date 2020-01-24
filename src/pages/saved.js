@@ -5,9 +5,13 @@ import { Link } from "react-router-dom";
 import { deleteSaved } from "redux/actions";
 
 import { IO } from "functions/IO";
+import { useAnimation } from "../hooks/animation";
+
+import { version } from "version";
 
 const S = styled.div`
   .item {
+    overflow: hidden;
     position: relative;
     color: var(--light);
     border-radius: 10px;
@@ -30,8 +34,8 @@ const S = styled.div`
       transform: scale(0.9);
     }
 
-    img {
-      height: 100px;
+    .food-img {
+      width: 150px;
       border-radius: 10px 0 0 10px;
     }
 
@@ -93,6 +97,8 @@ export const Saved = () => {
   let saved = useSelector(s => s.saved);
   let dispatch = useDispatch();
 
+  const load = useAnimation();
+
   useEffect(() => {
     window.scroll(0, 0);
 
@@ -107,7 +113,7 @@ export const Saved = () => {
   return (
     <S id="saved">
       {saved.length < 1 && (
-        <div className="saved-notice">
+        <div className="saved-notice" {...load}>
           <i className="material-icons-round">favorite</i>
           saved items will appear here
         </div>
@@ -117,15 +123,16 @@ export const Saved = () => {
         <div key={item.name} className="item" id={item.name}>
           <Link to={`${item.restaurant}/${item.url}`} key={item.url}>
             <img
+              className="food-img"
               alt="item"
-              src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/menu/${
+              src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/${version}/menu/${
                 item.restaurant
               }/${item.url}.jpg`}
             />
           </Link>
 
           <img
-            src={`https://res.cloudinary.com/baudelaire/image/upload/menu/${
+            src={`https://res.cloudinary.com/baudelaire/image/upload/${version}/menu/${
               item.restaurant
             }/logo.png`}
             alt="logo"

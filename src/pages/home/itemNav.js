@@ -3,8 +3,7 @@ import styled from "styled-components";
 import { useParams, useHistory } from "react-router";
 import { saveItem } from "redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-
-import { Load } from "functions/load";
+import { useAnimation } from "../../hooks/animation";
 
 const S = styled.div`
   background: var(--theme3);
@@ -28,11 +27,8 @@ const S = styled.div`
     }
   }
 
-  opacity: 0;
-  transition: transform 0.3s, opacity 0.3s;
   transform: translatey(20px);
-  &.loading {
-    opacity: 1;
+  &.loaded {
     transform: translateY(0);
   }
 
@@ -54,7 +50,7 @@ const S = styled.div`
 export const ItemNav = ({ item }) => {
   let { restaurant } = useParams();
 
-  const { loading } = Load();
+  const loadItemNav = useAnimation();
 
   const dispatch = useDispatch();
 
@@ -82,7 +78,7 @@ export const ItemNav = ({ item }) => {
   };
 
   return (
-    <S className={loading ? "loading" : ""}>
+    <S {...loadItemNav}>
       <div className="action" onClick={() => back()}>
         <i className="material-icons-round">arrow_back_ios</i>
         back

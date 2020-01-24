@@ -13,8 +13,6 @@ export const IO = tar => {
           el.style.backgroundImage = `url('${el.dataset.img}')`;
         }
         el.classList.add("io");
-      } else {
-        // el.classList.remove("io");
       }
     });
   }, options);

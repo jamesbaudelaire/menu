@@ -26,19 +26,44 @@ export const Restaurants = {
         info: `shrimp poached in lime juice, old bay spices, and served with pico de gallo, tortilla chips, avocado cocktail sauce`
       },
       {
+        url: "cheese",
+        name: "Breaded Mozzarella",
+        price: "9.50",
+        category: "appetizer",
+        info: `logs of fresh mozzarella, italian breading, deep-fried, with spicy caper marinara`
+      },
+      {
+        name: "Spinach & Shrimp",
+        category: "salad",
+        url: "s-s",
+        price: "14",
+        types: ["vegetarian"],
+        info: `blackened shrimp, panko-breaded avocado, bacon, mandarin oranges, eggs,boursin cheese, tomato, caramelized onions`
+      },
+      {
+        name: "14oz Ribeye",
+        category: "entree",
+        url: "ribeye",
+        price: "30",
+        types: ["beef"],
+        info: `seasoned and grilled to your preference`,
+        sides: ["twice baked potato", "asparagus"]
+      },
+      {
+        name: "Pesto Linguine",
+        category: "entree",
+        url: "pesto",
+        price: "12",
+        types: ["vegetarian"],
+        info: `squash, red onions, tomatoes, artichokes, mushrooms, eggplant, asparagus, spinach, vegan mozzarella`
+      },
+      {
         url: "wings",
         name: "Wings (8)",
         price: "10",
         types: ["chicken"],
         category: "appetizer",
         info: `deep-fried and tossed in a light cajun sauce topped with cilantro and gorgonzola chipotle ranch`
-      },
-      {
-        url: "cheese",
-        name: "Breaded Mozzarella",
-        price: "9.50",
-        category: "appetizer",
-        info: `logs of fresh mozzarella, italian breading, deep-fried, with spicy caper marinara`
       },
       {
         name: "Crab Cake",

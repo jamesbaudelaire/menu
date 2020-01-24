@@ -3,24 +3,18 @@ import styled from "styled-components";
 import { ItemNav } from "./itemNav";
 import { useParams } from "react-router-dom";
 
-import { Load } from "functions/load";
 import { Restaurants } from "../../restaurants";
 
 import { useDispatch } from "react-redux";
 import { lastItem } from "redux/actions";
+import { useAnimation } from "../../hooks/animation";
+
+import { version } from "version";
 
 const S = styled.div`
-  .item {
-    opacity: 0;
-    transition: opacity 0.3s;
-    &.loading {
-      opacity: 1;
-    }
-  }
-
   .img {
     width: 100%;
-    height: 250px;
+    height: 350px;
     background-size: cover;
   }
   .details {
@@ -63,7 +57,6 @@ const S = styled.div`
     margin-top: 50px;
     .img {
       border-radius: 10px;
-      height: 300px;
       box-shadow: var(--shadow);
     }
   }
@@ -79,9 +72,7 @@ export const Item = ({ items }) => {
   let { restaurant, item } = useParams();
   let search = items.filter(i => i.url == item)[0];
 
-  const { loading } = Load();
-
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(1);
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -90,14 +81,16 @@ export const Item = ({ items }) => {
     }
   });
 
+  const loadItem = useAnimation();
+
   return (
-    <S>
+    <S {...loadItem}>
       {search ? (
-        <div className={loading ? "item loading" : "item"}>
+        <div className="item">
           <div
             className="img"
             style={{
-              backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/menu/${restaurant}/${
+              backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/${version}/menu/${restaurant}/${
                 search.url
               }.jpg')`
             }}
