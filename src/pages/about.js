@@ -58,10 +58,8 @@ const S = styled.div`
 
   .version {
     font-family: var(--font2);
-    position: absolute;
-    bottom: 0;
-    margin: 20px;
-    right: 0;
+    margin: 40px;
+    text-align: right;
   }
 `;
 

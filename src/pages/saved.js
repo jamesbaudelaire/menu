@@ -65,6 +65,9 @@ const S = styled.div`
       background: var(--theme3);
       border-radius: 0 10px;
       padding: 10px;
+      &:hover {
+        background: #d50000;
+      }
     }
     .link {
       position: absolute;

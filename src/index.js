@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
@@ -11,8 +11,6 @@ import { Reducers } from "./redux/reducers";
 import { useSelector } from "react-redux";
 
 import { LS } from "functions/LS";
-
-import { Spinner } from "./components/spinner";
 
 import { useAnimation } from "./hooks/animation";
 
@@ -95,7 +93,7 @@ body{
 #saved,#home,#about{
   position: absolute;
     left: 160px;
-    top: 60px;
+    top: 40px;
 }
 
 }

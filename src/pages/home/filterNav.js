@@ -19,7 +19,7 @@ const S = styled.div`
 
   transition: transform 0.3s, opacity 0.3s;
 
-  transform: translatey(20px);
+  transform: translatey(100px);
   &.loaded {
     transform: translateY(0);
   }
@@ -48,7 +48,7 @@ const S = styled.div`
   @media screen and (min-width: 1000px) {
     position: fixed;
     top: 20px;
-    max-width: 500px;
+    max-width: 350px;
     bottom: unset;
     left: 140px;
     width: auto;
@@ -56,6 +56,7 @@ const S = styled.div`
     text-align: center;
     margin: auto;
     height: auto;
+    transform: translatey(20px);
   }
 `;
 
@@ -63,7 +64,7 @@ export const FilterNav = ({ items }) => {
   const filter = useSelector(s => s.filter);
   const dispatch = useDispatch();
 
-  const loadFilterNav = useAnimation();
+  const loadFilterNav = useAnimation(0.3, 0);
 
   useEffect(() => {
     if (filter) {

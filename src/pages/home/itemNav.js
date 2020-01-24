@@ -21,18 +21,18 @@ const S = styled.div`
     color: white;
     padding: 10px;
     i {
-      transition: 0.3s;
       display: block;
       font-size: 25px;
     }
   }
 
-  transform: translatey(20px);
+  transform: translatey(100px);
   &.loaded {
     transform: translateY(0);
   }
 
   @media screen and (min-width: 1000px) {
+    transform: translatey(20px);
     left: 140px;
     top: 20px;
     bottom: unset;
@@ -50,7 +50,7 @@ const S = styled.div`
 export const ItemNav = ({ item }) => {
   let { restaurant } = useParams();
 
-  const loadItemNav = useAnimation();
+  const loadItemNav = useAnimation(0.3, 0);
 
   const dispatch = useDispatch();
 

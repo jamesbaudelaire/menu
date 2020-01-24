@@ -7,9 +7,9 @@ import { Restaurants } from "../../restaurants";
 
 import { useDispatch } from "react-redux";
 import { lastItem } from "redux/actions";
-import { useAnimation } from "../../hooks/animation";
 
 import { version } from "version";
+import { useAnimation } from "../../hooks/animation";
 
 const S = styled.div`
   .img {
@@ -63,8 +63,8 @@ const S = styled.div`
 
   @media screen and (min-width: 1000px) {
     position: absolute;
-    left: 400px;
-    top: 100px;
+    left: 420px;
+    top: 0px;
   }
 `;
 
@@ -74,6 +74,8 @@ export const Item = ({ items }) => {
 
   const dispatch = useDispatch(1);
 
+  const load = useAnimation();
+
   useEffect(() => {
     window.scroll(0, 0);
     if (search) {
@@ -81,10 +83,8 @@ export const Item = ({ items }) => {
     }
   });
 
-  const loadItem = useAnimation();
-
   return (
-    <S {...loadItem}>
+    <S {...load}>
       {search ? (
         <div className="item">
           <div

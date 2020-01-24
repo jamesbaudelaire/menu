@@ -46,8 +46,8 @@ const S = styled.div`
   @media screen and (min-width: 1000px) {
     .item-info {
       position: fixed;
-      left: 100px;
-      top: 80px;
+      left: 120px;
+      top: 100px;
     }
   }
 `;
@@ -112,22 +112,23 @@ export const Restaurant = () => {
   return (
     <S>
       {Restaurants[restaurant] ? (
-        <Switch>
-          <Route path="/:restaurant/:item">
-            <Item
-              restaurant={Restaurants[restaurant]}
-              items={Restaurants[restaurant].items}
-            />
-            <Info />
-          </Route>
-          <Route path="/:restaurant">
-            <Items
-              restaurant={restaurant}
-              items={Restaurants[restaurant].items}
-            />
-            <Info />
-          </Route>
-        </Switch>
+        <>
+          <Switch>
+            <Route path="/:restaurant/:item">
+              <Item
+                restaurant={Restaurants[restaurant]}
+                items={Restaurants[restaurant].items}
+              />
+            </Route>
+            <Route path="/:restaurant">
+              <Items
+                restaurant={restaurant}
+                items={Restaurants[restaurant].items}
+              />
+            </Route>
+          </Switch>
+          <Info />
+        </>
       ) : (
         <div className="not-found">
           <i className="material-icons-round">info</i>
