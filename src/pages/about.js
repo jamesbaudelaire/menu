@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import { useSelector, useDispatch } from "react-redux";
+import { useAnimation } from "../hooks/animation";
 
-import { Load } from "functions/load";
+import { version } from "version";
 
 const S = styled.div`
   opacity: 0;
@@ -54,20 +55,28 @@ const S = styled.div`
       margin: 10px;
     }
   }
+
+  .version {
+    font-family: var(--font2);
+    position: absolute;
+    bottom: 0;
+    margin: 20px;
+    right: 0;
+  }
 `;
 
 export const About = () => {
   const dark = useSelector(state => state.dark);
   const dispatch = useDispatch();
 
-  const { loading } = Load();
+  const load = useAnimation();
 
   useEffect(() => {
     window.scroll(0, 0);
   });
 
   return (
-    <S className={loading ? "loading" : ""} id="about">
+    <S {...load} id="about">
       <i
         style={{ color: dark ? "var(--light)" : "var(--dark)" }}
         onClick={() => {
@@ -103,6 +112,8 @@ export const About = () => {
           <i className="material-icons-round">email</i>
         </a>
       </div>
+
+      <div className="version">{version}</div>
     </S>
   );
 };

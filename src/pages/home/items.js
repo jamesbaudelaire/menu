@@ -7,6 +7,8 @@ import { useSelector } from "react-redux";
 
 import { IO } from "functions/IO";
 
+import { version } from "version";
+
 const S = styled.div`
   .category-name {
     margin: 20px;
@@ -26,14 +28,14 @@ const S = styled.div`
 
     display: inline-block;
     border-radius: 10px;
-    height: 175px;
+    height: 250px;
     width: calc(100% - 100px);
 
     background-color: black;
     background-size: cover;
 
     opacity: 0;
-    transition: opacity 0.3s, transform 0.3s;
+    transition: 0.3s;
     transform: scale(0.9);
     &.io {
       box-shadow: var(--shadow);
@@ -51,6 +53,11 @@ const S = styled.div`
 
     .item {
       width: 300px;
+      &:hover,
+      &.active {
+        transform: scale(0.95);
+        box-shadow: unset;
+      }
     }
 
     .category {
@@ -112,7 +119,7 @@ export const Items = ({ restaurant, items }) => {
             {categoryItems(category).map(item => (
               <Link to={`${restaurant}/${item.url}`} key={item.url}>
                 <div
-                  data-img={`https://res.cloudinary.com/baudelaire/image/upload/w_700/menu/${restaurant}/${
+                  data-img={`https://res.cloudinary.com/baudelaire/image/upload/w_700/${version}/menu/${restaurant}/${
                     item.url
                   }.jpg`}
                   className="item"

@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
-import { Nav } from "nav";
-import { Pages } from "pages";
+import { Nav } from "./nav";
+import { Pages } from "./pages";
 
 import { createStore } from "redux";
 import { Provider } from "react-redux";
@@ -12,9 +12,9 @@ import { useSelector } from "react-redux";
 
 import { LS } from "functions/LS";
 
-import { Load } from "functions/load";
-
 import { Spinner } from "./components/spinner";
+
+import { useAnimation } from "./hooks/animation";
 
 const store = createStore(Reducers);
 
@@ -38,7 +38,7 @@ const GS = createGlobalStyle`
 --theme1:#304ffe;
 --theme2:#ffd600;
 --theme3:#1a237e;
---shadow:0 10px 6px -6px rgba(0,0,0,.5);
+--shadow: 0 5px 10px 1px rgba(0,0,0,.2);
 
 }
 
@@ -47,23 +47,18 @@ display: none;
 }
 
 #app{
-opacity:0;
-transition:.3s;
-&.loading{
- opacity:1 
-}
+
 }
 
 body{
   user-select:none;
   overscroll-behavior: contain;
   font-family:var(--font1);
-  transition:.3s;
   margin:0;
   padding:0;
+  transition:.3s;
   background:${props => (props.dark ? "var(--dark)" : "var(--light)")};
   color:${props => (props.dark ? "var(--light)" : "var(--dark)")};
-
   ::after {
     content: "";
     display: block;
@@ -112,22 +107,18 @@ body{
 const App = () => {
   const dark = useSelector(state => state.dark);
 
-  const { loading } = Load(300);
+  const loadApp = useAnimation();
 
   return (
     <>
       <GS dark={dark} />
 
-      {loading ? (
-        <div id="app" className={loading ? "loading" : ""}>
-          <BrowserRouter>
-            <Pages />
-            <Nav />
-          </BrowserRouter>
-        </div>
-      ) : (
-        <Spinner />
-      )}
+      <div id="app" {...loadApp}>
+        <BrowserRouter>
+          <Pages />
+          <Nav />
+        </BrowserRouter>
+      </div>
     </>
   );
 };

@@ -10,8 +10,6 @@ import { useDispatch } from "react-redux";
 import { getRestaurant } from "redux/actions";
 import { useSelector } from "react-redux";
 
-import { Load } from "functions/load";
-
 const S = styled.div`
   .logo {
     width: calc(100% - 100px);
@@ -31,14 +29,6 @@ const S = styled.div`
       }
     }
     margin-bottom: 50px;
-  }
-
-  .item-info {
-    opacity: 0;
-    transition: 0.3s;
-    &.loading {
-      opacity: 1;
-    }
   }
 
   .not-found {
@@ -69,10 +59,8 @@ const Info = () => {
 
   let R = Restaurants[restaurant];
 
-  const { loading } = Load();
-
   return (
-    <div className={loading ? "item-info loading" : "item-info"}>
+    <div className="item-info">
       <Link to={`/${restaurant}`}>
         <img
           src={`

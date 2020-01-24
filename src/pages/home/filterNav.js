@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { filterItems } from "redux/actions";
-import { Load } from "functions/load";
 import { lastItem } from "../../redux/actions";
+import { useAnimation } from "../../hooks/animation";
 
 const S = styled.div`
   background: var(--theme3);
@@ -19,10 +19,8 @@ const S = styled.div`
 
   transition: transform 0.3s, opacity 0.3s;
 
-  opacity: 0;
   transform: translatey(20px);
-  &.loading {
-    opacity: 1;
+  &.loaded {
     transform: translateY(0);
   }
 
@@ -64,7 +62,8 @@ const S = styled.div`
 export const FilterNav = ({ items }) => {
   const filter = useSelector(s => s.filter);
   const dispatch = useDispatch();
-  const { loading } = Load();
+
+  const loadFilterNav = useAnimation();
 
   useEffect(() => {
     if (filter) {
@@ -78,7 +77,7 @@ export const FilterNav = ({ items }) => {
   let filters = [...new Set(items.map(x => x.types).flat())].filter(x => x);
 
   return (
-    <S className={loading ? "loading" : ""}>
+    <S {...loadFilterNav}>
       {filters.map(x => (
         <div
           className={filter == x ? "selected" : ""}

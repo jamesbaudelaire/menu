@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { Load } from "functions/load";
 import { useSelector } from "react-redux";
 
 const S = styled.div`
@@ -16,14 +15,6 @@ const S = styled.div`
     props.restaurant !== null ? "repeat(4, 1fr)" : "repeat(3, 1fr)"};
   background: var(--theme1);
   text-align: center;
-  transition: transform 0.3s, opacity 0.3s;
-
-  opacity: 0;
-  transform: translatey(20px);
-  &.loading {
-    opacity: 1;
-    transform: translateY(0);
-  }
 
   .page-link {
     padding: 10px;
@@ -74,11 +65,10 @@ const Pages = [
 ];
 
 export const Nav = () => {
-  const { loading } = Load();
   const restaurant = useSelector(state => state.restaurant);
 
   return (
-    <S className={loading ? "loading" : ""} restaurant={restaurant}>
+    <S restaurant={restaurant}>
       <NavLink exact to={`/`}>
         <div className="page-link">
           <i className="material-icons-round">home</i>

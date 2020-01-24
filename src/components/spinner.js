@@ -1,14 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Load } from "functions/load";
 
 const S = styled.div`
-  transition: 0.3s;
-  opacity: 0;
-  &.loading {
-    opacity: 1;
-  }
 
   .spinner {
     height: 70px;
@@ -47,10 +41,9 @@ const S = styled.div`
 `;
 
 export const Spinner = () => {
-  const { loading } = Load();
 
   return (
-    <S className={loading ? "loading" : ""}>
+    <S>
       <svg className="spinner">
         <circle cx="35" cy="35" r="20" />
       </svg>
