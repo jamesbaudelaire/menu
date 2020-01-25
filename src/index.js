@@ -11,6 +11,7 @@ import { Reducers } from "./redux/reducers";
 import { useSelector } from "react-redux";
 
 import { LS } from "functions/LS";
+import { useAnimation } from "./functions/animation";
 
 const store = createStore(Reducers);
 
@@ -69,7 +70,7 @@ i{
   transition:.3s;
   cursor: pointer;
   :active{
-    transform:scale(.75)
+    transform:scale(.7)
   }
 }
 
@@ -100,11 +101,13 @@ body{
 const App = () => {
   const dark = useSelector(state => state.dark);
 
+  const load = useAnimation(0.5);
+
   return (
     <>
       <GS dark={dark} />
 
-      <div id="app">
+      <div id="app" {...load}>
         <BrowserRouter>
           <Pages />
           <Nav />
