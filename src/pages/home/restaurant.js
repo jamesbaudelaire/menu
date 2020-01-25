@@ -36,7 +36,7 @@ const S = styled.div`
   .not-found {
     text-align: center;
     font-family: var(--font2);
-    margin: 20px;
+    margin: 40px;
     i {
       font-size: 40px;
       color: #d50000;

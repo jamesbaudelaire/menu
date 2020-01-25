@@ -2,16 +2,10 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import { useSelector, useDispatch } from "react-redux";
-import { useAnimation } from "../hooks/animation";
 
 import { version } from "version";
 
 const S = styled.div`
-  opacity: 0;
-  transition: 0.3s;
-  &.loading {
-    opacity: 1;
-  }
   i {
     font-size: 40px;
   }
@@ -67,14 +61,12 @@ export const About = () => {
   const dark = useSelector(state => state.dark);
   const dispatch = useDispatch();
 
-  const load = useAnimation();
-
   useEffect(() => {
     window.scroll(0, 0);
   });
 
   return (
-    <S {...load} id="about">
+    <S id="about">
       <i
         style={{ color: dark ? "var(--light)" : "var(--dark)" }}
         onClick={() => {

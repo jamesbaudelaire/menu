@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { filterItems } from "redux/actions";
 import { lastItem } from "../../redux/actions";
-import { useAnimation } from "../../hooks/animation";
 
 const S = styled.div`
   background: var(--theme3);
@@ -16,13 +15,6 @@ const S = styled.div`
   width: 100%;
   white-space: nowrap;
   overflow-x: scroll;
-
-  transition: transform 0.3s, opacity 0.3s;
-
-  transform: translatey(100px);
-  &.loaded {
-    transform: translateY(0);
-  }
 
   div {
     cursor: pointer;
@@ -47,7 +39,7 @@ const S = styled.div`
 
   @media screen and (min-width: 1000px) {
     position: fixed;
-    top: 20px;
+    top: 0;
     max-width: 350px;
     border-radius: 40px;
     bottom: unset;
@@ -65,8 +57,6 @@ export const FilterNav = ({ items }) => {
   const filter = useSelector(s => s.filter);
   const dispatch = useDispatch();
 
-  const loadFilterNav = useAnimation(0.3, 0);
-
   useEffect(() => {
     if (filter) {
       document.querySelector(".selected").scrollIntoView({
@@ -79,7 +69,7 @@ export const FilterNav = ({ items }) => {
   let filters = [...new Set(items.map(x => x.types).flat())].filter(x => x);
 
   return (
-    <S {...loadFilterNav}>
+    <S>
       {filters.map(x => (
         <div
           className={filter == x ? "selected" : ""}

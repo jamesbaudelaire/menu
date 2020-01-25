@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { deleteSaved } from "redux/actions";
 
 import { IO } from "functions/IO";
-import { useAnimation } from "../hooks/animation";
 
 import { version } from "version";
 
@@ -100,8 +99,6 @@ export const Saved = () => {
   let saved = useSelector(s => s.saved);
   let dispatch = useDispatch();
 
-  const load = useAnimation();
-
   useEffect(() => {
     window.scroll(0, 0);
 
@@ -116,7 +113,7 @@ export const Saved = () => {
   return (
     <S id="saved">
       {saved.length < 1 && (
-        <div className="saved-notice" {...load}>
+        <div className="saved-notice">
           <i className="material-icons-round">favorite</i>
           saved items will appear here
         </div>

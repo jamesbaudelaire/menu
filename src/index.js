@@ -12,8 +12,6 @@ import { useSelector } from "react-redux";
 
 import { LS } from "functions/LS";
 
-import { useAnimation } from "./hooks/animation";
-
 const store = createStore(Reducers);
 
 store.subscribe(() => {
@@ -44,9 +42,6 @@ const GS = createGlobalStyle`
 display: none;
 }
 
-#app{
-
-}
 
 body{
   user-select:none;
@@ -105,13 +100,11 @@ body{
 const App = () => {
   const dark = useSelector(state => state.dark);
 
-  const loadApp = useAnimation();
-
   return (
     <>
       <GS dark={dark} />
 
-      <div id="app" {...loadApp}>
+      <div id="app">
         <BrowserRouter>
           <Pages />
           <Nav />
