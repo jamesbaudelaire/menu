@@ -122,7 +122,7 @@ export const Item = ({ items }) => {
             </div>
           </>
         ) : (
-          <div className="not-found" {...load}>
+          <div className="not-found">
             <i className="material-icons-round">info</i>
             item not found or no longer available
           </div>
