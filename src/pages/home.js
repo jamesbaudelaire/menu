@@ -7,6 +7,8 @@ import { useDispatch } from "react-redux";
 import { lastItem, filterItems } from "redux/actions";
 import { IO } from "functions/IO";
 
+import { version } from "version";
+
 const S = styled.div`
   .title {
     font-size: 30px;
@@ -16,7 +18,7 @@ const S = styled.div`
   .restaurant {
     width: calc(100% - 40px);
     max-width: 300px;
-    border-radius: 10px;
+    border-radius: 20px;
     margin: 20px auto;
     box-shadow: var(--shadow);
     background: var(--theme1);
@@ -90,7 +92,7 @@ export const Home = () => {
                 className="logo"
                 alt="logo"
                 src={`
-                https://res.cloudinary.com/baudelaire/image/upload/menu/${restaurant}/logo.png
+                https://res.cloudinary.com/baudelaire/image/upload/${version}/menu/${restaurant}/logo.png
                 `}
               />
             </div>

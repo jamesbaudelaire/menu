@@ -7,7 +7,6 @@ import { Restaurants } from "../../restaurants";
 
 import { useDispatch } from "react-redux";
 import { lastItem } from "redux/actions";
-import { useAnimation } from "../../hooks/animation";
 
 import { version } from "version";
 
@@ -63,8 +62,8 @@ const S = styled.div`
 
   @media screen and (min-width: 1000px) {
     position: absolute;
-    left: 400px;
-    top: 100px;
+    left: 430px;
+    top: 0px;
   }
 `;
 
@@ -81,54 +80,54 @@ export const Item = ({ items }) => {
     }
   });
 
-  const loadItem = useAnimation();
-
   return (
-    <S {...loadItem}>
-      {search ? (
-        <div className="item">
-          <div
-            className="img"
-            style={{
-              backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/${version}/menu/${restaurant}/${
-                search.url
-              }.jpg')`
-            }}
-          />
-          <div className="details">
-            <div className="name">{search.name}</div>
-            <div className="price">${search.price}</div>
-            <div className="info">{search.info}</div>
+    <S>
+      <div id="item">
+        {search ? (
+          <>
+            <div
+              className="img"
+              style={{
+                backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/${version}/menu/${restaurant}/${
+                  search.url
+                }.jpg')`
+              }}
+            />
+            <div className="details">
+              <div className="name">{search.name}</div>
+              <div className="price">${search.price}</div>
+              <div className="info">{search.info}</div>
 
-            {search.sides && (
-              <div className="sides">
-                {search.sides.map(side => (
-                  <div className="side" key={side}>
-                    {side}
-                  </div>
-                ))}
-              </div>
-            )}
+              {search.sides && (
+                <div className="sides">
+                  {search.sides.map(side => (
+                    <div className="side" key={side}>
+                      {side}
+                    </div>
+                  ))}
+                </div>
+              )}
 
-            {search.category == "salad" && (
-              <div className="dressings">
-                DRESSINGS
-                <br />
-                {Restaurants[restaurant].dressings.map(dressing => (
-                  <div key={dressing} className="dressing">
-                    {dressing}
-                  </div>
-                ))}
-              </div>
-            )}
+              {search.category == "salad" && (
+                <div className="dressings">
+                  DRESSINGS
+                  <br />
+                  {Restaurants[restaurant].dressings.map(dressing => (
+                    <div key={dressing} className="dressing">
+                      {dressing}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </>
+        ) : (
+          <div className="not-found" {...load}>
+            <i className="material-icons-round">info</i>
+            item not found or no longer available
           </div>
-        </div>
-      ) : (
-        <div className="not-found">
-          <i className="material-icons-round">info</i>
-          item not found or no longer available
-        </div>
-      )}
+        )}
+      </div>
 
       <ItemNav item={search} />
     </S>

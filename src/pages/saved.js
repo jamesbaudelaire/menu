@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { deleteSaved } from "redux/actions";
 
 import { IO } from "functions/IO";
-import { useAnimation } from "../hooks/animation";
 
 import { version } from "version";
 
@@ -14,7 +13,7 @@ const S = styled.div`
     overflow: hidden;
     position: relative;
     color: var(--light);
-    border-radius: 10px;
+    border-radius: 20px;
     background: var(--theme1);
     height: 100px;
     width: calc(100% - 40px);
@@ -36,7 +35,7 @@ const S = styled.div`
 
     .food-img {
       width: 150px;
-      border-radius: 10px 0 0 10px;
+      border-radius: 20px 0 0 20px;
     }
 
     .logo {
@@ -63,8 +62,11 @@ const S = styled.div`
       top: 0;
       right: 0;
       background: var(--theme3);
-      border-radius: 0 10px;
+      border-radius: 0 20px;
       padding: 10px;
+      &:hover {
+        background: #d50000;
+      }
     }
     .link {
       position: absolute;
@@ -97,8 +99,6 @@ export const Saved = () => {
   let saved = useSelector(s => s.saved);
   let dispatch = useDispatch();
 
-  const load = useAnimation();
-
   useEffect(() => {
     window.scroll(0, 0);
 
@@ -113,7 +113,7 @@ export const Saved = () => {
   return (
     <S id="saved">
       {saved.length < 1 && (
-        <div className="saved-notice" {...load}>
+        <div className="saved-notice">
           <i className="material-icons-round">favorite</i>
           saved items will appear here
         </div>

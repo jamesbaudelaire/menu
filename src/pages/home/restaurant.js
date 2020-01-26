@@ -10,6 +10,8 @@ import { useDispatch } from "react-redux";
 import { getRestaurant } from "redux/actions";
 import { useSelector } from "react-redux";
 
+import { version } from "version";
+
 const S = styled.div`
   .logo {
     width: calc(100% - 100px);
@@ -34,7 +36,7 @@ const S = styled.div`
   .not-found {
     text-align: center;
     font-family: var(--font2);
-    margin: 20px;
+    margin: 40px;
     i {
       font-size: 40px;
       color: #d50000;
@@ -46,8 +48,8 @@ const S = styled.div`
   @media screen and (min-width: 1000px) {
     .item-info {
       position: fixed;
-      left: 100px;
-      top: 80px;
+      left: 120px;
+      top: 100px;
     }
   }
 `;
@@ -64,7 +66,7 @@ const Info = () => {
       <Link to={`/${restaurant}`}>
         <img
           src={`
-          https://res.cloudinary.com/baudelaire/image/upload/menu/${restaurant}/logo.png
+          https://res.cloudinary.com/baudelaire/image/upload/${version}/menu/${restaurant}/logo.png
           `}
           alt="logo"
           className="logo"
@@ -112,22 +114,23 @@ export const Restaurant = () => {
   return (
     <S>
       {Restaurants[restaurant] ? (
-        <Switch>
-          <Route path="/:restaurant/:item">
-            <Item
-              restaurant={Restaurants[restaurant]}
-              items={Restaurants[restaurant].items}
-            />
-            <Info />
-          </Route>
-          <Route path="/:restaurant">
-            <Items
-              restaurant={restaurant}
-              items={Restaurants[restaurant].items}
-            />
-            <Info />
-          </Route>
-        </Switch>
+        <>
+          <Switch>
+            <Route path="/:restaurant/:item">
+              <Item
+                restaurant={Restaurants[restaurant]}
+                items={Restaurants[restaurant].items}
+              />
+            </Route>
+            <Route path="/:restaurant">
+              <Items
+                restaurant={restaurant}
+                items={Restaurants[restaurant].items}
+              />
+            </Route>
+          </Switch>
+          <Info />
+        </>
       ) : (
         <div className="not-found">
           <i className="material-icons-round">info</i>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
@@ -11,10 +11,7 @@ import { Reducers } from "./redux/reducers";
 import { useSelector } from "react-redux";
 
 import { LS } from "functions/LS";
-
-import { Spinner } from "./components/spinner";
-
-import { useAnimation } from "./hooks/animation";
+import { useAnimation } from "./functions/animation";
 
 const store = createStore(Reducers);
 
@@ -46,9 +43,6 @@ const GS = createGlobalStyle`
 display: none;
 }
 
-#app{
-
-}
 
 body{
   user-select:none;
@@ -76,7 +70,7 @@ i{
   transition:.3s;
   cursor: pointer;
   :active{
-    transform:scale(.75)
+    transform:scale(.7)
   }
 }
 
@@ -95,7 +89,7 @@ body{
 #saved,#home,#about{
   position: absolute;
     left: 160px;
-    top: 60px;
+    top: 40px;
 }
 
 }
@@ -107,13 +101,13 @@ body{
 const App = () => {
   const dark = useSelector(state => state.dark);
 
-  const loadApp = useAnimation();
+  const load = useAnimation(0.5);
 
   return (
     <>
       <GS dark={dark} />
 
-      <div id="app" {...loadApp}>
+      <div id="app" {...load}>
         <BrowserRouter>
           <Pages />
           <Nav />

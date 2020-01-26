@@ -3,15 +3,14 @@ import styled from "styled-components";
 import { useParams, useHistory } from "react-router";
 import { saveItem } from "redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { useAnimation } from "../../hooks/animation";
 
 const S = styled.div`
   background: var(--theme3);
   position: fixed;
   z-index: 80;
-  border-radius: 10px 10px 0 0;
-  bottom: 45px;
-  padding-bottom: 20px;
+  border-radius: 50px 50px 0 0;
+  bottom: 0px;
+  padding-bottom: 65px;
   left: 0;
   width: 100%;
   display: grid;
@@ -21,23 +20,18 @@ const S = styled.div`
     color: white;
     padding: 10px;
     i {
-      transition: 0.3s;
       display: block;
       font-size: 25px;
     }
   }
 
-  transform: translatey(20px);
-  &.loaded {
-    transform: translateY(0);
-  }
-
   @media screen and (min-width: 1000px) {
+    transform: translatey(20px);
+    border-radius: 40px;
     left: 140px;
-    top: 20px;
+    top: 0px;
     bottom: unset;
     width: auto;
-    border-radius: 10px;
     box-shadow: var(--shadow);
     padding: 0;
     height: 60px;
@@ -49,8 +43,6 @@ const S = styled.div`
 
 export const ItemNav = ({ item }) => {
   let { restaurant } = useParams();
-
-  const loadItemNav = useAnimation();
 
   const dispatch = useDispatch();
 
@@ -78,7 +70,7 @@ export const ItemNav = ({ item }) => {
   };
 
   return (
-    <S {...loadItemNav}>
+    <S>
       <div className="action" onClick={() => back()}>
         <i className="material-icons-round">arrow_back_ios</i>
         back

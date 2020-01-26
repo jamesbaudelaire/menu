@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 const S = styled.div`
   position: fixed;
-  border-radius: 10px 10px 0 0;
+  border-radius: 40px 40px 0 0;
   bottom: 0;
   z-index: 100;
   left: 0;
@@ -43,10 +43,11 @@ const S = styled.div`
     left: 0;
     top: 0;
     bottom: unset;
+    padding: 10px 0 10px 0;
     width: 100px;
     margin: 20px;
     grid-template-columns: 1fr;
-    border-radius: 10px;
+    border-radius: 60px;
     box-shadow: var(--shadow);
   }
 `;

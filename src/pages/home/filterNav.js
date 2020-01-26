@@ -3,11 +3,10 @@ import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { filterItems } from "redux/actions";
 import { lastItem } from "../../redux/actions";
-import { useAnimation } from "../../hooks/animation";
 
 const S = styled.div`
   background: var(--theme3);
-  border-radius: 10px;
+  border-radius: 40px 40px 0 0;
   position: fixed;
   z-index: 90;
   bottom: 0;
@@ -17,20 +16,13 @@ const S = styled.div`
   white-space: nowrap;
   overflow-x: scroll;
 
-  transition: transform 0.3s, opacity 0.3s;
-
-  transform: translatey(20px);
-  &.loaded {
-    transform: translateY(0);
-  }
-
   div {
     cursor: pointer;
     color: white;
     display: inline-block;
     margin: 10px 5px;
     padding: 5px 10px;
-    border-radius: 30px;
+    border-radius: 20px;
     transition: 0.5s;
     &.selected {
       background: var(--theme2);
@@ -38,17 +30,18 @@ const S = styled.div`
     }
 
     :first-child {
-      margin-left: 10px;
+      margin-left: 20px;
     }
     :last-child {
-      margin-right: 10px;
+      margin-right: 20px;
     }
   }
 
   @media screen and (min-width: 1000px) {
     position: fixed;
-    top: 20px;
-    max-width: 500px;
+    top: 0;
+    max-width: 350px;
+    border-radius: 40px;
     bottom: unset;
     left: 140px;
     width: auto;
@@ -56,14 +49,13 @@ const S = styled.div`
     text-align: center;
     margin: auto;
     height: auto;
+    transform: translatey(20px);
   }
 `;
 
 export const FilterNav = ({ items }) => {
   const filter = useSelector(s => s.filter);
   const dispatch = useDispatch();
-
-  const loadFilterNav = useAnimation();
 
   useEffect(() => {
     if (filter) {
@@ -77,7 +69,7 @@ export const FilterNav = ({ items }) => {
   let filters = [...new Set(items.map(x => x.types).flat())].filter(x => x);
 
   return (
-    <S {...loadFilterNav}>
+    <S>
       {filters.map(x => (
         <div
           className={filter == x ? "selected" : ""}
