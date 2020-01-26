@@ -33,14 +33,6 @@ export const Restaurants = {
         info: `logs of fresh mozzarella, italian breading, deep-fried, with spicy caper marinara`
       },
       {
-        name: "Spinach & Shrimp",
-        category: "salad",
-        url: "s-s",
-        price: "14",
-        types: ["vegetarian"],
-        info: `blackened shrimp, panko-breaded avocado, bacon, mandarin oranges, eggs, boursin cheese, tomato, caramelized onions`
-      },
-      {
         name: "14oz Ribeye",
         category: "entree",
         url: "ribeye",
@@ -50,20 +42,28 @@ export const Restaurants = {
         sides: ["twice baked potato", "asparagus"]
       },
       {
-        name: "Pesto Linguine",
-        category: "entree",
-        url: "pesto",
-        price: "12",
-        types: ["vegetarian"],
-        info: `squash, red onions, tomatoes, artichokes, mushrooms, eggplant, asparagus, spinach, vegan mozzarella`
-      },
-      {
         url: "wings",
         name: "Wings (8)",
         price: "10",
         types: ["chicken"],
         category: "appetizer",
         info: `deep-fried and tossed in a light cajun sauce topped with cilantro and gorgonzola chipotle ranch`
+      },
+      {
+        name: "Spinach & Shrimp",
+        category: "entree",
+        url: "s-s",
+        price: "14",
+        types: ["salad"],
+        info: `blackened shrimp, panko-breaded avocado, bacon, mandarin oranges, eggs, boursin cheese, tomato, caramelized onions`
+      },
+      {
+        name: "Pesto Linguine",
+        category: "entree",
+        url: "pesto",
+        price: "12",
+        types: ["vegetarian"],
+        info: `squash, red onions, tomatoes, artichokes, mushrooms, eggplant, asparagus, spinach, vegan mozzarella`
       },
       {
         name: "Crab Cake",
@@ -174,6 +174,15 @@ export const Restaurants = {
         category: "dessert",
         url: "tiramisu",
         price: "5"
+      },
+      {
+        name: "Blackened Sea bass",
+        category: "entree",
+        url: "seabass",
+        price: "22.50",
+        types: ["seafood", "gluten-free"],
+        info: "topped wih crabmeat and tarragon cream sauce",
+        sides: ["wild rice", "asparagus"]
       }
     ]
   }

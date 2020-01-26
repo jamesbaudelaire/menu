@@ -98,7 +98,7 @@ export const About = () => {
 
       <div className="contact">
         <div className="title">Interested in listing your menu?</div>
-        <a href="mailto:admin@m3nu.app?subject=I want to list my menu!">
+        <a href="mailto:admin@m3nu.app">
           <i className="material-icons-round">email</i>
         </a>
       </div>
