@@ -129,7 +129,7 @@ export const Restaurants = {
         url: "cac",
         price: "12",
         sides: ["seasoned fries"],
-        types: ["chicken"],
+        types: ["chicken","sandwich"],
         info: `grilled chicken, bacon, avocado, swiss cheese, lettuce, tomato, chipotle aioli, on pecan and cranberry sourdough`
       },
       {
@@ -183,7 +183,42 @@ export const Restaurants = {
         types: ["seafood", "gluten-free"],
         info: "topped wih crabmeat and tarragon cream sauce",
         sides: ["wild rice", "asparagus"]
-      }
+      },
+      {
+        name:'Ginger Salmon',
+        category: "entree",
+        types: ["seafood", "gluten-free"],
+        sides: ["wild rice", "seasonal vegetables"],
+        url:'ginger-salmon',
+        price:'24'
+      },
+      {
+        name: "Cobb",
+        category: "entree",
+        url: "cobb",
+        price: "12",
+        types: ["salad","gluten-free"],
+        info: `fresh mixed greens, avocado, tomato, eggs, cheddar, blue cheese, black olives, bacon, fried or grilled chicken, and choice of dressing`
+      },
+      {
+        name: "Filet Mignon",
+        category: "entree",
+        url: "filet",
+        price: "34",
+        types: ["beef"],
+        sides: ["asparagus","twice-baked potato"],
+        info: `bacon-wrapped and topped with portobello mushroom demi-glaze`
+      },
+      {
+        name: "Prime Rib Sandwich",
+        category: "entree",
+        url: "prime-rib-sandwich",
+        price: "12",
+        sides: ["au jus", "seasoned fries"],
+        types: ["beef","sandwich"],
+        info: `portobello mushrooms, swiss cheese, peppers, onions, served with horseradish aioli on a grilled hoagie`
+      },
+
     ]
   }
 };

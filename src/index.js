@@ -101,7 +101,7 @@ body{
 const App = () => {
   const dark = useSelector(state => state.dark);
 
-  const load = useAnimation(0.5);
+  const load = useAnimation(1);
 
   return (
     <>

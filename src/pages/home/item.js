@@ -108,7 +108,7 @@ export const Item = ({ items }) => {
                 </div>
               )}
 
-              {search.category == "salad" && (
+              {search.types.includes("salad") && (
                 <div className="dressings">
                   DRESSINGS
                   <br />
