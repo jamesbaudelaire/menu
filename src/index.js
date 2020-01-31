@@ -70,7 +70,7 @@ i{
   transition:.3s;
   cursor: pointer;
   :active{
-    transform:scale(.7)
+    transform:scale(.8)
   }
 }
 
@@ -101,7 +101,7 @@ body{
 const App = () => {
   const dark = useSelector(state => state.dark);
 
-  const load = useAnimation(1);
+  const load = useAnimation(0.7);
 
   return (
     <>

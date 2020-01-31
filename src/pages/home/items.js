@@ -36,7 +36,7 @@ const S = styled.div`
 
     opacity: 0;
     transition: 0.3s;
-    transform: scale(0.9);
+    transform: scale(0.8);
     &.io {
       box-shadow: var(--shadow);
       opacity: 1;
