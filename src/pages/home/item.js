@@ -10,6 +10,8 @@ import { lastItem } from "redux/actions";
 
 import { version } from "version";
 
+import { useAnimation } from "functions/animation";
+
 const S = styled.div`
   .img {
     width: 100%;
@@ -80,6 +82,8 @@ export const Item = ({ items }) => {
     }
   });
 
+  const load = useAnimation(0.5);
+
   return (
     <S>
       <div id="item">
@@ -93,7 +97,7 @@ export const Item = ({ items }) => {
                 }.jpg')`
               }}
             />
-            <div className="details">
+            <div className="details" {...load}>
               <div className="name">{search.name}</div>
               <div className="price">${search.price}</div>
               <div className="info">{search.info}</div>
@@ -108,7 +112,7 @@ export const Item = ({ items }) => {
                 </div>
               )}
 
-              {search.category == "salad" && (
+              {search.types && search.types.includes("salad") && (
                 <div className="dressings">
                   DRESSINGS
                   <br />
