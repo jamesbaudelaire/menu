@@ -71,6 +71,9 @@ const S = styled.div`
         background: #d50000;
         color: white;
       }
+      :active {
+        transform: none;
+      }
     }
     .link {
       position: absolute;

@@ -34,7 +34,7 @@ const GS = createGlobalStyle`
 --light:rgb(240,240,240);
 --theme1:#2c7772;
 --theme2:#f9b44c;
---shadow: 0 5px 10px 1px rgba(0,0,0,.2);
+--shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
 }
 
@@ -66,7 +66,7 @@ a{
 }
 
 i{
-  transition:.5s;
+  transition:.3s;
   cursor: pointer;
   :active{
     transform:scale(.8)
@@ -100,7 +100,7 @@ body{
 const App = () => {
   const dark = useSelector(state => state.dark);
 
-  const load = useAnimation(0.7);
+  const load = useAnimation(1);
 
   return (
     <>
