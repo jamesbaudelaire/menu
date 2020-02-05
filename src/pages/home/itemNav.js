@@ -5,9 +5,11 @@ import { saveItem } from "redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 const S = styled.div`
-  background: var(--theme3);
+  box-shadow: inset 1px 1px 5px black;
+
   position: fixed;
   z-index: 80;
+  height: 60px;
   border-radius: 50px 50px 0 0;
   bottom: 0px;
   padding-bottom: 65px;
@@ -17,10 +19,9 @@ const S = styled.div`
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
   .action {
-    color: white;
-    padding: 10px;
+    cursor: pointer;
+    padding: 15px;
     i {
-      display: block;
       font-size: 25px;
     }
   }
@@ -32,19 +33,15 @@ const S = styled.div`
     top: 0px;
     bottom: unset;
     width: auto;
-    box-shadow: var(--shadow);
     padding: 0;
-    height: 60px;
-    .action {
-      padding: 10px 20px;
-    }
+    box-shadow: none;
   }
 `;
 
 export const ItemNav = ({ item }) => {
   let { restaurant } = useParams();
-
   const dispatch = useDispatch();
+  const dark = useSelector(state => state.dark);
 
   let saved = useSelector(s => s.saved).filter(x => x.restaurant == restaurant);
 
@@ -70,7 +67,7 @@ export const ItemNav = ({ item }) => {
   };
 
   return (
-    <S>
+    <S style={{ background: dark ? "var(--dark)" : "var(--light)" }}>
       <div className="action" onClick={() => back()}>
         <i className="material-icons-round">arrow_back_ios</i>
         back

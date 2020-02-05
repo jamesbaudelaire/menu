@@ -64,8 +64,8 @@ const S = styled.div`
 
   @media screen and (min-width: 1000px) {
     position: absolute;
-    left: 430px;
-    top: 0px;
+    left: 450px;
+    top: 50px;
   }
 `;
 

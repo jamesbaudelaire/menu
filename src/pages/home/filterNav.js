@@ -5,27 +5,27 @@ import { filterItems } from "redux/actions";
 import { lastItem } from "../../redux/actions";
 
 const S = styled.div`
-  background: var(--theme3);
   border-radius: 40px 40px 0 0;
+  box-shadow: inset 1px 1px 5px black;
   position: fixed;
   z-index: 90;
   bottom: 0;
   left: 0;
-  height: 115px;
+  height: 121px;
   width: 100%;
   white-space: nowrap;
   overflow-x: scroll;
 
   div {
     cursor: pointer;
-    color: white;
     display: inline-block;
-    margin: 10px 5px;
+    margin: 13px 5px;
     padding: 5px 10px;
     border-radius: 20px;
     transition: 0.5s;
     &.selected {
       background: var(--theme2);
+      box-shadow: var(--shadow);
       color: black;
     }
 
@@ -45,7 +45,7 @@ const S = styled.div`
     bottom: unset;
     left: 140px;
     width: auto;
-    box-shadow: var(--shadow);
+    box-shadow: inset 1px 1px 5px black;
     text-align: center;
     margin: auto;
     height: auto;
@@ -56,6 +56,8 @@ const S = styled.div`
 export const FilterNav = ({ items }) => {
   const filter = useSelector(s => s.filter);
   const dispatch = useDispatch();
+
+  const dark = useSelector(state => state.dark);
 
   useEffect(() => {
     if (filter) {
@@ -69,7 +71,7 @@ export const FilterNav = ({ items }) => {
   let filters = [...new Set(items.map(x => x.types).flat())].filter(x => x);
 
   return (
-    <S>
+    <S style={{ background: dark ? "var(--dark)" : "var(--light)" }}>
       {filters.map(x => (
         <div
           className={filter == x ? "selected" : ""}
