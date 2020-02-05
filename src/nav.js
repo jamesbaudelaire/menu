@@ -18,7 +18,10 @@ const S = styled.div`
 
   .page-link {
     padding: 10px;
-    color: var(--light);
+    color: black;
+    span {
+      transition: 0.5s;
+    }
     i {
       display: block;
       font-size: 25px;
@@ -31,10 +34,7 @@ const S = styled.div`
 
   .active {
     .page-link {
-      color: var(--dark);
-      i {
-        color: var(--dark);
-      }
+      color: var(--theme2);
     }
   }
 
@@ -73,7 +73,7 @@ export const Nav = () => {
       <NavLink exact to={`/`}>
         <div className="page-link">
           <i className="material-icons-round">home</i>
-          home
+          <span>home</span>
         </div>
       </NavLink>
 
@@ -81,7 +81,7 @@ export const Nav = () => {
         <NavLink exact to={`/${restaurant}`}>
           <div className="page-link">
             <i className="material-icons-round">menu_book</i>
-            menu
+            <span>menu</span>
           </div>
         </NavLink>
       )}
@@ -90,7 +90,7 @@ export const Nav = () => {
         <NavLink key={x.name} exact to={x.location}>
           <div className="page-link">
             <i className="material-icons-round">{x.icon}</i>
-            {x.name}
+            <span>{x.name}</span>
           </div>
         </NavLink>
       ))}

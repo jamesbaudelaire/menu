@@ -1,6 +1,7 @@
 export const Restaurants = {
   rialto: {
     name: "Rialto",
+    theme: "2962ff",
     location: {
       name: "720 Garrison Ave",
       address: "https://goo.gl/maps/tXo5y9ccKjo9A9EF6"

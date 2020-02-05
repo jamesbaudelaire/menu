@@ -8,6 +8,8 @@ import { IO } from "functions/IO";
 
 import { version } from "version";
 
+import { useAnimation } from "functions/animation";
+
 const S = styled.div`
   .item {
     overflow: hidden;
@@ -60,12 +62,14 @@ const S = styled.div`
       font-size: 20px;
       position: absolute;
       top: 0;
+      color: black;
       right: 0;
-      background: var(--theme3);
+      background: var(--theme2);
       border-radius: 0 20px;
       padding: 10px;
       &:hover {
         background: #d50000;
+        color: white;
       }
     }
     .link {
@@ -99,6 +103,8 @@ export const Saved = () => {
   let saved = useSelector(s => s.saved);
   let dispatch = useDispatch();
 
+  const load = useAnimation(0.5);
+
   useEffect(() => {
     window.scroll(0, 0);
 
@@ -113,7 +119,7 @@ export const Saved = () => {
   return (
     <S id="saved">
       {saved.length < 1 && (
-        <div className="saved-notice">
+        <div className="saved-notice" {...load}>
           <i className="material-icons-round">favorite</i>
           saved items will appear here
         </div>

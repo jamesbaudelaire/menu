@@ -87,7 +87,10 @@ export const Home = () => {
       <div className="restaurants">
         {Object.keys(Restaurants).map(restaurant => (
           <Link to={`${restaurant}`} key={restaurant}>
-            <div className="restaurant">
+            <div
+              className="restaurant"
+              style={{ background: `#${Restaurants[restaurant].theme}` }}
+            >
               <img
                 className="logo"
                 alt="logo"

@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { version } from "version";
 
+import { useAnimation } from "functions/animation";
+
 const S = styled.div`
   i {
     font-size: 40px;
@@ -61,12 +63,14 @@ export const About = () => {
   const dark = useSelector(state => state.dark);
   const dispatch = useDispatch();
 
+  const load = useAnimation(0.5);
+
   useEffect(() => {
     window.scroll(0, 0);
   });
 
   return (
-    <S id="about">
+    <S id="about" {...load}>
       <i
         style={{ color: dark ? "var(--light)" : "var(--dark)" }}
         onClick={() => {
