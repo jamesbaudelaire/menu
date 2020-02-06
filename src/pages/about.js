@@ -44,6 +44,7 @@ const S = styled.div`
     margin-top: 50px;
     .title {
       font-size: 20px;
+      font-family: var(--font2);
     }
     font-size: 15px;
     i {

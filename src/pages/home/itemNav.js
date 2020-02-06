@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const S = styled.div`
   box-shadow: inset 1px 1px 5px black;
-
+  font-family: var(--font2);
   position: fixed;
   z-index: 80;
   height: 60px;
@@ -22,7 +22,7 @@ const S = styled.div`
     cursor: pointer;
     padding: 15px;
     i {
-      font-size: 25px;
+      font-size: 30px;
     }
   }
 

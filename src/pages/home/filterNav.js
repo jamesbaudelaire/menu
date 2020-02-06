@@ -15,6 +15,7 @@ const S = styled.div`
   width: 100%;
   white-space: nowrap;
   overflow-x: scroll;
+  font-family: var(--font2);
 
   div {
     cursor: pointer;

@@ -11,6 +11,7 @@ const S = styled.div`
   left: 0;
   width: 100%;
   display: grid;
+  font-family: var(--font2);
   grid-template-columns: ${props =>
     props.restaurant !== null ? "repeat(4, 1fr)" : "repeat(3, 1fr)"};
   background: var(--theme1);
@@ -19,17 +20,21 @@ const S = styled.div`
   .page-link {
     padding: 10px;
     color: black;
+    transition: 0.3s;
+
+    :active {
+      transform: scale(0.8);
+    }
     span {
-      transition: 0.5s;
     }
     i {
+      transition: none;
+      :active {
+        transform: none;
+      }
       display: block;
       font-size: 25px;
     }
-  }
-
-  .page-link * {
-    transition: 0.3s;
   }
 
   .active {

@@ -26,11 +26,8 @@ const S = styled.div`
     font-size: 25px;
   }
   .price {
-    font-size: 25px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: 20px;
+    font-size: 20px;
+    font-family: var(--font2);
   }
   .sides,
   .toppings,
@@ -82,7 +79,7 @@ export const Item = ({ items }) => {
     }
   });
 
-  const load = useAnimation(0.5);
+  const load = useAnimation(0.7);
 
   return (
     <S>
@@ -99,7 +96,7 @@ export const Item = ({ items }) => {
             />
             <div className="details" {...load}>
               <div className="name">{search.name}</div>
-              <div className="price">${search.price}</div>
+              <div className="price">{search.price}</div>
               <div className="info">{search.info}</div>
 
               {search.sides && (
