@@ -12,9 +12,10 @@ const S = styled.div`
   z-index: 90;
   bottom: 0;
   left: 0;
-  height: 125px;
+  height: 110px;
+  font-weight: bold;
   width: 100%;
-  font-size: 15px;
+  font-size: 12px;
   white-space: nowrap;
   overflow-x: scroll;
   font-family: var(--font2);
@@ -22,15 +23,14 @@ const S = styled.div`
   div {
     cursor: pointer;
     display: inline-block;
-    margin: 13px 5px;
-    padding: 5px 10px;
+    margin: 10px 0px;
+    padding: 5px 15px;
     border-radius: 20px;
-    transition: 0.5s;
+    transition: 0.3s;
     &.selected {
       background: var(--theme);
       box-shadow: var(--shadow);
       color: white;
-      padding: 5px 15px;
     }
 
     :first-child {

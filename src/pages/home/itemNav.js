@@ -9,13 +9,13 @@ const S = styled.div`
   text-transform: uppercase;
   border-radius: 50px 50px 0 0;
   width: 100%;
-  font-size: 15px;
+  margin-bottom: 30px;
+  margin-top: -10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
   .action {
     cursor: pointer;
-    padding: 15px;
     i {
       font-size: 30px;
     }
@@ -25,12 +25,15 @@ const S = styled.div`
     position: fixed;
     transform: translatey(20px);
     border-radius: 40px;
-    left: 120px;
-    top: 0px;
+    left: 140px;
+    top: 20px;
     bottom: unset;
     width: auto;
     padding: 0;
     box-shadow: none;
+    .action {
+      padding: 10px;
+    }
   }
 `;
 

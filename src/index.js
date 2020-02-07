@@ -44,6 +44,7 @@ display: none;
 
 body{
   user-select:none;
+  font-size:14px;
   overscroll-behavior: contain;
   font-family:var(--font1);
   margin:0;

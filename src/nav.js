@@ -8,7 +8,6 @@ const S = styled.div`
   box-shadow: inset 1px 1px 5px black;
   border-radius: 40px 40px 0 0;
   bottom: 0;
-  font-size: 15px;
   z-index: 100;
   left: 0;
   text-transform: uppercase;
@@ -35,7 +34,7 @@ const S = styled.div`
         transform: none;
       }
       display: block;
-      font-size: 25px;
+      font-size: 24px;
     }
   }
 

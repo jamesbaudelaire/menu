@@ -53,7 +53,6 @@ const S = styled.div`
       text-align: right;
       width: 150px;
       overflow: hidden;
-      font-size: 15px;
       position: absolute;
       margin: 10px 15px;
       bottom: 0px;

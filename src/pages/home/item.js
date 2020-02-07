@@ -23,7 +23,7 @@ const S = styled.div`
     padding: 20px;
   }
   .name {
-    font-size: 25px;
+    font-size: 24px;
   }
   .price {
     font-size: 20px;
@@ -41,12 +41,11 @@ const S = styled.div`
       font-family: var(--font2);
       display: inline-block;
       margin: 5px 10px;
-      font-size: 15px;
+      font-size: 14px;
     }
   }
   .info {
     margin: 20px;
-    font-size: 15px;
     font-family: var(--font2);
   }
 
