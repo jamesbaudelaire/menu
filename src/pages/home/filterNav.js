@@ -8,11 +8,13 @@ const S = styled.div`
   border-radius: 40px 40px 0 0;
   box-shadow: inset 1px 1px 5px black;
   position: fixed;
+  text-transform: uppercase;
   z-index: 90;
   bottom: 0;
   left: 0;
-  height: 121px;
+  height: 125px;
   width: 100%;
+  font-size: 15px;
   white-space: nowrap;
   overflow-x: scroll;
   font-family: var(--font2);
@@ -25,9 +27,10 @@ const S = styled.div`
     border-radius: 20px;
     transition: 0.5s;
     &.selected {
-      background: var(--theme2);
+      background: var(--theme);
       box-shadow: var(--shadow);
-      color: black;
+      color: white;
+      padding: 5px 15px;
     }
 
     :first-child {

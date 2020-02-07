@@ -28,6 +28,7 @@ const S = styled.div`
   .price {
     font-size: 20px;
     font-family: var(--font2);
+    margin: 10px;
   }
   .sides,
   .toppings,
@@ -61,7 +62,7 @@ const S = styled.div`
 
   @media screen and (min-width: 1000px) {
     position: absolute;
-    left: 450px;
+    left: 460px;
     top: 50px;
   }
 `;
@@ -121,6 +122,7 @@ export const Item = ({ items }) => {
                 </div>
               )}
             </div>
+            <ItemNav item={search} />
           </>
         ) : (
           <div className="not-found">
@@ -129,8 +131,6 @@ export const Item = ({ items }) => {
           </div>
         )}
       </div>
-
-      <ItemNav item={search} />
     </S>
   );
 };

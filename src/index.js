@@ -32,8 +32,7 @@ const GS = createGlobalStyle`
 --font1:'Averia Serif Libre', cursive;
 --dark:rgb(30,30,30);
 --light:rgb(240,240,240);
---theme1:#2c7772;
---theme2:#f9b44c;
+--theme:#00c853;
 --shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
 }
