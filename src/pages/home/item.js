@@ -23,11 +23,12 @@ const S = styled.div`
     padding: 20px;
   }
   .name {
-    font-size: 25px;
+    font-size: 24px;
   }
   .price {
     font-size: 20px;
     font-family: var(--font2);
+    margin: 10px;
   }
   .sides,
   .toppings,
@@ -40,12 +41,11 @@ const S = styled.div`
       font-family: var(--font2);
       display: inline-block;
       margin: 5px 10px;
-      font-size: 15px;
+      font-size: 14px;
     }
   }
   .info {
     margin: 20px;
-    font-size: 15px;
     font-family: var(--font2);
   }
 
@@ -61,7 +61,7 @@ const S = styled.div`
 
   @media screen and (min-width: 1000px) {
     position: absolute;
-    left: 450px;
+    left: 460px;
     top: 50px;
   }
 `;
@@ -121,6 +121,7 @@ export const Item = ({ items }) => {
                 </div>
               )}
             </div>
+            <ItemNav item={search} />
           </>
         ) : (
           <div className="not-found">
@@ -129,8 +130,6 @@ export const Item = ({ items }) => {
           </div>
         )}
       </div>
-
-      <ItemNav item={search} />
     </S>
   );
 };

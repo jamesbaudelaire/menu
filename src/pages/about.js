@@ -21,7 +21,7 @@ const S = styled.div`
   .info {
     margin: 20px;
     .title {
-      font-size: 25px;
+      font-size: 24px;
       font-family: var(--font1);
     }
 
@@ -46,7 +46,6 @@ const S = styled.div`
       font-size: 20px;
       font-family: var(--font2);
     }
-    font-size: 15px;
     i {
       display: block;
       margin: 10px;

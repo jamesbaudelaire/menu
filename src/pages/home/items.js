@@ -13,7 +13,7 @@ const S = styled.div`
   .category-name {
     margin: 20px;
     margin-bottom: 0;
-    font-size: 25px;
+    font-size: 24px;
     text-transform: uppercase;
   }
 

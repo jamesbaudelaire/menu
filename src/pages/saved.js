@@ -8,6 +8,8 @@ import { IO } from "functions/IO";
 
 import { version } from "version";
 
+import { Restaurants } from "restaurants";
+
 import { useAnimation } from "functions/animation";
 
 const S = styled.div`
@@ -16,7 +18,6 @@ const S = styled.div`
     position: relative;
     color: var(--light);
     border-radius: 20px;
-    background: var(--theme1);
     height: 100px;
     width: calc(100% - 40px);
     max-width: 320px;
@@ -52,7 +53,6 @@ const S = styled.div`
       text-align: right;
       width: 150px;
       overflow: hidden;
-      font-size: 15px;
       position: absolute;
       margin: 10px 15px;
       bottom: 0px;
@@ -62,9 +62,10 @@ const S = styled.div`
       font-size: 20px;
       position: absolute;
       top: 0;
-      color: black;
       right: 0;
-      background: var(--theme2);
+      color: black;
+      background: var(--light);
+      opacity: 0.5;
       border-radius: 0 20px;
       padding: 10px;
       &:hover {
@@ -129,7 +130,16 @@ export const Saved = () => {
       )}
 
       {saved.map(item => (
-        <div key={item.name} className="item" id={item.name}>
+        <div
+          key={item.name}
+          style={{
+            background: Restaurants[item.restaurant]
+              ? `#${Restaurants[item.restaurant].theme}`
+              : "var(--dark)"
+          }}
+          className="item"
+          id={item.name}
+        >
           <Link to={`${item.restaurant}/${item.url}`} key={item.url}>
             <img
               className="food-img"

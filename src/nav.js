@@ -5,21 +5,22 @@ import { useSelector } from "react-redux";
 
 const S = styled.div`
   position: fixed;
+  box-shadow: inset 1px 1px 5px black;
   border-radius: 40px 40px 0 0;
   bottom: 0;
   z-index: 100;
   left: 0;
+  text-transform: uppercase;
   width: 100%;
   display: grid;
   font-family: var(--font2);
   grid-template-columns: ${props =>
     props.restaurant !== null ? "repeat(4, 1fr)" : "repeat(3, 1fr)"};
-  background: var(--theme1);
   text-align: center;
 
   .page-link {
     padding: 10px;
-    color: black;
+    color: ${props => (props.dark ? "var(--light)" : "var(--dark)")};
     transition: 0.3s;
 
     :active {
@@ -33,13 +34,13 @@ const S = styled.div`
         transform: none;
       }
       display: block;
-      font-size: 25px;
+      font-size: 24px;
     }
   }
 
   .active {
     .page-link {
-      color: var(--theme2);
+      color: var(--theme);
     }
   }
 
@@ -53,7 +54,6 @@ const S = styled.div`
     margin: 20px;
     grid-template-columns: 1fr;
     border-radius: 60px;
-    box-shadow: var(--shadow);
   }
 `;
 
@@ -73,8 +73,14 @@ const Pages = [
 export const Nav = () => {
   const restaurant = useSelector(state => state.restaurant);
 
+  const dark = useSelector(state => state.dark);
+
   return (
-    <S restaurant={restaurant}>
+    <S
+      style={{ background: dark ? "var(--dark)" : "var(--light)" }}
+      restaurant={restaurant}
+      dark={dark}
+    >
       <NavLink exact to={`/`}>
         <div className="page-link">
           <i className="material-icons-round">home</i>
