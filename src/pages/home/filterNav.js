@@ -11,6 +11,8 @@ const S = styled.div`
   text-transform: uppercase;
   z-index: 90;
   bottom: 0;
+  background: var(--light);
+  color: var(--dark);
   left: 0;
   height: 110px;
   font-weight: bold;
@@ -61,8 +63,6 @@ export const FilterNav = ({ items }) => {
   const filter = useSelector(s => s.filter);
   const dispatch = useDispatch();
 
-  const dark = useSelector(state => state.dark);
-
   useEffect(() => {
     if (filter) {
       document.querySelector(".selected").scrollIntoView({
@@ -75,7 +75,7 @@ export const FilterNav = ({ items }) => {
   let filters = [...new Set(items.map(x => x.types).flat())].filter(x => x);
 
   return (
-    <S style={{ background: dark ? "var(--dark)" : "var(--light)" }}>
+    <S className="dark-mode">
       {filters.map(x => (
         <div
           className={filter == x ? "selected" : ""}

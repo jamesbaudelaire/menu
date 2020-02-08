@@ -8,7 +8,6 @@ import { Pages } from "./pages";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { Reducers } from "./redux/reducers";
-import { useSelector } from "react-redux";
 
 import { LS } from "functions/LS";
 import { useAnimation } from "./functions/animation";
@@ -43,6 +42,8 @@ display: none;
 
 
 body{
+  background:var(--light);
+  color:var(--dark);
   user-select:none;
   font-size:14px;
   overscroll-behavior: contain;
@@ -50,19 +51,29 @@ body{
   margin:0;
   padding:0;
   transition:.3s;
-  background:${props => (props.dark ? "var(--dark)" : "var(--light)")};
-  color:${props => (props.dark ? "var(--light)" : "var(--dark)")};
   ::after {
     content: "";
     display: block;
     height: 200px;
   }
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  @media (prefers-color-scheme: dark) {
+  background:var(--dark);
+  color:var(--light)
+}
 }
 
 a{
   text-decoration:none;
   color:unset;
+}
+
+.dark-mode{
+@media (prefers-color-scheme: dark) {
+  background:var(--dark);
+  color:var(--light)
+}
 }
 
 i{
@@ -98,13 +109,11 @@ body{
 `;
 
 const App = () => {
-  const dark = useSelector(state => state.dark);
-
   const load = useAnimation(1);
 
   return (
     <>
-      <GS dark={dark} />
+      <GS />
 
       <div id="app" {...load}>
         <BrowserRouter>
