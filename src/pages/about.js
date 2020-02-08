@@ -1,21 +1,11 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 
-import { useSelector, useDispatch } from "react-redux";
-
-import { version } from "version";
-
 import { useAnimation } from "functions/animation";
 
 const S = styled.div`
   i {
     font-size: 40px;
-  }
-  .darkmode {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 20px;
   }
 
   .info {
@@ -51,18 +41,9 @@ const S = styled.div`
       margin: 10px;
     }
   }
-
-  .version {
-    font-family: var(--font2);
-    margin: 40px;
-    text-align: right;
-  }
 `;
 
 export const About = () => {
-  const dark = useSelector(state => state.dark);
-  const dispatch = useDispatch();
-
   const load = useAnimation(0.5);
 
   useEffect(() => {
@@ -71,16 +52,6 @@ export const About = () => {
 
   return (
     <S id="about" {...load}>
-      <i
-        style={{ color: dark ? "var(--light)" : "var(--dark)" }}
-        onClick={() => {
-          dispatch({ type: "dark" });
-        }}
-        className="material-icons-round darkmode"
-      >
-        brightness_6
-      </i>
-
       <div className="info">
         <div className="title">M3NU</div>
         <ul>
@@ -106,8 +77,6 @@ export const About = () => {
           <i className="material-icons-round">email</i>
         </a>
       </div>
-
-      <div className="version">{version}</div>
     </S>
   );
 };

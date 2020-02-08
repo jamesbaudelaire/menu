@@ -3,15 +3,6 @@ import { combineReducers } from "redux";
 import { LS } from "functions/LS";
 LS.init();
 
-const darkReducer = (state = LS.data.dark, action) => {
-  switch (action.type) {
-    case "dark":
-      return !state;
-    default:
-      return state;
-  }
-};
-
 const restaurantReducer = (state = null, action) => {
   switch (action.type) {
     case "get":
@@ -66,7 +57,6 @@ const lastItemReducer = (state = null, action) => {
 };
 
 export const Reducers = combineReducers({
-  dark: darkReducer,
   restaurant: restaurantReducer,
   saved: savedReducer,
   filter: filterReducer,

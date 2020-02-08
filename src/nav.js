@@ -9,6 +9,7 @@ const S = styled.div`
   border-radius: 40px 40px 0 0;
   bottom: 0;
   z-index: 100;
+  background: var(--light);
   left: 0;
   text-transform: uppercase;
   width: 100%;
@@ -20,7 +21,6 @@ const S = styled.div`
 
   .page-link {
     padding: 10px;
-    color: ${props => (props.dark ? "var(--light)" : "var(--dark)")};
     transition: 0.3s;
 
     :active {
@@ -73,14 +73,8 @@ const Pages = [
 export const Nav = () => {
   const restaurant = useSelector(state => state.restaurant);
 
-  const dark = useSelector(state => state.dark);
-
   return (
-    <S
-      style={{ background: dark ? "var(--dark)" : "var(--light)" }}
-      restaurant={restaurant}
-      dark={dark}
-    >
+    <S restaurant={restaurant} className="dark-mode">
       <NavLink exact to={`/`}>
         <div className="page-link">
           <i className="material-icons-round">home</i>

@@ -8,7 +8,6 @@ import { Route, Link, useParams, Switch } from "react-router-dom";
 import { Restaurants } from "restaurants";
 import { useDispatch } from "react-redux";
 import { getRestaurant } from "redux/actions";
-import { useSelector } from "react-redux";
 
 import { version } from "version";
 
@@ -18,6 +17,10 @@ const S = styled.div`
     margin: 20px auto;
     display: block;
     max-width: 300px;
+
+    @media (prefers-color-scheme: dark) {
+      filter: invert();
+    }
   }
 
   .actions {
@@ -57,8 +60,6 @@ const S = styled.div`
 const Info = () => {
   let { restaurant } = useParams();
 
-  const dark = useSelector(s => s.dark);
-
   let R = Restaurants[restaurant];
 
   return (
@@ -70,18 +71,12 @@ const Info = () => {
           `}
           alt="logo"
           className="logo"
-          style={{ filter: dark ? "invert(1)" : "invert(0)" }}
         />
       </Link>
 
       <div className="actions">
         <a className="action" href={`tel:${R.phone}`} rel="noopener noreferrer">
-          <i
-            style={{ color: dark ? "var(--light)" : "var(--dark)" }}
-            className="material-icons-round"
-          >
-            phone
-          </i>
+          <i className="material-icons-round">phone</i>
           {R.phone}
         </a>
 
@@ -90,12 +85,7 @@ const Info = () => {
           href={`${R.location.address}`}
           rel="noopener noreferrer"
         >
-          <i
-            style={{ color: dark ? "var(--light)" : "var(--dark)" }}
-            className="material-icons-round"
-          >
-            near_me
-          </i>
+          <i className="material-icons-round">near_me</i>
           {R.location.name}
         </a>
       </div>
