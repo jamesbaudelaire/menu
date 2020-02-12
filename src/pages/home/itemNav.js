@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useParams, useHistory } from "react-router";
 import { saveItem } from "redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import { useAnimation } from "../../functions/animation";
 
 const S = styled.div`
   font-family: var(--font2);
@@ -12,28 +13,42 @@ const S = styled.div`
   margin-bottom: 30px;
   margin-top: -10px;
   display: grid;
+  background: var(--light);
+  color: var(--dark);
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
+  position: fixed;
+  bottom: 0px;
+  z-index: 90;
+  left: 0;
+  height: 125px;
+  box-shadow: inset 1px 1px 5px black;
+
   .action {
     cursor: pointer;
+    margin: 20px;
     i {
       font-size: 30px;
     }
   }
 
+  transition: 0.3s;
+  transform: translatey(50px);
+  &.loaded {
+    transform: translatex(0);
+    opacity: 1;
+  }
+
   @media screen and (min-width: 1000px) {
-    position: fixed;
-    transform: translatey(20px);
-    border-radius: 40px;
-    left: 140px;
+    transform: none;
+    left: 120px;
     top: 20px;
-    bottom: unset;
+    bottom: auto;
     width: auto;
     padding: 0;
     box-shadow: none;
-    .action {
-      padding: 10px;
-    }
+    height: auto;
+    opacity: 0;
   }
 `;
 
@@ -56,6 +71,8 @@ export const ItemNav = ({ item }) => {
 
   let history = useHistory();
 
+  const load = useAnimation();
+
   let back = () => {
     if (history.length < 2) {
       history.push(`/${restaurant}`);
@@ -65,7 +82,7 @@ export const ItemNav = ({ item }) => {
   };
 
   return (
-    <S>
+    <S className="dark-mode" {...load}>
       <div className="action" onClick={() => back()}>
         <i className="material-icons-round">arrow_back_ios</i>
         back

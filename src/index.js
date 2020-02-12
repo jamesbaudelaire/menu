@@ -45,12 +45,11 @@ body{
   background:var(--light);
   color:var(--dark);
   user-select:none;
-  font-size:14px;
   overscroll-behavior: contain;
   font-family:var(--font1);
   margin:0;
+  font-size:14px;
   padding:0;
-  transition:.3s;
   ::after {
     content: "";
     display: block;
@@ -84,6 +83,15 @@ i{
   }
 }
 
+#app{
+  transition:.5s;
+  opacity:0;
+  &.loaded{
+    opacity:1;
+  }
+}
+
+
 
 @media screen and (min-width: 500px) {
 
@@ -109,7 +117,7 @@ body{
 `;
 
 const App = () => {
-  const load = useAnimation(1);
+  const load = useAnimation();
 
   return (
     <>

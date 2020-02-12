@@ -15,6 +15,7 @@ const S = styled.div`
   .logo {
     width: calc(100% - 100px);
     margin: 20px auto;
+    margin-top: 50px;
     display: block;
     max-width: 300px;
 
@@ -51,8 +52,8 @@ const S = styled.div`
   @media screen and (min-width: 1000px) {
     .item-info {
       position: fixed;
-      left: 120px;
-      top: 100px;
+      left: 100px;
+      top: 60px;
     }
   }
 `;

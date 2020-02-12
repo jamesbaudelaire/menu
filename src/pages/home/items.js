@@ -73,11 +73,11 @@ const S = styled.div`
     height: calc(100% - 120px);
     overflow: scroll;
 
-    left: 430px;
+    left: 400px;
     text-align: left;
 
     .category {
-      width: calc(100vw - 430px);
+      width: calc(100vw - 400px);
     }
   }
 `;
@@ -105,6 +105,7 @@ export const Items = ({ restaurant, items }) => {
 
   useEffect(() => {
     let item = document.getElementById(lastItem);
+
     if (item) {
       item.scrollIntoView({
         block: "center",

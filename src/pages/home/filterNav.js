@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { filterItems } from "redux/actions";
 import { lastItem } from "../../redux/actions";
+import { useAnimation } from "../../functions/animation";
 
 const S = styled.div`
   border-radius: 40px 40px 0 0;
@@ -14,18 +15,24 @@ const S = styled.div`
   background: var(--light);
   color: var(--dark);
   left: 0;
-  height: 110px;
+  height: 145px;
   font-weight: bold;
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
   white-space: nowrap;
   overflow-x: scroll;
   font-family: var(--font2);
 
+  transition: 0.3s;
+  transform: translatey(20px);
+  &.loaded {
+    transform: translatex(0);
+  }
+
   div {
     cursor: pointer;
     display: inline-block;
-    margin: 10px 0px;
+    margin: 15px 0px;
     padding: 5px 15px;
     border-radius: 20px;
     transition: 0.3s;
@@ -45,7 +52,7 @@ const S = styled.div`
 
   @media screen and (min-width: 1000px) {
     position: fixed;
-    top: 0;
+    top: 20px;
     max-width: 350px;
     border-radius: 40px;
     bottom: unset;
@@ -55,7 +62,7 @@ const S = styled.div`
     text-align: center;
     margin: auto;
     height: auto;
-    transform: translatey(20px);
+    transform: none;
   }
 `;
 
@@ -63,10 +70,13 @@ export const FilterNav = ({ items }) => {
   const filter = useSelector(s => s.filter);
   const dispatch = useDispatch();
 
+  const load = useAnimation();
+
   useEffect(() => {
     if (filter) {
       document.querySelector(".selected").scrollIntoView({
         behavior: "smooth",
+        block: "center",
         inline: "center"
       });
     }
@@ -75,7 +85,7 @@ export const FilterNav = ({ items }) => {
   let filters = [...new Set(items.map(x => x.types).flat())].filter(x => x);
 
   return (
-    <S className="dark-mode">
+    <S className="dark-mode" {...load}>
       {filters.map(x => (
         <div
           className={filter == x ? "selected" : ""}

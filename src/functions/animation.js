@@ -1,13 +1,12 @@
 import React, { useRef, useEffect } from "react";
 
-export const useAnimation = (duration = 0.3) => {
+export const useAnimation = () => {
   const el = useRef();
   useEffect(() => {
     if (el.current) {
       let { current } = el;
-      current.style.transition = `opacity ${duration}s`;
-      current.style.opacity = "1";
+      current.classList.add('loaded')
     }
   });
-  return { ref: el, style: { opacity: 0 } };
+  return {ref: el};
 };
