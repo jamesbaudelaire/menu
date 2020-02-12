@@ -24,10 +24,8 @@ const S = styled.div`
 
     opacity: 0;
     transition: 0.5s;
-    transform: translatex(20px);
     &.loaded {
       opacity: 1;
-      transform: translatex(0);
     }
   }
   .name {
