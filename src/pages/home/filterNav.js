@@ -15,7 +15,7 @@ const S = styled.div`
   background: var(--light);
   color: var(--dark);
   left: 0;
-  height: 145px;
+  height: 140px;
   font-weight: bold;
   width: 100%;
   font-size: 14px;
@@ -37,9 +37,8 @@ const S = styled.div`
     border-radius: 20px;
     transition: 0.3s;
     &.selected {
-      background: var(--theme);
-      box-shadow: var(--shadow);
-      color: white;
+      color: var(--theme);
+      box-shadow: inset 1px 1px 5px black;
     }
 
     :first-child {
@@ -61,7 +60,7 @@ const S = styled.div`
     box-shadow: inset 1px 1px 5px black;
     text-align: center;
     margin: auto;
-    height: auto;
+    height: 60px;
     transform: none;
   }
 `;

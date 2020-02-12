@@ -11,8 +11,11 @@ const S = styled.div`
 
   .info {
     margin: 20px;
+    .slogan {
+      font-size: 18px;
+    }
     .title {
-      font-size: 24px;
+      font-size: 28px;
       font-family: var(--font1);
     }
     ul {
@@ -41,10 +44,8 @@ const S = styled.div`
 
   opacity: 0;
   transition: 0.5s;
-  transform: translatex(20px);
   &.loaded {
     opacity: 1;
-    transform: translatex(0);
   }
 `;
 
@@ -60,7 +61,7 @@ export const About = () => {
       <div className="info">
         <div className="title">M3NU</div>
         <ul>
-          a modern menu
+          <span className="slogan">a modern menu</span>
           <li>
             <i className="material-icons-round">send</i>
             share your favorite items with family and friends

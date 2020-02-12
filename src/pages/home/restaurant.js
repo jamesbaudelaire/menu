@@ -15,7 +15,6 @@ const S = styled.div`
   .logo {
     width: calc(100% - 100px);
     margin: 20px auto;
-    margin-top: 50px;
     display: block;
     max-width: 300px;
 
@@ -53,7 +52,7 @@ const S = styled.div`
     .item-info {
       position: fixed;
       left: 100px;
-      top: 60px;
+      top: 100px;
     }
   }
 `;
