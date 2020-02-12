@@ -7,6 +7,7 @@ const S = styled.div`
   i {
     font-size: 40px;
   }
+  font-family: var(--font2);
 
   .info {
     margin: 20px;
@@ -14,9 +15,6 @@ const S = styled.div`
       font-size: 24px;
       font-family: var(--font1);
     }
-
-    font-family: var(--font2);
-
     ul {
       list-style: none;
       padding: 0 10px;
@@ -37,14 +35,21 @@ const S = styled.div`
       font-family: var(--font2);
     }
     i {
-      display: block;
       margin: 10px;
     }
+  }
+
+  opacity: 0;
+  transition: 0.5s;
+  transform: translatex(20px);
+  &.loaded {
+    opacity: 1;
+    transform: translatex(0);
   }
 `;
 
 export const About = () => {
-  const load = useAnimation(0.5);
+  const load = useAnimation();
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -75,6 +80,7 @@ export const About = () => {
         <div className="title">Interested in listing your menu?</div>
         <a href="mailto:admin@m3nu.app">
           <i className="material-icons-round">email</i>
+          admin@m3nu.app
         </a>
       </div>
     </S>

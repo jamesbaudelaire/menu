@@ -63,15 +63,12 @@ const S = styled.div`
       position: absolute;
       top: 0;
       right: 0;
-      color: black;
-      background: var(--light);
+      background: black;
+      color: white;
       opacity: 0.5;
       border-radius: 0 20px;
       padding: 10px;
-      &:hover {
-        background: #d50000;
-        color: white;
-      }
+
       :active {
         transform: none;
       }
@@ -94,6 +91,12 @@ const S = styled.div`
       margin: 10px;
       display: block;
     }
+
+    opacity: 0;
+    transition: 0.5s;
+    &.loaded {
+      opacity: 1;
+    }
   }
 
   @media screen and (min-width: 1000px) {
@@ -107,7 +110,7 @@ export const Saved = () => {
   let saved = useSelector(s => s.saved);
   let dispatch = useDispatch();
 
-  const load = useAnimation(0.5);
+  const load = useAnimation();
 
   useEffect(() => {
     window.scroll(0, 0);

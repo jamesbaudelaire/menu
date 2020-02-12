@@ -21,6 +21,14 @@ const S = styled.div`
   .details {
     position: relative;
     padding: 20px;
+
+    opacity: 0;
+    transition: 0.5s;
+    transform: translatex(20px);
+    &.loaded {
+      opacity: 1;
+      transform: translatex(0);
+    }
   }
   .name {
     font-size: 24px;
@@ -61,7 +69,7 @@ const S = styled.div`
 
   @media screen and (min-width: 1000px) {
     position: absolute;
-    left: 460px;
+    left: 500px;
     top: 50px;
   }
 `;
@@ -79,7 +87,7 @@ export const Item = ({ items }) => {
     }
   });
 
-  const load = useAnimation(0.7);
+  const load = useAnimation();
 
   return (
     <S>

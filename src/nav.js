@@ -20,7 +20,7 @@ const S = styled.div`
   text-align: center;
 
   .page-link {
-    padding: 10px;
+    padding: 20px;
     transition: 0.3s;
 
     :active {
