@@ -20,12 +20,10 @@ const S = styled.div`
   text-align: center;
 
   .page-link {
-    padding: 20px;
+    padding: 10px;
+    border-radius: 80px;
+    margin: 10px;
     transition: 0.3s;
-
-    :active {
-      transform: scale(0.8);
-    }
     span {
     }
     i {
@@ -41,6 +39,7 @@ const S = styled.div`
   .active {
     .page-link {
       color: var(--theme);
+      box-shadow: inset 1px 1px 5px black;
     }
   }
 
@@ -54,6 +53,7 @@ const S = styled.div`
     margin: 20px;
     grid-template-columns: 1fr;
     border-radius: 60px;
+    box-shadow: none;
   }
 `;
 
