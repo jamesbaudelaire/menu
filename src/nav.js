@@ -20,9 +20,9 @@ const S = styled.div`
   text-align: center;
 
   .page-link {
-    padding: 10px;
+    padding: 5px;
     border-radius: 80px;
-    margin: 10px;
+    margin: 10px 10px 20px 10px;
     transition: 0.3s;
     span {
     }
