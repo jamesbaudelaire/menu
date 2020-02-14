@@ -19,14 +19,6 @@ export const Restaurants = {
 
     items: [
       {
-        name: "Shrimp Ceviche",
-        category: "appetizer",
-        url: "ceviche",
-        price: "10.50",
-        types: ["seafood", "gluten-free"],
-        info: `shrimp poached in lime juice, old bay spices, and served with pico de gallo, tortilla chips, avocado cocktail sauce`
-      },
-      {
         url: "cheese",
         name: "Breaded Mozzarella",
         price: "9.50",
@@ -73,6 +65,14 @@ export const Restaurants = {
         price: "10.50",
         types: ["seafood"],
         info: `jumbo lump crab cake, shrimp, with artichoke spinach cream sauce`
+      },
+      {
+        name: "Shrimp Ceviche",
+        category: "appetizer",
+        url: "ceviche",
+        price: "10.50",
+        types: ["seafood", "gluten-free"],
+        info: `shrimp poached in lime juice, old bay spices, and served with pico de gallo, tortilla chips, avocado cocktail sauce`
       },
       {
         name: "Osso Bucco",
