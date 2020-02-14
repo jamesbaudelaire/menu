@@ -52,13 +52,11 @@ const S = styled.div`
   @media screen and (min-width: 1000px) {
     position: fixed;
     top: 20px;
-    max-width: 350px;
+    max-width: calc(100% - 140px);
     border-radius: 40px;
     bottom: unset;
-    left: 140px;
-    width: auto;
-    box-shadow: inset 1px 1px 5px black;
-    text-align: center;
+    left: 120px;
+    box-shadow: none;
     margin: auto;
     height: 60px;
     transform: none;
