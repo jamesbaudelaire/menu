@@ -10,8 +10,10 @@ const S = styled.div`
   text-transform: uppercase;
   border-radius: 50px 50px 0 0;
   width: 100%;
-  margin-bottom: 30px;
+  padding-bottom: 40px;
   margin-top: -10px;
+  right: 0;
+  max-width: 540px;
   display: grid;
   background: var(--light);
   color: var(--dark);
@@ -19,6 +21,7 @@ const S = styled.div`
   text-align: center;
   position: fixed;
   bottom: 0px;
+  margin: auto;
   z-index: 90;
   left: 0;
   height: 125px;
@@ -43,6 +46,7 @@ const S = styled.div`
     transform: none;
     left: 120px;
     top: 20px;
+    right: unset;
     bottom: auto;
     width: auto;
     padding: 0;

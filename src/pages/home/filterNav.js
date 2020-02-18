@@ -15,13 +15,16 @@ const S = styled.div`
   background: var(--light);
   color: var(--dark);
   left: 0;
-  height: 140px;
+  height: 150px;
   font-weight: bold;
   width: 100%;
   font-size: 14px;
+  max-width: 540px;
+  right: 0;
+  margin: auto;
   white-space: nowrap;
   overflow-x: scroll;
-  font-family: var(--font2);
+  font-family: var(--font1);
 
   transition: 0.3s;
   transform: translatey(20px);
@@ -56,6 +59,7 @@ const S = styled.div`
     border-radius: 40px;
     bottom: unset;
     left: 120px;
+    right: unset;
     box-shadow: none;
     margin: auto;
     height: 60px;

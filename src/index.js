@@ -120,16 +120,15 @@ const App = () => {
   const load = useAnimation();
 
   return (
-    <>
+    <div id="app" {...load}>
       <GS />
-
-      <div id="app" {...load}>
+      <div>
         <BrowserRouter>
           <Pages />
           <Nav />
         </BrowserRouter>
       </div>
-    </>
+    </div>
   );
 };
 
