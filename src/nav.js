@@ -11,8 +11,8 @@ const S = styled.div`
   z-index: 100;
   width: calc(100% - 40px);
   max-width: 500px;
-  padding-bottom: 20px;
   background: var(--light);
+  padding-bottom: 10px;
   left: 0;
   right: 0;
   margin: auto;

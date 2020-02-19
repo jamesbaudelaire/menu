@@ -15,7 +15,7 @@ const S = styled.div`
   background: var(--light);
   color: var(--dark);
   left: 0;
-  height: 150px;
+  height: 140px;
   font-weight: bold;
   width: 100%;
   font-size: 14px;

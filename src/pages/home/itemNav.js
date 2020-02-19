@@ -10,8 +10,7 @@ const S = styled.div`
   text-transform: uppercase;
   border-radius: 50px 50px 0 0;
   width: 100%;
-  padding-bottom: 40px;
-  margin-top: -10px;
+  padding-bottom: 25px;
   right: 0;
   max-width: 540px;
   display: grid;
