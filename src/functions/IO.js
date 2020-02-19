@@ -11,15 +11,9 @@ export const IO = tar => {
       if (entry.intersectionRatio > 0.1) {
         let url = el.dataset.img;
         if (url) {
-          let img = new Image();
-          img.src = url;
-
-          img.onload = () => {
-            el.style.backgroundImage = `url('${url}')`;
-
-            el.classList.add("io");
-          };
+          el.style.backgroundImage = `url('${url}')`;
         }
+        el.classList.add("io");
       }
     });
   }, options);
