@@ -64,7 +64,7 @@ export const About = () => {
           <span className="slogan">a modern menu</span>
           <li>
             <i className="material-icons-round">send</i>
-            share your favorite items with family and friends
+            share your favorite items
           </li>
           <li>
             <i className="material-icons-round">favorite</i>

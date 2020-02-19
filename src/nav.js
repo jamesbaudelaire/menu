@@ -9,20 +9,24 @@ const S = styled.div`
   border-radius: 40px 40px 0 0;
   bottom: 0;
   z-index: 100;
+  width: calc(100% - 40px);
+  max-width: 500px;
   background: var(--light);
+  padding-bottom: 10px;
   left: 0;
+  right: 0;
+  margin: auto;
   text-transform: uppercase;
-  width: 100%;
   display: grid;
-  font-family: var(--font2);
+  font-family: var(--font1);
   grid-template-columns: ${props =>
     props.restaurant !== null ? "repeat(4, 1fr)" : "repeat(3, 1fr)"};
   text-align: center;
 
   .page-link {
     padding: 5px;
-    border-radius: 80px;
-    margin: 10px 10px 20px 10px;
+    border-radius: 50px;
+    margin: 10px;
     transition: 0.3s;
     span {
     }
@@ -48,6 +52,7 @@ const S = styled.div`
     left: 0;
     top: 0;
     bottom: unset;
+    right: unset;
     padding: 10px 0 10px 0;
     width: 100px;
     margin: 20px;
