@@ -36,7 +36,7 @@ export const Restaurants = {
       },
       {
         url: "wings",
-        name: "Wings (8)",
+        name: "Cilantro & Gorgonzola Wings (8)",
         price: "10",
         types: ["chicken"],
         category: "appetizer",
