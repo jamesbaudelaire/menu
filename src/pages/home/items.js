@@ -31,7 +31,7 @@ const S = styled.div`
     height: 250px;
     width: calc(100% - 100px);
 
-    background-color: black;
+    /* background-color: black; */
     background-size: cover;
 
     opacity: 0;

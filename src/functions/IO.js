@@ -9,8 +9,9 @@ export const IO = tar => {
     entries.forEach(entry => {
       let el = entry.target;
       if (entry.intersectionRatio > 0.1) {
-        if (el.dataset.img) {
-          el.style.backgroundImage = `url('${el.dataset.img}')`;
+        let url = el.dataset.img;
+        if (url) {
+          el.style.backgroundImage = `url('${url}')`;
         }
         el.classList.add("io");
       }

@@ -79,9 +79,8 @@ export const About = () => {
 
       <div className="contact">
         <div className="title">Interested in listing your menu?</div>
-        <a href="mailto:admin@m3nu.app">
+        <a href="mailto:ronakmystery@gmail.com">
           <i className="material-icons-round">email</i>
-          admin@m3nu.app
         </a>
       </div>
     </S>
