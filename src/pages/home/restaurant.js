@@ -88,6 +88,16 @@ const Info = () => {
           <i className="material-icons-round">near_me</i>
           {R.location.name}
         </a>
+
+        <a
+          className="action"
+          href={R.pdf}
+          rel="noopener noreferrer"
+          target="blank"
+        >
+          <i className="material-icons-round">menu_book</i>
+          PDF menus
+        </a>
       </div>
     </div>
   );

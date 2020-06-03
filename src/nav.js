@@ -28,6 +28,9 @@ const S = styled.div`
     border-radius: 50px;
     margin: 10px;
     transition: 0.3s;
+    &:hover {
+      box-shadow: inset 1px 1px 5px black;
+    }
     span {
     }
     i {

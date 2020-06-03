@@ -39,6 +39,9 @@ const S = styled.div`
     padding: 5px 15px;
     border-radius: 20px;
     transition: 0.3s;
+    &:hover {
+      box-shadow: inset 1px 1px 5px black;
+    }
     &.selected {
       color: var(--theme);
       box-shadow: inset 1px 1px 5px black;
