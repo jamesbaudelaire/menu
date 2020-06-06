@@ -9,7 +9,7 @@ const S = styled.div`
   border-radius: 40px 40px 0 0;
   bottom: 0;
   z-index: 100;
-  width: calc(100% - 40px);
+  width: 100%;
   max-width: 500px;
   background: var(--light);
   padding-bottom: 10px;

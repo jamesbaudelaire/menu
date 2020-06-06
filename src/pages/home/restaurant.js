@@ -13,10 +13,10 @@ import { version } from "version";
 
 const S = styled.div`
   .logo {
-    width: calc(100% - 100px);
+    /* width: calc(100% - 100px); */
     margin: 20px auto;
     display: block;
-    max-width: 300px;
+    max-width: 200px;
 
     @media (prefers-color-scheme: dark) {
       filter: invert();
@@ -51,8 +51,14 @@ const S = styled.div`
   @media screen and (min-width: 1000px) {
     .item-info {
       position: fixed;
-      left: 100px;
+      left: 160px;
       top: 100px;
+      .logo {
+        margin: 0;
+      }
+      .actions {
+        text-align: left;
+      }
     }
   }
 `;
@@ -95,7 +101,7 @@ const Info = () => {
           rel="noopener noreferrer"
           target="blank"
         >
-          <i className="material-icons-round">menu_book</i>
+          <i className="material-icons-round">description</i>
           PDF menus
         </a>
       </div>
