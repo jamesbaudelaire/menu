@@ -58,7 +58,6 @@ const S = styled.div`
   @media screen and (min-width: 500px) {
     width: 450px;
     margin: 20px auto;
-    margin-top: 50px;
     .img {
       border-radius: 10px;
       box-shadow: var(--shadow);
@@ -67,8 +66,8 @@ const S = styled.div`
 
   @media screen and (min-width: 1000px) {
     position: absolute;
-    left: 500px;
-    top: 50px;
+    left: 300px;
+    top: 20px;
   }
 `;
 

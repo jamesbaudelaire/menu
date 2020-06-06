@@ -69,15 +69,15 @@ const S = styled.div`
     box-shadow: inset 1px 1px 5px black;
     border-radius: 40px 0 0 0;
     position: absolute;
-    margin-top: 120px;
-    height: calc(100% - 120px);
+    margin-top: 100px;
+    height: calc(100% - 100px);
     overflow: scroll;
 
-    left: 400px;
+    left: 300px;
     text-align: left;
 
     .category {
-      width: calc(100vw - 400px);
+      width: calc(100vw - 300px);
     }
   }
 `;

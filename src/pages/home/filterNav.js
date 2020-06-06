@@ -15,11 +15,11 @@ const S = styled.div`
   background: var(--light);
   color: var(--dark);
   left: 0;
-  height: 140px;
+  height: 120px;
   font-weight: bold;
   width: 100%;
   font-size: 14px;
-  max-width: 540px;
+  max-width: 500px;
   right: 0;
   margin: auto;
   white-space: nowrap;
@@ -39,12 +39,8 @@ const S = styled.div`
     padding: 5px 15px;
     border-radius: 20px;
     transition: 0.3s;
-    &:hover {
-      box-shadow: inset 1px 1px 5px black;
-    }
     &.selected {
       color: var(--theme);
-      box-shadow: inset 1px 1px 5px black;
     }
 
     :first-child {
@@ -58,13 +54,13 @@ const S = styled.div`
   @media screen and (min-width: 1000px) {
     position: fixed;
     top: 20px;
-    max-width: calc(100% - 140px);
-    border-radius: 40px;
+    max-width: calc(100% - 300px);
+    border-radius: 40px 0 0 40px;
     bottom: unset;
-    left: 120px;
+    left: 300px;
     right: unset;
-    box-shadow: none;
-    margin: auto;
+    /* box-shadow: none; */
+    margin: 0;
     height: 60px;
     transform: none;
   }

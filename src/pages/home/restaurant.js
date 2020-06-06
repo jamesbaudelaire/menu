@@ -33,7 +33,6 @@ const S = styled.div`
         margin: 10px;
       }
     }
-    margin-bottom: 50px;
   }
 
   .not-found {
@@ -51,8 +50,8 @@ const S = styled.div`
   @media screen and (min-width: 1000px) {
     .item-info {
       position: fixed;
-      left: 160px;
-      top: 100px;
+      left: 30px;
+      bottom: 20px;
       .logo {
         margin: 0;
       }
