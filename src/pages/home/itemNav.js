@@ -8,11 +8,11 @@ import { useAnimation } from "../../functions/animation";
 const S = styled.div`
   font-family: var(--font2);
   text-transform: uppercase;
-  border-radius: 50px 50px 0 0;
+  border-radius: 40px 40px 0 0;
   width: 100%;
-  padding-bottom: 25px;
+  padding-bottom: 30px;
   right: 0;
-  max-width: 540px;
+  max-width: 500px;
   display: grid;
   background: var(--light);
   color: var(--dark);
@@ -23,7 +23,7 @@ const S = styled.div`
   margin: auto;
   z-index: 200;
   left: 0;
-  height: 60px;
+  height: 40px;
   box-shadow: inset 1px 1px 5px black;
 
   .action {
@@ -43,15 +43,20 @@ const S = styled.div`
 
   @media screen and (min-width: 1000px) {
     transform: none;
-    left: 120px;
-    top: 20px;
     right: unset;
     bottom: auto;
     width: auto;
     padding: 0;
-    box-shadow: none;
-    height: auto;
     opacity: 0;
+
+    grid-template-columns: 1fr;
+    border-radius: 50px;
+    left: 40px;
+    width: 100px;
+    height: auto;
+    display: grid;
+    top: 40px;
+    height: 305px;
   }
 `;
 

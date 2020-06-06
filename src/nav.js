@@ -14,6 +14,7 @@ const S = styled.div`
   background: var(--light);
   padding-bottom: 10px;
   left: 0;
+  height: 60px;
   right: 0;
   margin: auto;
   text-transform: uppercase;
@@ -28,9 +29,6 @@ const S = styled.div`
     border-radius: 50px;
     margin: 10px;
     transition: 0.3s;
-    &:hover {
-      box-shadow: inset 1px 1px 5px black;
-    }
     span {
     }
     i {
@@ -46,22 +44,21 @@ const S = styled.div`
   .active {
     .page-link {
       color: var(--theme);
-      box-shadow: inset 1px 1px 5px black;
     }
   }
 
   @media screen and (min-width: 1000px) {
     position: fixed;
-    left: 0;
-    top: 0;
+    left: 20px;
+    top: 20px;
     bottom: unset;
     right: unset;
     padding: 10px 0 10px 0;
     width: 100px;
     margin: 20px;
+    height: auto;
     grid-template-columns: 1fr;
     border-radius: 60px;
-    box-shadow: none;
   }
 `;
 
