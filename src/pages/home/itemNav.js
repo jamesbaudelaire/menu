@@ -21,9 +21,9 @@ const S = styled.div`
   position: fixed;
   bottom: 0px;
   margin: auto;
-  z-index: 90;
+  z-index: 200;
   left: 0;
-  height: 125px;
+  height: 60px;
   box-shadow: inset 1px 1px 5px black;
 
   .action {
