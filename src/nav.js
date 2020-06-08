@@ -14,7 +14,7 @@ const S = styled.div`
   background: var(--light);
   padding-bottom: 10px;
   left: 0;
-  height: 60px;
+  height: 70px;
   right: 0;
   margin: auto;
   text-transform: uppercase;

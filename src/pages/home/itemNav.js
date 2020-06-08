@@ -23,7 +23,7 @@ const S = styled.div`
   margin: auto;
   z-index: 200;
   left: 0;
-  height: 40px;
+  height: 50px;
   box-shadow: inset 1px 1px 5px black;
 
   .action {
