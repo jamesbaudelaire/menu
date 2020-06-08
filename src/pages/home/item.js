@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ItemNav } from "./itemNav";
 import { useParams } from "react-router-dom";
 
-import { Restaurants } from "../../restaurants";
+import { Restaurants } from "restaurants";
 
 import { useDispatch } from "react-redux";
 import { lastItem } from "redux/actions";
@@ -101,7 +101,6 @@ export const Item = ({ items }) => {
             />
             <div className="details" {...load}>
               <div className="name">{search.name}</div>
-              <div className="price">{search.price}</div>
               <div className="info">{search.info}</div>
 
               {search.sides && (
