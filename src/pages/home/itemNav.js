@@ -51,12 +51,12 @@ const S = styled.div`
 
     grid-template-columns: 1fr;
     border-radius: 50px;
-    left: 40px;
+    left: 20px;
     width: 100px;
     height: auto;
     display: grid;
-    top: 40px;
-    height: 305px;
+    top: 20px;
+    height: 304px;
   }
 `;
 

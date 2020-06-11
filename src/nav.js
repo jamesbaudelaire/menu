@@ -49,8 +49,8 @@ const S = styled.div`
 
   @media screen and (min-width: 1000px) {
     position: fixed;
-    left: 20px;
-    top: 20px;
+    left: 0px;
+    top: 0px;
     bottom: unset;
     right: unset;
     padding: 10px 0 10px 0;
