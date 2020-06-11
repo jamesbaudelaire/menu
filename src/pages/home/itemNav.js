@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAnimation } from "../../functions/animation";
 
 const S = styled.div`
-  font-family: var(--font2);
+  font-family: var(--font1);
   text-transform: uppercase;
   border-radius: 40px 40px 0 0;
   width: 100%;
@@ -44,7 +44,6 @@ const S = styled.div`
   @media screen and (min-width: 1000px) {
     transform: none;
     right: unset;
-    bottom: auto;
     width: auto;
     padding: 0;
     opacity: 0;
@@ -55,7 +54,7 @@ const S = styled.div`
     width: 100px;
     height: auto;
     display: grid;
-    top: 20px;
+    bottom: 20px;
     height: 304px;
   }
 `;

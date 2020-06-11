@@ -33,7 +33,7 @@ const GS = createGlobalStyle`
 --light:rgb(240,240,240);
 --theme:#00c853;
 --shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-
+--link:
 }
 
 ::-webkit-scrollbar {
@@ -70,8 +70,8 @@ a{
 
 .dark-mode{
 @media (prefers-color-scheme: dark) {
-  background:var(--dark);
-  color:var(--light)
+  background:var(--dark) !important;
+  color:var(--light) !important;
 }
 }
 

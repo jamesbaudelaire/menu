@@ -12,8 +12,10 @@ import { getRestaurant } from "redux/actions";
 import { version } from "version";
 
 const S = styled.div`
+  .item-info {
+    font-family: var(--font1);
+  }
   .logo {
-    /* width: calc(100% - 100px); */
     margin: 20px auto;
     display: block;
     max-width: 200px;
@@ -24,7 +26,6 @@ const S = styled.div`
   }
 
   .actions {
-    font-family: var(--font2);
     text-align: center;
     .action {
       display: block;
@@ -51,7 +52,7 @@ const S = styled.div`
     .item-info {
       position: fixed;
       left: 30px;
-      bottom: 20px;
+      top: 20px;
       .logo {
         margin: 0;
       }

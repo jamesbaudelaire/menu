@@ -55,6 +55,9 @@ const S = styled.div`
   }
 
   @media screen and (min-width: 1000px) {
+    .title {
+      margin: 0;
+    }
     .restaurants {
       grid-template-columns: repeat(2, 300px);
     }
