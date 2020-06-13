@@ -47,6 +47,10 @@ const S = styled.div`
   &.loaded {
     opacity: 1;
   }
+
+  .email {
+    color: #6200ea;
+  }
 `;
 
 export const About = () => {
@@ -80,7 +84,7 @@ export const About = () => {
       <div className="contact">
         <div className="title">Interested in listing your menu?</div>
         <a href="mailto:ronakmystery@gmail.com">
-          <i className="material-icons-round">email</i>
+          <i className="material-icons-round email">email</i>
         </a>
       </div>
     </S>
