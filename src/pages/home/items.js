@@ -67,17 +67,17 @@ const S = styled.div`
 
   @media screen and (min-width: 1000px) {
     box-shadow: inset 1px 1px 5px black;
-    border-radius: 40px 0 0 0;
+    border-radius: 40px;
     position: absolute;
     margin-top: 100px;
-    height: calc(100% - 100px);
+    height: calc(100% - 120px);
     overflow: scroll;
 
     left: 300px;
     text-align: left;
 
     .category {
-      width: calc(100vw - 300px);
+      width: calc(100vw - 320px);
     }
   }
 `;

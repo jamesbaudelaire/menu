@@ -6,6 +6,7 @@ export const Template = {
     name: "",
     address: ""
   },
+  review:"",
   phone: "",
   pdf: "",
 

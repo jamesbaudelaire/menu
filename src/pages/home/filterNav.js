@@ -54,12 +54,11 @@ const S = styled.div`
   @media screen and (min-width: 1000px) {
     position: fixed;
     top: 20px;
-    max-width: calc(100% - 300px);
-    border-radius: 40px 0 0 40px;
+    max-width: calc(100% - 320px);
+    border-radius: 40px;
     bottom: unset;
     left: 300px;
     right: unset;
-    /* box-shadow: none; */
     margin: 0;
     height: 60px;
     transform: none;

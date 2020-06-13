@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { getRestaurant } from "redux/actions";
 
 import { version } from "version";
+import { Info } from "./restaurant-info";
 
 const S = styled.div`
   .item-info {
@@ -30,6 +31,7 @@ const S = styled.div`
     .action {
       display: block;
       i {
+        color: #6200ea;
         font-size: 30px;
         margin: 10px;
       }
@@ -63,52 +65,6 @@ const S = styled.div`
   }
 `;
 
-const Info = () => {
-  let { restaurant } = useParams();
-
-  let R = Restaurants[restaurant];
-
-  return (
-    <div className="item-info">
-      <Link to={`/${restaurant}`}>
-        <img
-          src={`
-          https://res.cloudinary.com/baudelaire/image/upload/${version}/menu/${restaurant}/logo.png
-          `}
-          alt="logo"
-          className="logo"
-        />
-      </Link>
-
-      <div className="actions">
-        <a className="action" href={`tel:${R.phone}`} rel="noopener noreferrer">
-          <i className="material-icons-round">phone</i>
-          {R.phone}
-        </a>
-
-        <a
-          className="action"
-          href={`${R.location.address}`}
-          rel="noopener noreferrer"
-        >
-          <i className="material-icons-round">near_me</i>
-          {R.location.name}
-        </a>
-
-        <a
-          className="action"
-          href={R.pdf}
-          rel="noopener noreferrer"
-          target="blank"
-        >
-          <i className="material-icons-round">description</i>
-          PDF menus
-        </a>
-      </div>
-    </div>
-  );
-};
-
 export const Restaurant = () => {
   let { restaurant } = useParams();
 
@@ -135,7 +91,7 @@ export const Restaurant = () => {
               />
             </Route>
           </Switch>
-          <Info />
+          <Info restaurant={restaurant} version={version} />
         </>
       ) : (
         <div className="not-found">
