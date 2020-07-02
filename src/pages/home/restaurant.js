@@ -27,7 +27,7 @@ const S = styled.div`
   }
 
   .actions {
-    text-align: center;
+    margin: 0 20px;
     .action {
       display: block;
       i {
@@ -59,7 +59,7 @@ const S = styled.div`
         margin: 0;
       }
       .actions {
-        text-align: left;
+        margin: 0;
       }
     }
   }
