@@ -42,7 +42,6 @@ display: none;
 
 body{
   background:var(--light);
-  background:red;
   color:var(--dark);
   user-select:none;
   overscroll-behavior: contain;
