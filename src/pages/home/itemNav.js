@@ -51,11 +51,15 @@ const S = styled.div`
     grid-template-columns: 1fr;
     border-radius: 50px;
     left: 20px;
-    width: 100px;
+    width: 80px;
     height: auto;
     display: grid;
     bottom: 20px;
-    height: 304px;
+    height: 244px;
+
+    .action {
+      margin: 10px;
+    }
   }
 `;
 
@@ -91,7 +95,7 @@ export const ItemNav = ({ item }) => {
   return (
     <S className="dark-mode" {...load}>
       <div className="action" onClick={() => back()}>
-        <i className="material-icons-round">arrow_back_ios</i>
+        <i className="material-icons-round">undo</i>
         back
       </div>
 
