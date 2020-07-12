@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { deleteSaved } from "redux/actions";
+import { deleteSaved } from "../redux/actions";
 
-import { IO } from "functions/IO";
+import { IO } from "../functions/IO";
 
-import { version } from "version";
+import { version } from "../version";
 
-import { Restaurants } from "restaurants";
+import { Restaurants } from "../restaurants";
 
-import { useAnimation } from "functions/animation";
+import { useAnimation } from "../functions/animation";
 
 const S = styled.div`
   .item {

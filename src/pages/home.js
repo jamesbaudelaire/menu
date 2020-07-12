@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Restaurants } from "restaurants";
+import { Restaurants } from "../restaurants";
 
 import { useDispatch } from "react-redux";
-import { lastItem, filterItems } from "redux/actions";
-import { IO } from "functions/IO";
+import { lastItem, filterItems } from "../redux/actions";
+import { IO } from "../functions/IO";
 
-import { version } from "version";
+import { version } from "../version";
 
 const S = styled.div`
   .title {

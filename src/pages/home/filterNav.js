@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
-import { filterItems } from "redux/actions";
+import { filterItems } from "../../redux/actions";
 import { lastItem } from "../../redux/actions";
 import { useAnimation } from "../../functions/animation";
 

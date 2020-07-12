@@ -60,6 +60,7 @@ const S = styled.div`
 
     .page-link{
       margin:0;
+      margin-bottom:5px;
     }
   }
 `;

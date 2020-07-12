@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
-import { Restaurants } from "restaurants";
+import { Restaurants } from "../../restaurants";
 
 export const Info = ({ restaurant, version }) => {
   let R = Restaurants[restaurant];

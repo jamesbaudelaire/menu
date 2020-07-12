@@ -9,7 +9,7 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { Reducers } from "./redux/reducers";
 
-import { LS } from "functions/LS";
+import { LS } from "./functions/LS";
 import { useAnimation } from "./functions/animation";
 
 const store = createStore(Reducers);

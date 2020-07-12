@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useParams, useHistory } from "react-router";
-import { saveItem } from "redux/actions";
+import { saveItem } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useAnimation } from "../../functions/animation";
 

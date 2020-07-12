@@ -5,11 +5,11 @@ import { Items } from "./items";
 import { Item } from "./item";
 
 import { Route, Link, useParams, Switch } from "react-router-dom";
-import { Restaurants } from "restaurants";
+import { Restaurants } from "../../restaurants";
 import { useDispatch } from "react-redux";
-import { getRestaurant } from "redux/actions";
+import { getRestaurant } from "../../redux/actions";
 
-import { version } from "version";
+import { version } from "../../version";
 import { Info } from "./restaurant-info";
 
 const S = styled.div`
