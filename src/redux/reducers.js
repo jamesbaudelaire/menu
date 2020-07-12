@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import { LS } from "functions/LS";
+import { LS } from "../functions/LS";
 LS.init();
 
 const restaurantReducer = (state = null, action) => {

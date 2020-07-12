@@ -52,11 +52,16 @@ const S = styled.div`
     left: 0px;
     right: unset;
     padding: 10px 0 10px 0;
-    width: 100px;
+    width: 80px;
     margin: 20px;
     height: auto;
     grid-template-columns: 1fr;
     border-radius: 60px;
+
+    .page-link{
+      margin:0;
+      margin-bottom:5px;
+    }
   }
 `;
 

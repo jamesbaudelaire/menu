@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import { FilterNav } from "./filterNav";
 import { useSelector } from "react-redux";
 
-import { IO } from "functions/IO";
+import { IO } from "../../functions/IO";
 
-import { version } from "version";
+import { version } from "../../version";
 
 const S = styled.div`
   .category-name {

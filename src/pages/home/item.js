@@ -3,14 +3,14 @@ import styled from "styled-components";
 import { ItemNav } from "./itemNav";
 import { useParams } from "react-router-dom";
 
-import { Restaurants } from "restaurants";
+import { Restaurants } from "../../restaurants";
 
 import { useDispatch } from "react-redux";
-import { lastItem } from "redux/actions";
+import { lastItem } from "../../redux/actions";
 
-import { version } from "version";
+import { version } from "../../version";
 
-import { useAnimation } from "functions/animation";
+import { useAnimation } from "../../functions/animation";
 
 const S = styled.div`
   .img {

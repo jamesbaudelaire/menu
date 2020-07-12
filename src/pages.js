@@ -1,9 +1,9 @@
 import React from "react";
 
 import { Restaurant } from "./pages/home/restaurant";
-import { Saved } from "pages/saved";
-import { About } from "pages/about";
-import { Home } from "pages/home";
+import { Saved } from "./pages/saved";
+import { About } from "./pages/about";
+import { Home } from "./pages/home";
 
 import { Route, Switch } from "react-router-dom";
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 
-import { useAnimation } from "functions/animation";
+import { useAnimation } from "../functions/animation";
 
 const S = styled.div`
   i {
