@@ -30,8 +30,6 @@ const S = styled.div`
     border-radius: 20px;
     height: 250px;
     width: calc(100% - 100px);
-
-    /* background-color: black; */
     background-size: cover;
 
     opacity: 0;

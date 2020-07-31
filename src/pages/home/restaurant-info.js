@@ -45,16 +45,6 @@ export const Info = ({ restaurant, version }) => {
 
         <a
           className="action"
-          href={R.review}
-          rel="noopener noreferrer"
-          target="blank"
-        >
-          <i className="material-icons-round">star</i>
-          Leave a review
-        </a>
-
-        <a
-          className="action"
           href={R.pdf}
           rel="noopener noreferrer"
           target="blank"

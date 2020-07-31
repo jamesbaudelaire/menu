@@ -23,8 +23,6 @@ const GS = createGlobalStyle`
 @import url("https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Open+Sans&display=swap");
 
 
-@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp");
-
 
 :root{
 --font2:'Open Sans', sans-serif;
