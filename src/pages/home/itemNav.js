@@ -50,12 +50,11 @@ const S = styled.div`
 
     grid-template-columns: 1fr;
     border-radius: 50px;
-    left: 20px;
+    left: 120px;
     width: 80px;
     height: auto;
     display: grid;
     bottom: 20px;
-    height: 244px;
 
     .action {
       margin: 10px;

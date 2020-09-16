@@ -19,16 +19,6 @@ export const Info = ({ restaurant, version }) => {
       </Link>
 
       <div className="actions">
-        <a
-          className="action"
-          href={` https://rsrv.netlify.app/${restaurant}`}
-          rel="noopener noreferrer"
-          target="blank"
-        >
-          <i className="material-icons-round">domain_verification</i>
-          Make a reservation
-        </a>
-
         <a className="action" href={`tel:${R.phone}`} rel="noopener noreferrer">
           <i className="material-icons-round">phone</i>
           {R.phone}
@@ -41,16 +31,6 @@ export const Info = ({ restaurant, version }) => {
         >
           <i className="material-icons-round">near_me</i>
           {R.location.name}
-        </a>
-
-        <a
-          className="action"
-          href={R.review}
-          rel="noopener noreferrer"
-          target="blank"
-        >
-          <i className="material-icons-round">star</i>
-          Leave a review
         </a>
 
         <a
