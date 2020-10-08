@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
-// import styled from "styled-components";
 import "../styles/saved.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteSaved } from "../redux/actions";
-
-import { IO } from "../functions/IO";
 
 import { version } from "../version";
 
