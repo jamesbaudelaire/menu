@@ -1,0 +1,29 @@
+#home{
+  .title {
+    font-size: 30px;
+    margin: 20px;
+  }
+  .restaurant {
+    width: calc(100% - 40px);
+    max-width: 300px;
+    border-radius: 20px;
+    margin: 20px auto;
+    box-shadow: var(--shadow);
+    background: var(--theme1);
+    height: 150px;
+    position: relative;
+
+    .logo {
+      filter: invert(1);
+      width: calc(100% - 60px);
+      display: block;
+      margin: auto;
+      top: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+}

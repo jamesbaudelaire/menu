@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Open+Sans&display=swap");
+
+
+
+:root{
+--font2:'Open Sans', sans-serif;
+--font1:'Averia Serif Libre', cursive;
+--dark:rgb(30,30,30);
+--light:rgb(240,240,240);
+--selected:#00c853;
+--shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+--inset: inset 1px 1px 5px black;
+
+}
+
+::-webkit-scrollbar {
+display: none;
+}
+
+body{
+  background:var(--light);
+  color:var(--dark);
+  user-select:none;
+  overscroll-behavior: contain;
+  font-family:var(--font1);
+  margin:0;
+  font-size:14px;
+  padding:0;
+  &::after {
+    content: "";
+    display: block;
+    height: 200px;
+  }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+}
+
+a{
+  text-decoration:none;
+  color:unset;
+}
+
+
+i{
+  cursor: pointer;
+}

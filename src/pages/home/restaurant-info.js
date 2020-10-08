@@ -7,7 +7,7 @@ export const Info = ({ restaurant, version }) => {
   let R = Restaurants[restaurant];
 
   return (
-    <div className="item-info">
+    <div id="item-info">
       <Link to={`/${restaurant}`}>
         <img
           src={`
