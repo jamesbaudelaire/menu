@@ -1,0 +1,70 @@
+#saved{
+    .item {
+    overflow: hidden;
+    position: relative;
+    color: var(--light);
+    border-radius: 20px;
+    height: 100px;
+    width: calc(100% - 40px);
+    max-width: 320px;
+    margin: 20px auto;
+
+
+    .food-img {
+      width: 150px;
+      border-radius: 20px 0 0 20px;
+    }
+
+    .logo {
+      position: absolute;
+      height: 30px;
+      filter: invert(1);
+      right: 50px;
+      top: 10px;
+    }
+
+    .name {
+      text-align: right;
+      width: 150px;
+      overflow: hidden;
+      position: absolute;
+      margin: 10px 15px;
+      bottom: 0px;
+      right: 0px;
+    }
+    .delete {
+      font-size: 20px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: black;
+      color: white;
+      opacity: 0.5;
+      border-radius: 0 20px;
+      padding: 10px;
+
+      :active {
+        transform: none;
+      }
+    }
+    .link {
+      position: absolute;
+      left: 50%;
+      top: 10px;
+      font-size: 30px;
+    }
+  }
+
+  .saved-notice {
+    text-align: center;
+    font-family: var(--font2);
+    margin: 20px;
+    i {
+      font-size: 40px;
+      color: #d50000;
+      margin: 10px;
+      display: block;
+    }
+
+  }
+}

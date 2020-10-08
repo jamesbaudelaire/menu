@@ -1,0 +1,44 @@
+#nav{
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0,0,0,.5);
+  position: fixed;
+  border-radius: 40px 40px 0 0;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+  max-width: 500px;
+  padding-bottom: 10px;
+  left: 0;
+  height: 70px;
+  right: 0;
+  margin: auto;
+  text-transform: uppercase;
+  display: grid;
+  font-family: var(--font1);
+  text-align: center;
+
+  .page-link {
+    color:white;
+    padding: 5px;
+    border-radius: 50px;
+    margin: 10px;
+    transition: .5s;
+
+    i {
+      transition: none;
+      :active {
+        transform: none;
+      }
+      display: block;
+      font-size: 24px;
+    }
+  }
+
+  .active {
+    .page-link {
+      color: black;
+    }
+  }
+
+}

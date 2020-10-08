@@ -1,0 +1,45 @@
+#about{
+  i {
+        font-size: 40px;
+      }
+      font-family: var(--font2);
+    
+      .info {
+        margin: 20px;
+        .slogan {
+          font-size: 18px;
+        }
+        .title {
+          font-size: 28px;
+          font-family: var(--font1);
+        }
+        ul {
+          list-style: none;
+          padding: 0 10px;
+          li {
+            margin: 20px 0;
+            i {
+              margin: 10px;
+            }
+          }
+        }
+      }
+    
+      .contact {
+        margin: 20px;
+        margin-top: 50px;
+        .title {
+          font-size: 20px;
+          font-family: var(--font2);
+        }
+        i {
+          margin: 10px;
+        }
+      }
+    
+     
+    
+      .email {
+        color: #6200ea;
+      }
+}

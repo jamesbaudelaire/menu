@@ -1,0 +1,39 @@
+#restaurant{
+
+  .item-info {
+    font-family: var(--font1);
+  }
+  .logo {
+    margin: 20px auto;
+    display: block;
+    max-width: 200px;
+
+  }
+
+  .actions {
+        margin: 0 20px;
+        .action {
+          display: block;
+          i {
+            color: #6200ea;
+            font-size: 30px;
+            margin: 10px;
+          }
+        }
+      }
+
+      .not-found {
+            text-align: center;
+            font-family: var(--font2);
+            margin: 40px;
+            i {
+              font-size: 40px;
+              color: #d50000;
+              margin: 10px;
+              display: block;
+            }
+          }
+    
+
+}
+
