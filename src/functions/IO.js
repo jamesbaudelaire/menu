@@ -1,6 +1,6 @@
-export const IO = tar => {
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
+export const IO = (tar) => {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
       let el = entry.target;
       if (entry.isIntersecting) {
         let url = el.dataset.img;

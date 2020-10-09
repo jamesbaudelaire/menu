@@ -24,8 +24,9 @@ export const FilterNav = ({ items }) => {
   return (
     <motion.div
       id="filter-nav"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ bounce: 0 }}
       className="dark-mode"
     >
       {filters.map((x) => (
