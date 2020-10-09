@@ -27,8 +27,11 @@ export const Saved = () => {
         </div>
       )}
 
-      {saved.map((item) => (
-        <div
+      {saved.map((item, i) => (
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: i * 0.1 }}
           key={item.name}
           style={{
             background: Restaurants[item.restaurant]
@@ -62,7 +65,7 @@ export const Saved = () => {
           >
             close
           </i>
-        </div>
+        </motion.div>
       ))}
     </motion.div>
   );

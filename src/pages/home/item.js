@@ -26,7 +26,7 @@ export const Item = ({ items }) => {
   });
 
   return (
-    <div id="item">
+    <motion.div id="item" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       {search ? (
         <>
           <div
@@ -35,11 +35,7 @@ export const Item = ({ items }) => {
               backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/${version}/menu/${restaurant}/${search.url}.jpg')`
             }}
           />
-          <motion.div
-            className="details"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-          >
+          <div className="details">
             <div className="name">{search.name}</div>
             <div className="info">{search.info}</div>
 
@@ -64,7 +60,7 @@ export const Item = ({ items }) => {
                 ))}
               </div>
             )}
-          </motion.div>
+          </div>
           <ItemNav item={search} />
         </>
       ) : (
@@ -73,6 +69,6 @@ export const Item = ({ items }) => {
           item not found or no longer available
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
