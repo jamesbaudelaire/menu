@@ -19,7 +19,12 @@ export const Saved = () => {
   });
 
   return (
-    <motion.div id="saved" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <motion.div
+      id="saved"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ bounce: 0 }}
+    >
       {saved.length < 1 && (
         <div className="saved-notice">
           <i className="material-icons-round">favorite</i>
@@ -59,7 +64,6 @@ export const Saved = () => {
           <i
             className="material-icons-round delete"
             onClick={() => {
-              document.getElementById(`${item.name}`).classList.add("delete");
               dispatch(deleteSaved(item));
             }}
           >

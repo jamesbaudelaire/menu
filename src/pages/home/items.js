@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { IO } from "../../functions/IO";
 
 import { version } from "../../version";
+import { motion } from "framer-motion";
 
 export const Items = ({ restaurant, items }) => {
   const filter = useSelector((s) => s.filter);
@@ -42,7 +43,12 @@ export const Items = ({ restaurant, items }) => {
   }, [lastItem]);
 
   return (
-    <div id="items">
+    <motion.div
+      id="items"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ bounce: 0 }}
+    >
       {categories().map((category) => (
         <div className="category" key={category}>
           <div className="category-name"> {category}</div>
@@ -61,6 +67,6 @@ export const Items = ({ restaurant, items }) => {
       ))}
 
       <FilterNav items={itemsCopy} filter={filter} />
-    </div>
+    </motion.div>
   );
 };

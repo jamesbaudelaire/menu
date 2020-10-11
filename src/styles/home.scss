@@ -1,4 +1,12 @@
 #home{
+#restaurants{
+  box-shadow: var(--inset);
+    border-radius: 30px;
+    margin: 10px;
+    height: 400px;
+    overflow:scroll;
+}
+
   .title {
     font-size: 30px;
     margin: 20px;

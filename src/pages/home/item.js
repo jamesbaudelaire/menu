@@ -26,7 +26,12 @@ export const Item = ({ items }) => {
   });
 
   return (
-    <motion.div id="item" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <motion.div
+      id="item"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ bounce: 0 }}
+    >
       {search ? (
         <>
           <div

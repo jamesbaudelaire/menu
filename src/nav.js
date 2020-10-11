@@ -23,11 +23,10 @@ export const Nav = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ bounce: 0 }}
       id="nav"
-      className="dark-mode"
       style={{
         gridTemplateColumns: `${
           restaurant !== null ? "repeat(4, 1fr)" : "repeat(3, 1fr)"

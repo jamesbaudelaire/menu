@@ -2,6 +2,8 @@ export const Rialto = {
   name: "Rialto",
   url: "rialto",
   theme: "304ffe",
+  category: ["fine-dining"],
+  types: ["seafood", "steak"],
   location: {
     name: "720 Garrison Ave",
     address: "https://goo.gl/maps/tXo5y9ccKjo9A9EF6"

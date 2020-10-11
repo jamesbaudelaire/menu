@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { filterItems } from "../../redux/actions";
 import { lastItem } from "../../redux/actions";
 import "../../styles/filter-nav.scss";
-import { motion } from "framer-motion";
 
 export const FilterNav = ({ items }) => {
   const filter = useSelector((s) => s.filter);
@@ -22,12 +21,8 @@ export const FilterNav = ({ items }) => {
   let filters = [...new Set(items.map((x) => x.types).flat())].filter((x) => x);
 
   return (
-    <motion.div
+    <div
       id="filter-nav"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ bounce: 0 }}
-      className="dark-mode"
     >
       {filters.map((x) => (
         <div
@@ -42,6 +37,6 @@ export const FilterNav = ({ items }) => {
           {x}
         </div>
       ))}
-    </motion.div>
+    </div>
   );
 };

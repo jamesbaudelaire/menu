@@ -11,8 +11,6 @@ import { getRestaurant } from "../../redux/actions";
 import { version } from "../../version";
 import { Info } from "./restaurant-info";
 
-import { motion } from "framer-motion";
-
 export const Restaurant = () => {
   let { restaurant } = useParams();
 
@@ -22,11 +20,7 @@ export const Restaurant = () => {
   });
 
   return (
-    <motion.div
-      id="restaurant"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-    >
+    <div id="restaurant">
       {Restaurants[restaurant] ? (
         <>
           <Switch>
@@ -51,6 +45,6 @@ export const Restaurant = () => {
           restaurant not found or no longer available
         </div>
       )}
-    </motion.div>
+    </div>
   );
 };

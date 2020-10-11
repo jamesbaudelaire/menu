@@ -21,12 +21,10 @@ store.subscribe(() => {
 
 const App = () => {
   return (
-    <div id="app">
-      <BrowserRouter>
-        <Pages />
-        <Nav />
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Pages />
+      <Nav />
+    </BrowserRouter>
   );
 };
 
