@@ -11,7 +11,6 @@ import { Reducers } from "./redux/reducers";
 import { LS } from "./functions/LS";
 
 import "./index.scss";
-import "./desktop.scss";
 
 const store = createStore(Reducers);
 
