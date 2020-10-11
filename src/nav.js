@@ -23,8 +23,8 @@ export const Nav = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ bounce: 0 }}
       id="nav"
       style={{

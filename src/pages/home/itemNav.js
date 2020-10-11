@@ -36,9 +36,9 @@ export const ItemNav = ({ item }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
       transition={{ bounce: 0 }}
+      animate={{ opacity: 1 }}
       id="item-nav"
     >
       <div className="action" onClick={() => back()}>

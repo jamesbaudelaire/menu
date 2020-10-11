@@ -9,7 +9,12 @@ export const About = () => {
   });
 
   return (
-    <motion.div id="about" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <motion.div
+      id="about"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ bounce: 0 }}
+    >
       <div className="info">
         <div className="title">M3NU</div>
         <ul>

@@ -22,7 +22,12 @@ export const Home = () => {
   });
 
   return (
-    <motion.div id="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <motion.div
+      id="home"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ bounce: 0 }}
+    >
       <div className="title">RESTAURANTS</div>
 
       <div id="restaurants">
