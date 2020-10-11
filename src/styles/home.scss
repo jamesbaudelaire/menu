@@ -1,7 +1,7 @@
 #home{
 #restaurants{
   box-shadow: var(--inset);
-    border-radius: 30px;
+    border-radius: 40px;
     margin: 10px;
     height: 400px;
     overflow:scroll;
@@ -32,6 +32,19 @@
       left: 0;
       right: 0;
     }
+  }
+
+  @media screen and (min-width: 1000px) {
+
+      margin:0px 120px;
+border-radius: 40px;
+
+#restaurants{
+  margin: 0;
+      display: grid;
+grid-template-columns: repeat(2, 300px);
+}
+
   }
 
 }

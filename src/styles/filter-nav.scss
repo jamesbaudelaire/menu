@@ -45,4 +45,20 @@
         margin-right: 20px;
       }
     }
+
+    @media screen and (min-width: 1000px) {
+      box-shadow: var(--shadow);
+      top: 20px;
+      position: fixed;
+      width: calc(100% - 300px);
+      border-radius: 40px 40px 0 0;
+      bottom: unset;
+      left: 280px;
+      right: unset;
+      margin: 0px;
+      height: 60px;
+      transform: none;
+      }
+    
+
 }

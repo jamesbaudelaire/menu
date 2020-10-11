@@ -1,17 +1,17 @@
 #restaurant{
 
-  .item-info {
-    font-family: var(--font1);
+  #item-info {
+    margin: 20px;
+    box-shadow: var(--shadow);
+    display: inline-block;
+    border-radius: 30px;
+    padding: 10px 20px;
   }
   .logo {
-    margin: 20px auto;
-    display: block;
     max-width: 200px;
-
   }
 
   .actions {
-        margin: 0 20px;
         .action {
           display: block;
           i {
@@ -33,7 +33,12 @@
               display: block;
             }
           }
-    
+          @media screen and (min-width: 1000px) {
+
+      #item-info{
+        position: absolute;
+      }
+        }
 
 }
 

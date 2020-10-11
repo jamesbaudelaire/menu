@@ -22,9 +22,36 @@
         background-size: cover;
               box-shadow: var(--shadow);
        
+              opacity: 0;
+              transition: .3s;
+              transform: scale(.75);
+              &.io{
+                transform: scale(1);
+                opacity:1;
+              }
       }
     
       a:last-child {
         margin-right: 20px;
       }
+
+
+      @media screen and (min-width: 1000px) {
+        box-shadow: var(--inset);
+        border-radius: 40px;
+        position: absolute;
+        top: 20px;
+        height: calc(100% - 40px);
+        box-sizing: border-box;
+        overflow: scroll;
+        padding-top: 60px;
+        left: 280px;
+        width: calc(100% - 300px);
+          .item{
+            width:300px;
+          }
+  
+        
+      }
+
 }

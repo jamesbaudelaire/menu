@@ -47,4 +47,9 @@ margin:20px;
       .email {
         color: #6200ea;
       }
+
+      @media screen and (min-width: 1000px) {
+          margin: 40px 120px;
+      }
+
 }
