@@ -11,7 +11,7 @@
     color: var(--light);
     border-radius: 20px;
     height: 100px;
-    max-width: 320px;
+    width: 320px;
     margin: 20px auto;
 
 
@@ -72,14 +72,11 @@
   }
 
   @media screen and (min-width: 1000px) {
-
-    display: grid;
-    grid-template-columns: repeat(2,360px);          
-    position: absolute;
-    left: 100px;
-    margin: 20px;
+    width: calc(100% - 140px);
+    margin: 20px 120px;
     .item{
       margin:20px;
+      display: inline-block;
     }
   }
   
