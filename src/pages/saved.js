@@ -59,7 +59,6 @@ export const Saved = () => {
           <i
             className="material-icons-round delete"
             onClick={() => {
-              document.getElementById(`${item.name}`).classList.add("delete");
               dispatch(deleteSaved(item));
             }}
           >

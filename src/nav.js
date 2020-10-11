@@ -27,7 +27,6 @@ export const Nav = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ bounce: 0 }}
       id="nav"
-      className="dark-mode"
       style={{
         gridTemplateColumns: `${
           restaurant !== null ? "repeat(4, 1fr)" : "repeat(3, 1fr)"

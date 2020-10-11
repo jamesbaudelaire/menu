@@ -1,4 +1,9 @@
 #saved{
+  box-shadow: var(--inset);
+  border-radius: 30px;
+  margin: 10px;
+  height: 400px;
+  overflow:scroll;
     .item {
       box-shadow:var(--shadow);
     overflow: hidden;
@@ -6,7 +11,6 @@
     color: var(--light);
     border-radius: 20px;
     height: 100px;
-    width: calc(100% - 40px);
     max-width: 320px;
     margin: 20px auto;
 
@@ -14,12 +18,12 @@
     .food-img {
       height:100px;
       width: 150px;
-      border-radius: 20px 100px 0px 20px;
+      border-radius: 20px 100px 100px 20px;
     }
 
     .logo {
       position: absolute;
-      height: 40px;
+      height: 34px;
       filter: invert(1);
       right: 50px;
       top: 10px;

@@ -40,7 +40,6 @@ export const ItemNav = ({ item }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ bounce: 0 }}
       id="item-nav"
-      className="dark-mode"
     >
       <div className="action" onClick={() => back()}>
         <i className="material-icons-round">undo</i>
