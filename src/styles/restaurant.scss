@@ -1,7 +1,6 @@
 #restaurant{
-
   #item-info {
-    margin: 20px;
+    margin: 0 20px;
     box-shadow: var(--shadow);
     display: inline-block;
     border-radius: 30px;
@@ -23,20 +22,18 @@
       }
 
       .not-found {
-            text-align: center;
             font-family: var(--font2);
-            margin: 40px;
+            margin: 20px;
             i {
               font-size: 40px;
               color: #d50000;
-              margin: 10px;
-              display: block;
             }
           }
           @media screen and (min-width: 1000px) {
+            margin:0 100px;
 
       #item-info{
-        position: absolute;
+        margin:20px;
       }
         }
 
