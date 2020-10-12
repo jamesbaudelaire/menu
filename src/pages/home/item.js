@@ -42,7 +42,8 @@ export const Item = ({ items }) => {
           />
           <div className="details">
             <div className="name">{search.name}</div>
-            <div className="info">{search.info}</div>
+
+            {search.info && <div className="info">{search.info}</div>}
 
             {search.sides && (
               <div className="sides">
