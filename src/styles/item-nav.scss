@@ -30,4 +30,28 @@
     }
   }
 
+
+   
+  @media screen and (min-width: 1000px) {
+    box-shadow: var(--shadow);
+    transform: none;
+    right: unset;
+    padding: 0px;
+    grid-template-columns: 1fr;
+    border-radius: 50px;
+    width: 80px;
+    height: auto;
+    padding-top: 240px;
+    top: 0;
+    border-radius: 60px;
+    bottom: unset;
+    position: fixed;
+    margin: 20px;
+      .action{
+        margin:10px;
+      }
+
+}
+
+
 }

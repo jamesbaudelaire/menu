@@ -1,39 +1,38 @@
 #restaurant{
-
-  .item-info {
-    font-family: var(--font1);
+  #item-info {
+    margin:20px;
+    box-shadow: var(--shadow);
+    display: inline-block;
+    border-radius: 30px;
+    padding: 10px 20px;
   }
   .logo {
-    margin: 20px auto;
-    display: block;
+    filter: invert(1);
     max-width: 200px;
-
   }
 
   .actions {
-        margin: 0 20px;
+    color: white;
         .action {
           display: block;
           i {
-            color: #6200ea;
-            font-size: 30px;
-            margin: 10px;
+            font-size: 40px;
+            margin:10px 0;
           }
         }
       }
 
       .not-found {
-            text-align: center;
             font-family: var(--font2);
-            margin: 40px;
+            margin: 20px;
             i {
               font-size: 40px;
               color: #d50000;
-              margin: 10px;
-              display: block;
             }
           }
-    
+          @media screen and (min-width: 1000px) {
+            margin:0 100px;
+        }
 
 }
 

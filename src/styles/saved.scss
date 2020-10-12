@@ -1,7 +1,7 @@
 #saved{
   box-shadow: var(--inset);
-  border-radius: 30px;
-  margin: 10px;
+  border-radius: 40px;
+  margin: 20px;
   height: 400px;
   overflow:scroll;
     .item {
@@ -11,14 +11,14 @@
     color: var(--light);
     border-radius: 20px;
     height: 100px;
-    max-width: 320px;
+    width: 320px;
     margin: 20px auto;
 
 
     .food-img {
       height:100px;
       width: 150px;
-      border-radius: 20px 100px 100px 20px;
+      border-radius: 20px 0px 50px 20px;
     }
 
     .logo {
@@ -62,15 +62,23 @@
   }
 
   .saved-notice {
-    text-align: center;
     font-family: var(--font2);
     margin: 20px;
     i {
       font-size: 40px;
       color: #d50000;
-      margin: 10px;
-      display: block;
     }
 
   }
+
+  @media screen and (min-width: 1000px) {
+    width: calc(100% - 140px);
+    margin: 20px 120px;
+    .item{
+      margin:20px;
+      display: inline-block;
+    }
+  }
+  
+
 }
