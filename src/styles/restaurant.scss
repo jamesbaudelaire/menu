@@ -7,14 +7,15 @@
     padding: 10px 20px;
   }
   .logo {
+    filter: invert(1);
     max-width: 200px;
   }
 
   .actions {
+    color: white;
         .action {
           display: block;
           i {
-            color: #6200ea;
             font-size: 40px;
             margin:10px 0;
           }
