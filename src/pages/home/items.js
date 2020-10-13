@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/items.scss";
 import { Link } from "react-router-dom";
 
@@ -9,10 +9,13 @@ import { IO } from "../../functions/IO";
 
 import { version } from "../../version";
 import { motion } from "framer-motion";
+import { Item } from "./itemModal";
 
 export const Items = ({ restaurant, items }) => {
   const filter = useSelector((s) => s.filter);
   const lastItem = useSelector((s) => s.lastItem);
+
+  const [selectedItem, setSelectedItem] = useState();
 
   let itemsCopy = items;
 
@@ -43,30 +46,35 @@ export const Items = ({ restaurant, items }) => {
   }, [lastItem]);
 
   return (
-    <motion.div
-      id="items"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ bounce: 0 }}
-    >
-      {categories().map((category) => (
-        <div className="category" key={category}>
-          <div className="category-name"> {category}</div>
-          <div className="items">
-            {categoryItems(category).map((item) => (
-              <Link to={`${restaurant}/${item.url}`} key={item.url}>
+    <>
+      <motion.div
+        id="items"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ bounce: 0 }}
+      >
+        {categories().map((category) => (
+          <div className="category" key={category}>
+            <div className="category-name"> {category}</div>
+            <div className="items">
+              {categoryItems(category).map((item) => (
                 <div
                   data-img={`https://res.cloudinary.com/baudelaire/image/upload/w_700/${version}/menu/${restaurant}/${item.url}.jpg`}
                   className="item"
                   id={item.url}
+                  key={item.url}
+                  onClick={() => {
+                    setSelectedItem(item);
+                  }}
                 />
-              </Link>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
 
-      <FilterNav items={itemsCopy} filter={filter} />
-    </motion.div>
+        <FilterNav items={itemsCopy} filter={filter} />
+      </motion.div>
+      {selectedItem && <Item item={selectedItem} setItem={setSelectedItem} />}
+    </>
   );
 };

@@ -6,7 +6,7 @@ import { Restaurants } from "../../restaurants";
 export const Info = ({ restaurant, version }) => {
   let R = Restaurants[restaurant];
   return (
-    <div id="item-info" style={{ background: `#${R.theme}` }}>
+    <div id="restaurant-info" style={{ background: `#${R.theme}` }}>
       <Link to={`/${restaurant}`}>
         <img
           src={`

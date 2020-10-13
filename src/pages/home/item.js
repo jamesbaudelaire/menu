@@ -16,7 +16,7 @@ export const Item = ({ items }) => {
   let { restaurant, item } = useParams();
   let search = items.filter((i) => i.url == item)[0];
 
-  const dispatch = useDispatch(1);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     window.scroll(0, 0);
