@@ -1,0 +1,57 @@
+#item-modal{
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0,0,0,.5);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  #item{
+    position: relative;
+    margin: 20px;
+    height: calc(100% - 120px);
+    max-height: 600px;
+    border-radius: 40px;
+    background: white;
+    box-shadow: var(--shadow);
+    .details{
+      overflow: scroll;
+      border-radius: 0 0 40px 40px;
+      box-shadow: var(--inset);
+      height: calc(100% - 400px);
+
+    }
+    #save{
+      position: absolute;
+      left: 20px;
+      bottom:10px;
+      font-size: 40px;
+    }
+    #share{
+      position: absolute;bottom:10px;right:20px;
+      font-size: 40px;
+color:var(--selected)  ;
+  }
+  }
+
+  @media screen and (min-width: 1000px) {
+  
+position: absolute;
+right: 20px;
+top: 20px;
+height: calc(100% - 40px);
+width: calc(100% - 400px);
+border-radius: 40px;
+
+#item{
+  left: unset;
+  margin: 20px auto;
+  #img{
+    border-radius: unset;
+  }
+}
+
+  }
+
+}
