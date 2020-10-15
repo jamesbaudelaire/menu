@@ -25,19 +25,15 @@ export const Saved = () => {
       animate={{ opacity: 1 }}
       transition={{ bounce: 0 }}
     >
-      {saved.length < 1 && (
-        <div className="saved-notice">
-          <i className="material-icons-round">favorite</i>
-          saved items will appear here
-        </div>
-      )}
+     
       <AnimatePresence>
+
         {saved.map((item, i) => (
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: i * 0.1 }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 0 ,scale:.9}}
             key={`${item.restaurant}-${item.url}`}
             style={{
               background: Restaurants[item.restaurant]
@@ -72,6 +68,15 @@ export const Saved = () => {
             </i>
           </motion.div>
         ))}
+
+{saved.length < 1 && (
+        <div
+        className="saved-notice">
+          <i className="material-icons-round">favorite</i>
+          saved items will appear here
+        </div>
+      )}
+
       </AnimatePresence>
     </motion.div>
   );

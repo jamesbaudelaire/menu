@@ -1,6 +1,7 @@
 #saved{
   box-shadow: var(--inset);
   border-radius: 40px;
+  position: relative;
   margin: 20px;
   height: 400px;
   overflow:scroll;
@@ -62,6 +63,7 @@
   }
 
   .saved-notice {
+    position: absolute;top:0;left:0;margin:20px;
     font-family: var(--font2);
     margin: 20px;
     i {

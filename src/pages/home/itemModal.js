@@ -41,8 +41,9 @@ export const Item = ({ item, setItem }) => {
     >
       <motion.div
         id="item"
-        initial={{ opacity: 0, scale: 0.75, y: 100 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
+        initial={{ opacity: 0, scale: 0.75 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ bounce: 0 }}
       >
         <i
           className="material-icons-round"
