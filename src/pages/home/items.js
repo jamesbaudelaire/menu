@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/items.scss";
-import { Link } from "react-router-dom";
-
 import { FilterNav } from "./filterNav";
 import { useSelector } from "react-redux";
 
 import { IO } from "../../functions/IO";
 
-import { version } from "../../version";
 import { motion } from "framer-motion";
 import { Item } from "./itemModal";
 
@@ -59,7 +56,7 @@ export const Items = ({ restaurant, items }) => {
             <div className="items">
               {categoryItems(category).map((item) => (
                 <div
-                  data-img={`https://res.cloudinary.com/baudelaire/image/upload/w_700/${version}/menu/${restaurant}/${item.url}.jpg`}
+                  data-img={`https://res.cloudinary.com/baudelaire/image/upload/w_700/menu/${restaurant}/${item.url}`}
                   className="item"
                   id={item.url}
                   key={item.url}

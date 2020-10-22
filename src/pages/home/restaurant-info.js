@@ -3,14 +3,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Restaurants } from "../../restaurants";
 
-export const Info = ({ restaurant, version }) => {
+export const Info = ({ restaurant }) => {
   let R = Restaurants[restaurant];
   return (
     <div id="restaurant-info" style={{ background: `#${R.theme}` }}>
       <Link to={`/${restaurant}`}>
         <img
           src={`
-          https://res.cloudinary.com/baudelaire/image/upload/${version}/menu/${restaurant}/logo.png
+          https://res.cloudinary.com/baudelaire/image/upload/menu/${restaurant}/logo.png
           `}
           alt="logo"
           className="logo"

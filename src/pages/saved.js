@@ -4,8 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteSaved } from "../redux/actions";
 
-import { version } from "../version";
-
 import { Restaurants } from "../restaurants";
 
 import { AnimatePresence, motion } from "framer-motion";
@@ -25,19 +23,13 @@ export const Saved = () => {
       animate={{ opacity: 1 }}
       transition={{ bounce: 0 }}
     >
-      {saved.length < 1 && (
-        <div className="saved-notice">
-          <i className="material-icons-round">favorite</i>
-          saved items will appear here
-        </div>
-      )}
       <AnimatePresence>
         {saved.map((item, i) => (
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: i * 0.1 }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 0, scale: 0.9 }}
             key={`${item.restaurant}-${item.url}`}
             style={{
               background: Restaurants[item.restaurant]
@@ -51,12 +43,12 @@ export const Saved = () => {
               <img
                 className="food-img"
                 alt="item"
-                src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/${version}/menu/${item.restaurant}/${item.url}.jpg`}
+                src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/menu/${item.restaurant}/${item.url}`}
               />
             </Link>
 
             <img
-              src={`https://res.cloudinary.com/baudelaire/image/upload/${version}/menu/${item.restaurant}/logo.png`}
+              src={`https://res.cloudinary.com/baudelaire/image/upload/menu/${item.restaurant}/logo`}
               alt="logo"
               className="logo"
             />
@@ -72,6 +64,13 @@ export const Saved = () => {
             </i>
           </motion.div>
         ))}
+
+        {saved.length < 1 && (
+          <div className="saved-notice">
+            <i className="material-icons-round">favorite</i>
+            saved items will appear here
+          </div>
+        )}
       </AnimatePresence>
     </motion.div>
   );

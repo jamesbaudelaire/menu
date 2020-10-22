@@ -30,11 +30,13 @@
                 transform: scale(1);
                 opacity:1;
               }
+
+              &:last-child {
+                margin-right: 20px;
+              }
       }
     
-      a:last-child {
-        margin-right: 20px;
-      }
+    
 
 
       @media screen and (min-width: 1000px) {

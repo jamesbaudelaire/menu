@@ -6,8 +6,6 @@ import { Restaurants } from "../../restaurants";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { version } from "../../version";
-
 import "../../styles/item-modal.scss";
 import { motion } from "framer-motion";
 
@@ -41,8 +39,9 @@ export const Item = ({ item, setItem }) => {
     >
       <motion.div
         id="item"
-        initial={{ opacity: 0, scale: 0.75, y: 100 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
+        initial={{ opacity: 0, scale: 0.75 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ bounce: 0 }}
       >
         <i
           className="material-icons-round"
@@ -75,7 +74,7 @@ export const Item = ({ item, setItem }) => {
         <div
           id="img"
           style={{
-            backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/${version}/menu/${restaurant}/${item.url}.jpg')`
+            backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/menu/${restaurant}/${item.url}')`
           }}
         />
         <div className="details">

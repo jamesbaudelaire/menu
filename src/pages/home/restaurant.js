@@ -8,7 +8,6 @@ import { Restaurants } from "../../restaurants";
 import { useDispatch } from "react-redux";
 import { getRestaurant } from "../../redux/actions";
 
-import { version } from "../../version";
 import { Info } from "./restaurant-info";
 
 export const Restaurant = () => {
@@ -37,7 +36,7 @@ export const Restaurant = () => {
               />
             </Route>
           </Switch>
-          <Info restaurant={restaurant} version={version} />
+          <Info restaurant={restaurant} />
         </>
       ) : (
         <div className="not-found">
