@@ -20,7 +20,6 @@ export const Rialto = {
     "blue cheese",
     "ranch"
   ],
-
   items: [
     {
       name: "Soup Du Jour",
@@ -115,12 +114,6 @@ export const Rialto = {
       name: "Cheesecake",
       category: "dessert",
       info: `Banana Pudding`
-    },
-    {
-      url: "ice-cream",
-      name: "Ice Cream",
-      category: "dessert",
-      info: `smoked maple & bourbon praline`
     },
     {
       name: "Tiramisu",
