@@ -7,8 +7,6 @@ import { Restaurants } from "../../restaurants";
 import { useDispatch } from "react-redux";
 import { lastItem } from "../../redux/actions";
 
-import { version } from "../../version";
-
 import "../../styles/item.scss";
 import { motion } from "framer-motion";
 
@@ -37,7 +35,7 @@ export const Item = ({ items }) => {
           <div
             id="img"
             style={{
-              backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/${version}/menu/${restaurant}/${search.url}.jpg')`
+              backgroundImage: `url('https://res.cloudinary.com/baudelaire/image/upload/w_700/menu/${restaurant}/${search.url}')`
             }}
           />
           <div className="details">

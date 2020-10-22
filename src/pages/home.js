@@ -5,7 +5,6 @@ import { Restaurants } from "../restaurants";
 import { useDispatch } from "react-redux";
 import { lastItem, filterItems } from "../redux/actions";
 
-import { version } from "../version";
 import "../styles/home.scss";
 import { motion } from "framer-motion";
 
@@ -41,7 +40,7 @@ export const Home = () => {
                 className="logo"
                 alt="logo"
                 src={`
-                https://res.cloudinary.com/baudelaire/image/upload/${version}/menu/${restaurant}/logo.png
+                https://res.cloudinary.com/baudelaire/image/upload/menu/${restaurant}/logo
                 `}
               />
             </div>
