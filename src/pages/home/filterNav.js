@@ -18,12 +18,12 @@ export const FilterNav = ({ items }) => {
     }
   });
 
-  let filters = [...new Set(items.map((x) => x.types).flat())].filter((x) => x);
+  let filters = [
+    ...new Set(items.map((x) => x.types.split(",")).flat())
+  ].filter((x) => x);
 
   return (
-    <div
-      id="filter-nav"
-    >
+    <div id="filter-nav">
       {filters.map((x) => (
         <div
           className={filter == x ? "selected" : ""}
