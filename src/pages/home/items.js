@@ -63,7 +63,9 @@ export const Items = ({ restaurant, items }) => {
                   onClick={() => {
                     setSelectedItem(item);
                   }}
-                />
+                >
+                  <div className="item-name">{item.name}</div>
+                </div>
               ))}
             </div>
           </div>

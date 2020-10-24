@@ -53,7 +53,7 @@ export const Item = ({ items }) => {
               </div>
             )}
 
-            {search.types && search.types.includes("salad") && (
+            {/* {search.types && search.types.includes("salad") && (
               <div className="dressings">
                 DRESSINGS
                 <br />
@@ -63,7 +63,7 @@ export const Item = ({ items }) => {
                   </div>
                 ))}
               </div>
-            )}
+            )} */}
           </div>
           <ItemNav item={search} />
         </>

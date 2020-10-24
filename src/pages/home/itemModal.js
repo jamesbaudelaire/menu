@@ -92,7 +92,7 @@ export const Item = ({ item, setItem }) => {
             </div>
           )}
 
-          {item.types && item.types.includes("salad") && (
+          {/* {item.types && item.types.includes("salad") && (
             <div className="dressings">
               DRESSINGS
               <br />
@@ -102,7 +102,7 @@ export const Item = ({ item, setItem }) => {
                 </div>
               ))}
             </div>
-          )}
+          )} */}
         </div>
       </motion.div>
     </motion.div>

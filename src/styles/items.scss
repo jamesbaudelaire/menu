@@ -14,8 +14,9 @@
       .item {
         cursor: pointer;
         margin: 20px;
+        overflow: hidden;
         margin-right: 0;
-    
+    background-color: black;
         display: inline-block;
         border-radius: 20px;
         height: 250px;
@@ -26,6 +27,19 @@
               opacity: 0;
               transition: .3s;
               transform: scale(.8);
+              .item-name{
+                position: absolute;
+                bottom: 0;left:0;
+                font-size: 20px;
+                color:white;
+                padding:10px 20px;
+                box-sizing: border-box;
+                width: 100%;
+                background: rgba(0,0,0,.25);
+                backdrop-filter: blur(10px); 
+                border-radius: 0 0 20px 20px;
+                -webkit-backdrop-filter: blur(10px);
+              }
               &.io{
                 transform: scale(1);
                 opacity:1;

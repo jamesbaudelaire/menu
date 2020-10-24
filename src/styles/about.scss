@@ -1,11 +1,14 @@
 #about{
 margin:20px;
+background: rgb(48, 79, 254);
+color:white;
   box-shadow: var(--shadow);
   display: inline-block;
   border-radius: 40px;
 
   i {
         font-size: 40px;
+        color:black;
       }
       font-family: var(--font2);
     
@@ -45,7 +48,7 @@ margin:20px;
      
     
       .email {
-        color: #6200ea;
+        color:white;
       }
 
       @media screen and (min-width: 1000px) {
