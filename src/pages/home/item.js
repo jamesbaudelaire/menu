@@ -45,25 +45,13 @@ export const Item = ({ items }) => {
 
             {search.sides && (
               <div className="sides">
-                {search.sides.map((side) => (
+                {search.sides.split(",").map((side) => (
                   <div className="side" key={side}>
                     {side}
                   </div>
                 ))}
               </div>
             )}
-
-            {/* {search.types && search.types.includes("salad") && (
-              <div className="dressings">
-                DRESSINGS
-                <br />
-                {Restaurants[restaurant].dressings.map((dressing) => (
-                  <div key={dressing} className="dressing">
-                    {dressing}
-                  </div>
-                ))}
-              </div>
-            )} */}
           </div>
           <ItemNav item={search} />
         </>

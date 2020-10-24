@@ -84,25 +84,13 @@ export const Item = ({ item, setItem }) => {
 
           {item.sides && (
             <div className="sides">
-              {item.sides.map((side) => (
+              {item.sides.split(",").map((side) => (
                 <div className="side" key={side}>
                   {side}
                 </div>
               ))}
             </div>
           )}
-
-          {/* {item.types && item.types.includes("salad") && (
-            <div className="dressings">
-              DRESSINGS
-              <br />
-              {Restaurants[restaurant].dressings.map((dressing) => (
-                <div key={dressing} className="dressing">
-                  {dressing}
-                </div>
-              ))}
-            </div>
-          )} */}
         </div>
       </motion.div>
     </motion.div>
