@@ -6,7 +6,7 @@ import { deleteSaved } from "../redux/actions";
 
 import { Restaurants } from "../restaurants";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export const Saved = () => {
   let saved = useSelector((s) => s.saved);
@@ -23,55 +23,52 @@ export const Saved = () => {
       animate={{ opacity: 1 }}
       transition={{ bounce: 0 }}
     >
-      <AnimatePresence>
-        {saved.map((item, i) => (
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: i * 0.1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            key={`${item.restaurant}-${item.url}`}
-            style={{
-              background: Restaurants[item.restaurant]
-                ? `#${Restaurants[item.restaurant].theme}`
-                : "var(--dark)"
-            }}
-            className="item"
-            id={`${item.restaurant}-${item.url}`}
-          >
-            <Link to={`${item.restaurant}/${item.url}`} key={item.url}>
-              <img
-                className="food-img"
-                alt="item"
-                src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/menu/${item.restaurant}/${item.url}`}
-              />
-            </Link>
-
+      {saved.map((item, i) => (
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: i * 0.1 }}
+          key={`${item.restaurant}-${item.url}`}
+          style={{
+            background: Restaurants[item.restaurant]
+              ? `#${Restaurants[item.restaurant].theme}`
+              : "var(--dark)"
+          }}
+          className="item"
+          id={`${item.restaurant}-${item.url}`}
+        >
+          <Link to={`${item.restaurant}/${item.url}`} key={item.url}>
             <img
-              src={`https://res.cloudinary.com/baudelaire/image/upload/menu/${item.restaurant}/logo`}
-              alt="logo"
-              className="logo"
+              className="food-img"
+              alt="item"
+              src={`https://res.cloudinary.com/baudelaire/image/upload/w_700/menu/${item.restaurant}/${item.url}`}
             />
+          </Link>
 
-            <div className="name">{item.name}</div>
-            <i
-              className="material-icons-round delete"
-              onClick={() => {
-                dispatch(deleteSaved(item));
-              }}
-            >
-              close
-            </i>
-          </motion.div>
-        ))}
+          <img
+            src={`https://res.cloudinary.com/baudelaire/image/upload/menu/${item.restaurant}/logo`}
+            alt="logo"
+            className="logo"
+          />
 
-        {saved.length < 1 && (
-          <div className="saved-notice">
-            <i className="material-icons-round">favorite</i>
-            saved items will appear here
-          </div>
-        )}
-      </AnimatePresence>
+          <div className="name">{item.name}</div>
+          <i
+            className="material-icons-round delete"
+            onClick={() => {
+              dispatch(deleteSaved(item));
+            }}
+          >
+            close
+          </i>
+        </motion.div>
+      ))}
+
+      {saved.length < 1 && (
+        <div className="saved-notice">
+          <i className="material-icons-round">favorite</i>
+          saved items will appear here
+        </div>
+      )}
     </motion.div>
   );
 };

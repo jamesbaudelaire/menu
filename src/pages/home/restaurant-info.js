@@ -23,13 +23,9 @@ export const Info = ({ restaurant }) => {
           {R.phone}
         </a>
 
-        <a
-          className="action"
-          href={`${R.location.address}`}
-          rel="noopener noreferrer"
-        >
+        <a className="action" href={`${R.map}`} rel="noopener noreferrer">
           <i className="material-icons-round">near_me</i>
-          {R.location.name}
+          {R.address}
         </a>
 
         <a
