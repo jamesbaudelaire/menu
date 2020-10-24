@@ -1,7 +1,4 @@
-import { Rialto } from "./restaurants/rialto";
-import { Template } from "./restaurants/template";
-
+import Rialto from "./restaurants/rialto";
 export const Restaurants = {
   [Rialto.url]: Rialto
-  // [Template.url]: Template
 };
