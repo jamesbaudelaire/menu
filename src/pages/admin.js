@@ -30,6 +30,7 @@ export const Admin = () => {
   const [items, setItems] = useState([]);
   const [item, setItem] = useState();
   const [theme, setTheme] = useState();
+  const [json, setJson] = useState();
 
   let types = [...new Set(items.map((x) => x.types.split(",")).flat())].filter(
     (x) => x
@@ -64,11 +65,14 @@ export const Admin = () => {
 
     restaurant.items = items;
 
-    console.log(JSON.stringify(restaurant));
+    // console.log(JSON.stringify(restaurant));
+    setJson(JSON.stringify(restaurant));
   };
 
   return (
     <div id="admin">
+      <div id="json">{json}</div>
+
       <button
         onClick={() => {
           form();
@@ -165,10 +169,8 @@ export const Admin = () => {
                 itemInputs.forEach((x) => {
                   item[x] = document.getElementById(`item-${x}`).value;
                 });
-                console.log(item);
 
                 item.types = [...new Set(item.types.split(","))].join(",");
-                console.log(item);
 
                 let check = () => {
                   //check if already exists by url
