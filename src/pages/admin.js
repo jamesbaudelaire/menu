@@ -24,10 +24,16 @@ let colors = [
   "ff6d00"
 ];
 
+let categories = ["appetizer", "entree", "dessert"];
+
 export const Admin = () => {
   const [items, setItems] = useState([]);
   const [item, setItem] = useState();
   const [theme, setTheme] = useState();
+
+  let types = [...new Set(items.map((x) => x.types.split(",")).flat())].filter(
+    (x) => x
+  );
 
   //prefill restaurant details
   useEffect(() => {
@@ -63,6 +69,26 @@ export const Admin = () => {
 
   return (
     <div id="admin">
+      <button
+        onClick={() => {
+          form();
+        }}
+      >
+        json
+      </button>
+
+      <button
+        onClick={() => {
+          let item = {};
+          itemInputs.forEach((x) => {
+            item[x] = "";
+          });
+          setItem(item);
+        }}
+      >
+        +
+      </button>
+
       <div id="inputs">
         {restaurantInputs.map((input) => (
           <div key={input}>
@@ -70,89 +96,56 @@ export const Admin = () => {
             <input key={input} id={input} />
           </div>
         ))}
+      </div>
 
-        <div id="theme">
-          {colors.map((x) => (
-            <div
-              key={x}
-              onClick={() => {
-                setTheme(x);
-              }}
-              style={{ background: `#${x}` }}
-              className={x === theme ? "selected" : ""}
-            >
-              {x === theme && <i className="material-icons-round">check</i>}
-            </div>
-          ))}
-        </div>
+      <div id="theme">
+        {colors.map((x) => (
+          <div
+            key={x}
+            onClick={() => {
+              setTheme(x);
+            }}
+            style={{ background: `#${x}` }}
+            className={x === theme ? "selected" : ""}
+          >
+            {x === theme && <i className="material-icons-round">check</i>}
+          </div>
+        ))}
+      </div>
 
-        <div id="admin-items">
-          {["appetizer", "entree", "dessert"].map((cat) => (
-            <div key={cat}>
-              <div>{cat}</div>
-              {items
-                .filter((item) => item.category === cat)
-                .map((item) => (
-                  <div
-                    key={item.url}
-                    className="item"
-                    onClick={() => {
-                      setItem(item);
-                    }}
-                  >
-                    {item.name}
-                  </div>
-                ))}
-            </div>
-          ))}
-        </div>
-
-        <button
-          onClick={() => {
-            form();
-          }}
-        >
-          update
-        </button>
-
-        <button
-          onClick={() => {
-            setItem({});
-          }}
-        >
-          +
-        </button>
-
-        {item && (
-          <div id="admin-item-modal">
-            <div id="admin-item">
-              {itemInputs.map((x) => (
-                <div key={x}>
-                  {x}
-                  <input id={`item-${x}`} key={x} />
+      <div id="admin-items">
+        {categories.map((cat) => (
+          <div key={cat}>
+            <div>{cat}</div>
+            {items
+              .filter((item) => item.category === cat)
+              .map((item) => (
+                <div
+                  key={item.url}
+                  className="item"
+                  onClick={() => {
+                    setItem(item);
+                  }}
+                >
+                  {item.name}
                 </div>
               ))}
+          </div>
+        ))}
+      </div>
 
-              <button
-                onClick={() => {
-                  setItem(null);
-                }}
-              >
-                X
-              </button>
-              <button
-                onClick={() => {
-                  let item = {};
-                  itemInputs.forEach((x) => {
-                    item[x] = document.getElementById(`item-${x}`).value;
-                  });
-                  let temp = items.map((x) => (x.url === item.url ? item : x));
-                  setItems(temp);
-                  setItem(null);
-                }}
-              >
-                save
-              </button>
+      {item && (
+        <div id="admin-item-modal">
+          <div id="admin-item">
+            <button
+              onClick={() => {
+                setItem(null);
+              }}
+            >
+              X
+            </button>
+
+            {item.url && (
               <button
                 onClick={() => {
                   if (window.confirm(`Delete ${item.name}?`)) {
@@ -164,10 +157,94 @@ export const Admin = () => {
               >
                 delete
               </button>
+            )}
+
+            <button
+              onClick={() => {
+                let item = {};
+                itemInputs.forEach((x) => {
+                  item[x] = document.getElementById(`item-${x}`).value;
+                });
+                console.log(item);
+
+                item.types = [...new Set(item.types.split(","))].join(",");
+                console.log(item);
+
+                let check = () => {
+                  //check if already exists by url
+                  return items.filter((x) => x.url === item.url).length;
+                };
+
+                if (
+                  check() === 0 &&
+                  item.url !== "undefined" &&
+                  item.url !== "" &&
+                  categories.includes(item.category)
+                ) {
+                  items.push(item);
+                  setItems(items);
+                  setItem(null);
+                } else if (
+                  item.url !== "" &&
+                  categories.includes(item.category)
+                ) {
+                  let temp = items.map((x) => (x.url === item.url ? item : x));
+                  setItems(temp);
+                  setItem(null);
+                } else {
+                  alert("error");
+                }
+              }}
+            >
+              save
+            </button>
+
+            <div id="suggestions">
+              <div className="suggested">
+                suggested category
+                <div className="suggestion">
+                  {categories.map((x) => (
+                    <div
+                      key={x}
+                      onClick={() => {
+                        document.getElementById("item-category").value = x;
+                      }}
+                    >
+                      {x}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="suggested">
+                suggested types
+                <div className="suggestion">
+                  {types.map((x) => (
+                    <div
+                      key={x}
+                      onClick={() => {
+                        let input = document.getElementById("item-types");
+                        if (input.value === "") {
+                          input.value = x;
+                        } else {
+                          input.value += `,${x}`;
+                        }
+                      }}
+                    >
+                      {x}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
+            {itemInputs.map((x) => (
+              <div key={x}>
+                {x}
+                <input id={`item-${x}`} key={x} />
+              </div>
+            ))}
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
