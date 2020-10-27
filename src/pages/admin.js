@@ -72,18 +72,20 @@ export const Admin = () => {
       <div id="admin-items">
         {categories.map((cat) => (
           <div key={cat}>
-            <div>{cat}</div>
+            <div className="category-name">{cat}</div>
             {items
-              .filter((item) => item.category === cat)
-              .map((item) => (
+              .filter((x) => x.category === cat)
+              .map((x) => (
                 <div
-                  key={item.url}
-                  className="item"
+                  key={x.url}
+                  className={`item ${
+                    item && item.url === x.url ? "selected" : ""
+                  }`}
                   onClick={() => {
-                    setItem(item);
+                    setItem(x);
                   }}
                 >
-                  {item.name}
+                  {x.name}
                 </div>
               ))}
           </div>
