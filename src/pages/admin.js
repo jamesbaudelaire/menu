@@ -63,6 +63,17 @@ export const Admin = () => {
 
   return (
     <div id="admin">
+      <div id="json-form">
+        <button
+          onClick={() => {
+            form();
+          }}
+        >
+          json
+        </button>
+        <textarea id="json" />
+      </div>
+
       <Items
         items={items}
         item={item}
@@ -76,18 +87,10 @@ export const Admin = () => {
           items={items}
           item={item}
           setItem={setItem}
+          setItems={setItems}
           itemInputs={itemInputs}
         />
       )}
-
-      <div id="restaurant-inputs">
-        {restaurantInputs.map((input) => (
-          <div key={input}>
-            {input}
-            <input key={input} id={input} />
-          </div>
-        ))}
-      </div>
 
       <div id="theme">
         {colors.map((x) => (
@@ -102,15 +105,13 @@ export const Admin = () => {
         ))}
       </div>
 
-      <div id="json-form">
-        <button
-          onClick={() => {
-            form();
-          }}
-        >
-          json
-        </button>
-        <textarea id="json" />
+      <div id="restaurant-inputs">
+        {restaurantInputs.map((input) => (
+          <div key={input}>
+            {input}
+            <input key={input} id={input} />
+          </div>
+        ))}
       </div>
     </div>
   );

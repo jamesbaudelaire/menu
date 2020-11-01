@@ -44,9 +44,8 @@
       position: absolute;
       top: 0;
       right: 0;
-      background: black;
+      box-shadow:var(--inset);
       color: white;
-      opacity: 0.5;
       border-radius: 0 20px;
       padding: 10px;
 
