@@ -45,7 +45,7 @@ export const Items = ({ restaurant, items }) => {
   return (
     <>
       <motion.div
-        id="items"
+        id="restaurant-items"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ bounce: 0 }}

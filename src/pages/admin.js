@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Restaurants } from "../restaurants";
 import "./admin.scss";
 
+import { Items } from "./admin/items";
+import { Item } from "./admin/item";
+
 let restaurantInputs = [
   "name",
   "url",
@@ -44,15 +47,6 @@ export const Admin = () => {
     setTheme(Restaurants.rialto.theme);
   }, []);
 
-  //prefill item details
-  useEffect(() => {
-    if (item) {
-      itemInputs.forEach((x) => {
-        document.getElementById(`item-${x}`).value = item[x];
-      });
-    }
-  }, [item]);
-
   //generate restaurant json
   let form = () => {
     let restaurant = {};
@@ -69,161 +63,24 @@ export const Admin = () => {
 
   return (
     <div id="admin">
-      <div id="admin-items">
-        {categories.map((cat) => (
-          <div key={cat}>
-            <div className="category-name">{cat}</div>
-            {items
-              .filter((x) => x.category === cat)
-              .map((x) => (
-                <div
-                  key={x.url}
-                  className={`item ${
-                    item && item.url === x.url ? "selected" : ""
-                  }`}
-                  onClick={() => {
-                    setItem(x);
-                  }}
-                >
-                  {x.name}
-                </div>
-              ))}
-          </div>
-        ))}
-      </div>
-
-      <i
-        id="add-item"
-        onClick={() => {
-          let item = {};
-          itemInputs.forEach((x) => {
-            item[x] = "";
-          });
-          setItem(item);
-        }}
-        className="material-icons-round"
-      >
-        add_circle_outline
-      </i>
+      <Items
+        items={items}
+        item={item}
+        setItem={setItem}
+        itemInputs={itemInputs}
+        categories={categories}
+      />
 
       {item && (
-        <div id="admin-item-modal">
-          <div id="admin-item">
-            <i
-              id="close"
-              onClick={() => {
-                setItem(null);
-              }}
-              className="material-icons-round"
-            >
-              close
-            </i>
-
-            <div id="suggestions">
-              <div className="suggested">
-                suggested category
-                <div className="suggestion">
-                  {categories.map((x) => (
-                    <button
-                      key={x}
-                      onClick={() => {
-                        document.getElementById("item-category").value = x;
-                      }}
-                    >
-                      {x}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              <div className="suggested">
-                suggested types
-                <div className="suggestion">
-                  {types.map((x) => (
-                    <button
-                      key={x}
-                      onClick={() => {
-                        let input = document.getElementById("item-types");
-                        if (input.value === "") {
-                          input.value = x;
-                        } else {
-                          input.value += `,${x}`;
-                        }
-                      }}
-                    >
-                      {x}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {itemInputs.map((x) => (
-              <div key={x}>
-                {x}
-                <input id={`item-${x}`} key={x} />
-              </div>
-            ))}
-
-            <i
-              id="save-item"
-              className="material-icons-round"
-              onClick={() => {
-                let item = {};
-                itemInputs.forEach((x) => {
-                  item[x] = document.getElementById(`item-${x}`).value;
-                });
-
-                item.types = [...new Set(item.types.split(","))].join(",");
-
-                let check = () => {
-                  //check if already exists by url
-                  return items.filter((x) => x.url === item.url).length;
-                };
-
-                if (
-                  check() === 0 &&
-                  item.url !== "undefined" &&
-                  item.url !== "" &&
-                  categories.includes(item.category)
-                ) {
-                  items.push(item);
-                  setItems(items);
-                  setItem(null);
-                } else if (
-                  item.url !== "" &&
-                  categories.includes(item.category)
-                ) {
-                  let temp = items.map((x) => (x.url === item.url ? item : x));
-                  setItems(temp);
-                  setItem(null);
-                } else {
-                  alert("error");
-                }
-              }}
-            >
-              save
-            </i>
-
-            {item.url && (
-              <i
-                id="delete-item"
-                onClick={() => {
-                  if (window.confirm(`Delete ${item.name}?`)) {
-                    let temp = items.filter((x) => x.url !== item.url);
-                    setItems(temp);
-                    setItem(null);
-                  }
-                }}
-                className="material-icons-round"
-              >
-                delete
-              </i>
-            )}
-          </div>
-        </div>
+        <Item
+          items={items}
+          item={item}
+          setItem={setItem}
+          itemInputs={itemInputs}
+        />
       )}
 
-      <div id="inputs">
+      <div id="restaurant-inputs">
         {restaurantInputs.map((input) => (
           <div key={input}>
             {input}

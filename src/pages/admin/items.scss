@@ -1,0 +1,38 @@
+  #admin-items{
+    display: inline-block;
+    margin:20px;
+    position: relative;
+    box-shadow: var(--inset);
+    border-radius: 20px;
+    font-size: 10px;
+    max-width: 400px;
+
+#categories{
+  height: 200px;
+  padding: 20px;
+  padding-right: 40px;
+  overflow: scroll;
+  .category-name{
+    text-transform: uppercase;
+  }
+} 
+        .item{
+          cursor: pointer;
+          box-shadow: var(--shadow);
+          display: inline-block;
+          padding: 5px 10px;
+          margin: 10px;
+          transition: .3s;
+          border-radius: 20px;
+        }
+        #add-item{
+          font-size: 30px;
+          margin:10px;
+          position: absolute;right:0;top:0;
+        }
+       
+      }
+
+
+
+     
