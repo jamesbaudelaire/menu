@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import "./item.scss";
 
 let categories = ["appetizer", "entree", "dessert"];
@@ -8,11 +9,14 @@ export const Item = ({ item, setItem, setItems, items, itemInputs }) => {
     (x) => x
   );
 
+  const [category, setCategory] = useState();
+
   useEffect(() => {
     if (item) {
       itemInputs.forEach((x) => {
         document.getElementById(`item-${x}`).value = item[x];
       });
+      setCategory(item.category);
     }
   }, [item]);
 
@@ -35,7 +39,9 @@ export const Item = ({ item, setItem, setItems, items, itemInputs }) => {
             {categories.map((x) => (
               <button
                 key={x}
+                className={category === x ? "selected" : ""}
                 onClick={() => {
+                  setCategory(x);
                   document.getElementById("item-category").value = x;
                 }}
               >
