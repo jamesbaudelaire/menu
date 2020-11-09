@@ -102,7 +102,7 @@
       "category": "dessert",
       "types": "",
       "sides": "",
-      "info": ""
+      "info": "Godiva Chocolate"
     },
     {
       "name": "Cheesecake",
@@ -159,6 +159,62 @@
       "sides": "asparagus",
       "types": "seafood",
       "info": "jalapeno and cream cheese grits with a spicy cajun and shrimp cream sauce"
+    },
+    {
+      "name": "Southwestern Shrimp Cocktail",
+      "url": "shrimp-cocktail",
+      "category": "appetizer",
+      "types": "seafood,gluten-free",
+      "sides": "",
+      "info": "shrimp poached in old bay spices, cilantro dusted avocado cocktail sauce"
+    },
+    {
+      "name": "Calamari",
+      "url": "calamari",
+      "category": "appetizer",
+      "types": "seafood",
+      "sides": "zesty pomodoro, remoulade",
+      "info": "deep-fried, dusted with cajun and lemon pepper spices"
+    },
+    {
+      "name": "Mahi Mahi",
+      "url": "mahi",
+      "category": "appetizer",
+      "types": "seafood",
+      "sides": "mango relish, ginger sesame sauce",
+      "info": "lightly battered"
+    },
+    {
+      "name": "Cheese Curds",
+      "url": "curds",
+      "category": "appetizer",
+      "types": "",
+      "sides": "zesty pomodoro sauce",
+      "info": "wisconsin white cheddar, garlic breading"
+    },
+    {
+      "name": "Blackened Alfredo",
+      "url": "alfredo",
+      "category": "entree",
+      "types": "chicken,beef",
+      "sides": "toast points,parmesan cheese",
+      "info": "linguini alfredo, andouille sausage"
+    },
+    {
+      "name": "Tempura Shrimp",
+      "url": "tempura",
+      "category": "entree",
+      "types": "seafood",
+      "sides": "rosemary fries",
+      "info": "green olives, cabbage, cilantro, tomato, lemon"
+    },
+    {
+      "name": "Rialto Burger",
+      "url": "burger",
+      "category": "entree",
+      "types": "beef,sandwich",
+      "sides": "",
+      "info": ""
     }
   ]
 }

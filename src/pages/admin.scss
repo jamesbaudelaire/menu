@@ -1,5 +1,9 @@
 #admin{
     user-select:text;
+    .selected{
+      background: var(--selected);
+      color: white;
+    }
     input,textarea{
         border: none;
         box-shadow: var(--inset);
@@ -29,10 +33,8 @@
 
 #json-form{
   margin:20px;
-  button{
-    margin:10px 0;
-  }
   textarea{
+  margin:10px 20px;
     display: block;
   }
 }
@@ -57,17 +59,14 @@
   &.selected{
     box-shadow: var(--shadow);
     box-sizing: border-box;
-    border:5px solid white;
+    border:7px solid white;
   }
   }
 }
 
 
 
-.selected{
-  background: var(--selected);
-  color: white;
-}
+
 
 #restaurant-inputs{
   margin:20px;
