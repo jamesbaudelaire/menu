@@ -1,5 +1,9 @@
 #admin{
     user-select:text;
+    .selected{
+      background: var(--selected);
+      color: white;
+    }
     input,textarea{
         border: none;
         box-shadow: var(--inset);
@@ -62,10 +66,7 @@
 
 
 
-.selected{
-  background: var(--selected);
-  color: white;
-}
+
 
 #restaurant-inputs{
   margin:20px;

@@ -16,7 +16,7 @@
           margin: 20px;
           overflow: hidden;
           margin-right: 0;
-      background-color: black;
+      background-color: grey;
           display: inline-block;
           border-radius: 20px;
           height: 250px;
@@ -28,9 +28,11 @@
                 transition: .3s;
                 transform: scale(.8);
                 .item-name{
+                  text-overflow: ellipsis;
+                  overflow: hidden;
                   position: absolute;
                   bottom: 0;left:0;
-                  font-size: 20px;
+                  font-size: 18px;
                   color:white;
                   padding:10px 20px;
                   box-sizing: border-box;
